@@ -1,0 +1,42 @@
+baseURL = "http://localhost/"
+languageCode = "id"
+title = "Danny Agus"
+theme = "PaperMod"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  env = "production"
+  ShowSearch = true
+  ShowArchive = true
+
+[params.homeInfoParams]
+  Title = "Selamat datang 👋"
+  Content = "Ini blog markdown saya. Kumpulan tulisan, tips, dan dokumentasi pribadi."
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Search"
+  url = "search/"
+  weight = 2
+
+[[menu.main]]
+  name = "Archive"
+  url = "archives/"
+  weight = 3
+
+[[menu.main]]
+  name = "Tags"
+  url = "tags/"
+  weight = 4
+
+[[menu.main]]
+  name = "Categories"
+  url = "categories/"
+  weight = 5
