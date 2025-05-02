@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Danny Agus</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Danny Agus</description>
+    <title>Azure on Danny Agus</title>
+    <link>http://localhost:1313/tags/azure/</link>
+    <description>Recent content in Azure on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
     <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rencana Deployment Blog: Pertimbangan Teknis dan Biaya</title>
       <link>http://localhost:1313/posts/deployment-strategy-hugo/</link>
@@ -149,13 +149,6 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;-penutup&#34;&gt;✍️ Penutup&lt;/h2&gt;
 &lt;p&gt;Untuk saat ini, setup ini sangat efisien dan scalable:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Halo Dunia</title>
-      <link>http://localhost:1313/posts/halo-dunia/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/halo-dunia/</guid>
-      <description>&lt;p&gt;Halo! Ini postingan pertama saya di blog Hugo + PaperMod 🎉&lt;/p&gt;</description>
     </item>
     <item>
       <title>Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web</title>

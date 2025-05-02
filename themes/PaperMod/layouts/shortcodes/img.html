@@ -1,0 +1,8 @@
+<figure style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: 1.5em 0;">
+    <img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" width="{{ .Get "width" }}" style="max-width: 100%; height: auto;" />
+    {{ with .Get "caption" }}
+      <figcaption style="font-size: 0.9em; color: #666; margin-top: 0.5rem;">
+        {{ . }}
+      </figcaption>
+    {{ end }}
+  </figure>  

@@ -6,14 +6,164 @@
     <description>Recent content in Hugo on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Thu, 01 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rencana Deployment Blog: Pertimbangan Teknis dan Biaya</title>
+      <link>http://localhost:1313/posts/deployment-strategy-hugo/</link>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/deployment-strategy-hugo/</guid>
+      <description>&lt;p&gt;Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal &lt;strong&gt;deployment&lt;/strong&gt; dan &lt;strong&gt;biaya operasional&lt;/strong&gt; jangka panjang. Blog ini dibangun dengan &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; dan menggunakan tema &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt;. Berikut ini adalah rangkuman pertimbangan kami.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-arsitektur-awal&#34;&gt;🧱 Arsitektur Awal&lt;/h2&gt;
+&lt;h3 id=&#34;komponen&#34;&gt;Komponen:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Konten:&lt;/strong&gt; Markdown (&lt;code&gt;.md&lt;/code&gt;) yang dikonversi ke HTML dengan Hugo&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Tema:&lt;/strong&gt; PaperMod&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hosting:&lt;/strong&gt; Azure Static Web Apps (Free Tier)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gambar:&lt;/strong&gt; disimpan di dalam folder Hugo (&lt;code&gt;static/images/&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;perkiraan-awal&#34;&gt;Perkiraan Awal:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;1 post = 1 Markdown + gambar = &lt;strong&gt;±1 MB total&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Misalnya ada 100 post = &lt;strong&gt;~100 MB&lt;/strong&gt; total konten&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-evaluasi-kebutuhan-dan-risiko&#34;&gt;💡 Evaluasi Kebutuhan dan Risiko&lt;/h2&gt;
+&lt;h3 id=&#34;masalah-yang-muncul&#34;&gt;Masalah yang Muncul:&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub Repo Limit:&lt;/strong&gt; GitHub membatasi size repo, dan ada limit per file (100MB)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Static Web Apps Limit:&lt;/strong&gt; Free tier hanya mendukung &lt;strong&gt;250 MB&lt;/strong&gt; total size&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Images Berat:&lt;/strong&gt; Post galeri foto bisa &amp;gt;10MB per post&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;CI/CD GitHub Actions:&lt;/strong&gt; meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-strategi-final-yang-diambil&#34;&gt;✅ Strategi Final yang Diambil&lt;/h2&gt;
+&lt;h3 id=&#34;1-konten-markdown-dan-hugo-html-tetap-di-static-web-app&#34;&gt;1. &lt;strong&gt;Konten Markdown dan Hugo HTML tetap di Static Web App&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Kecil (5–10 KB per post)&lt;/li&gt;
+&lt;li&gt;Cepat dibuild&lt;/li&gt;
+&lt;li&gt;Gratis deploy dengan GitHub Actions&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-gambar-dipisah-ke-azure-blob-storage&#34;&gt;2. &lt;strong&gt;Gambar dipisah ke Azure Blob Storage&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Contoh link: &lt;code&gt;https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Gambar tidak memakan space GitHub maupun Static App&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-simulasi-perkiraan-biaya&#34;&gt;🔢 Simulasi Perkiraan Biaya&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Kasus&lt;/th&gt;
+          &lt;th&gt;Jumlah Post&lt;/th&gt;
+          &lt;th&gt;Size per Post&lt;/th&gt;
+          &lt;th&gt;Total Size&lt;/th&gt;
+          &lt;th&gt;Biaya GitHub&lt;/th&gt;
+          &lt;th&gt;Biaya Azure Storage&lt;/th&gt;
+          &lt;th&gt;Biaya Static App&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Awal (Markdown + Image)&lt;/td&gt;
+          &lt;td&gt;10&lt;/td&gt;
+          &lt;td&gt;1 MB&lt;/td&gt;
+          &lt;td&gt;10 MB&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Optimal (Markdown only)&lt;/td&gt;
+          &lt;td&gt;100&lt;/td&gt;
+          &lt;td&gt;10 KB&lt;/td&gt;
+          &lt;td&gt;1 MB&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+          &lt;td&gt;±1 GB Image = Rp1.000–2.000/bln&lt;/td&gt;
+          &lt;td&gt;0&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Skala Besar (&amp;gt;250 MB HTML)&lt;/td&gt;
+          &lt;td&gt;500&lt;/td&gt;
+          &lt;td&gt;10 KB&lt;/td&gt;
+          &lt;td&gt;5 MB&lt;/td&gt;
+          &lt;td&gt;Mungkin perlu LFS&lt;/td&gt;
+          &lt;td&gt;±5 GB Image = Rp5.000–10.000/bln&lt;/td&gt;
+          &lt;td&gt;Butuh Tier Berbayar&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-perbandingan-hosting-hugo&#34;&gt;📦 Perbandingan Hosting Hugo&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;Opsi&lt;/th&gt;
+          &lt;th&gt;Keunggulan&lt;/th&gt;
+          &lt;th&gt;Kekurangan&lt;/th&gt;
+          &lt;th&gt;Biaya&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Azure Static Web (Free)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Auto SSL, CI/CD, ringan&lt;/td&gt;
+          &lt;td&gt;Limit 250MB total&lt;/td&gt;
+          &lt;td&gt;Gratis&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Azure Blob Static Website&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Bisa simpan ratusan GB&lt;/td&gt;
+          &lt;td&gt;Manual deploy/CI perlu setup&lt;/td&gt;
+          &lt;td&gt;±Rp1.000–2.000/GB/bulan&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;Azure Static Web (Standard)&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;SLA, staging, domain lebih banyak&lt;/td&gt;
+          &lt;td&gt;Biaya tetap meski trafik kecil&lt;/td&gt;
+          &lt;td&gt;±Rp140.000/bln&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;GitHub Pages&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Gratis, gampang untuk markdown blog&lt;/td&gt;
+          &lt;td&gt;Gambar besar tetap bermasalah&lt;/td&gt;
+          &lt;td&gt;Gratis&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;strong&gt;VPS / WordPress&lt;/strong&gt;&lt;/td&gt;
+          &lt;td&gt;Bebas kontrol, plugin, database&lt;/td&gt;
+          &lt;td&gt;Harus urus security, patching, dll&lt;/td&gt;
+          &lt;td&gt;±Rp50.000–200.000/bln&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-kapan-harus-upgrade&#34;&gt;🧭 Kapan Harus Upgrade?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Sudah &amp;gt;250MB konten HTML&lt;/strong&gt;: Pertimbangkan Standard Tier atau pindah ke Blob&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sudah &amp;gt;1GB gambar dan traffic tinggi&lt;/strong&gt;: Pasang Azure CDN atau pindah ke hosting khusus&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Butuh login, form, backend&lt;/strong&gt;: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Repo GitHub makin besar&lt;/strong&gt;: Pisahkan gambar ke Blob, pakai LFS kalau perlu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-penutup&#34;&gt;✍️ Penutup&lt;/h2&gt;
+&lt;p&gt;Untuk saat ini, setup ini sangat efisien dan scalable:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Halo Dunia</title>
       <link>http://localhost:1313/posts/halo-dunia/</link>
       <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/halo-dunia/</guid>
       <description>&lt;p&gt;Halo! Ini postingan pertama saya di blog Hugo + PaperMod 🎉&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web</title>
+      <link>http://localhost:1313/posts/petualangan-hugo/</link>
+      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/petualangan-hugo/</guid>
+      <description>&lt;p&gt;Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-&lt;em&gt;upload&lt;/em&gt;. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.&lt;/p&gt;
+&lt;p&gt;Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, 6 bulan sekali kena virus, dan saya harus restore. Restore pun agak menyebalkan, karena harus delete dan reupload ftp.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

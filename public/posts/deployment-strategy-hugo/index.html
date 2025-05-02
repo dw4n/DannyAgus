@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Rencana Deployment Blog: Pertimbangan Teknis dan Biaya | Danny Agus</title>
+<meta name="keywords" content="hugo, azure, blog, deployment, biaya">
+<meta name="description" content="Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.
+
+🧱 Arsitektur Awal
+Komponen:
+
+Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo
+Tema: PaperMod
+Hosting: Azure Static Web Apps (Free Tier)
+Gambar: disimpan di dalam folder Hugo (static/images/)
+
+Perkiraan Awal:
+
+1 post = 1 Markdown &#43; gambar = ±1 MB total
+Misalnya ada 100 post = ~100 MB total konten
+
+
+💡 Evaluasi Kebutuhan dan Risiko
+Masalah yang Muncul:
+
+GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB)
+Static Web Apps Limit: Free tier hanya mendukung 250 MB total size
+Images Berat: Post galeri foto bisa &gt;10MB per post
+CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar
+
+
+✅ Strategi Final yang Diambil
+1. Konten Markdown dan Hugo HTML tetap di Static Web App
+
+Kecil (5–10 KB per post)
+Cepat dibuild
+Gratis deploy dengan GitHub Actions
+
+2. Gambar dipisah ke Azure Blob Storage
+
+Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg
+Gambar tidak memakan space GitHub maupun Static App
+
+
+🔢 Simulasi Perkiraan Biaya
+
+  
+      
+          Kasus
+          Jumlah Post
+          Size per Post
+          Total Size
+          Biaya GitHub
+          Biaya Azure Storage
+          Biaya Static App
+      
+  
+  
+      
+          Awal (Markdown &#43; Image)
+          10
+          1 MB
+          10 MB
+          0
+          0
+          0
+      
+      
+          Optimal (Markdown only)
+          100
+          10 KB
+          1 MB
+          0
+          ±1 GB Image = Rp1.000–2.000/bln
+          0
+      
+      
+          Skala Besar (&gt;250 MB HTML)
+          500
+          10 KB
+          5 MB
+          Mungkin perlu LFS
+          ±5 GB Image = Rp5.000–10.000/bln
+          Butuh Tier Berbayar
+      
+  
+
+
+📦 Perbandingan Hosting Hugo
+
+  
+      
+          Opsi
+          Keunggulan
+          Kekurangan
+          Biaya
+      
+  
+  
+      
+          Azure Static Web (Free)
+          Auto SSL, CI/CD, ringan
+          Limit 250MB total
+          Gratis
+      
+      
+          Azure Blob Static Website
+          Bisa simpan ratusan GB
+          Manual deploy/CI perlu setup
+          ±Rp1.000–2.000/GB/bulan
+      
+      
+          Azure Static Web (Standard)
+          SLA, staging, domain lebih banyak
+          Biaya tetap meski trafik kecil
+          ±Rp140.000/bln
+      
+      
+          GitHub Pages
+          Gratis, gampang untuk markdown blog
+          Gambar besar tetap bermasalah
+          Gratis
+      
+      
+          VPS / WordPress
+          Bebas kontrol, plugin, database
+          Harus urus security, patching, dll
+          ±Rp50.000–200.000/bln
+      
+  
+
+
+🧭 Kapan Harus Upgrade?
+
+Sudah &gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob
+Sudah &gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus
+Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG &#43; API
+Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu
+
+
+✍️ Penutup
+Untuk saat ini, setup ini sangat efisien dan scalable:">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/deployment-strategy-hugo/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/deployment-strategy-hugo/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/deployment-strategy-hugo/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Rencana Deployment Blog: Pertimbangan Teknis dan Biaya">
+  <meta property="og:description" content="Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.
+🧱 Arsitektur Awal Komponen: Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo Tema: PaperMod Hosting: Azure Static Web Apps (Free Tier) Gambar: disimpan di dalam folder Hugo (static/images/) Perkiraan Awal: 1 post = 1 Markdown &#43; gambar = ±1 MB total Misalnya ada 100 post = ~100 MB total konten 💡 Evaluasi Kebutuhan dan Risiko Masalah yang Muncul: GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB) Static Web Apps Limit: Free tier hanya mendukung 250 MB total size Images Berat: Post galeri foto bisa &gt;10MB per post CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar ✅ Strategi Final yang Diambil 1. Konten Markdown dan Hugo HTML tetap di Static Web App Kecil (5–10 KB per post) Cepat dibuild Gratis deploy dengan GitHub Actions 2. Gambar dipisah ke Azure Blob Storage Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg Gambar tidak memakan space GitHub maupun Static App 🔢 Simulasi Perkiraan Biaya Kasus Jumlah Post Size per Post Total Size Biaya GitHub Biaya Azure Storage Biaya Static App Awal (Markdown &#43; Image) 10 1 MB 10 MB 0 0 0 Optimal (Markdown only) 100 10 KB 1 MB 0 ±1 GB Image = Rp1.000–2.000/bln 0 Skala Besar (&gt;250 MB HTML) 500 10 KB 5 MB Mungkin perlu LFS ±5 GB Image = Rp5.000–10.000/bln Butuh Tier Berbayar 📦 Perbandingan Hosting Hugo Opsi Keunggulan Kekurangan Biaya Azure Static Web (Free) Auto SSL, CI/CD, ringan Limit 250MB total Gratis Azure Blob Static Website Bisa simpan ratusan GB Manual deploy/CI perlu setup ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging, domain lebih banyak Biaya tetap meski trafik kecil ±Rp140.000/bln GitHub Pages Gratis, gampang untuk markdown blog Gambar besar tetap bermasalah Gratis VPS / WordPress Bebas kontrol, plugin, database Harus urus security, patching, dll ±Rp50.000–200.000/bln 🧭 Kapan Harus Upgrade? Sudah &gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob Sudah &gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG &#43; API Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu ✍️ Penutup Untuk saat ini, setup ini sangat efisien dan scalable:">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-02T00:00:00+00:00">
+    <meta property="article:tag" content="Hugo">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Blog">
+    <meta property="article:tag" content="Deployment">
+    <meta property="article:tag" content="Biaya">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rencana Deployment Blog: Pertimbangan Teknis dan Biaya">
+<meta name="twitter:description" content="Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.
+
+🧱 Arsitektur Awal
+Komponen:
+
+Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo
+Tema: PaperMod
+Hosting: Azure Static Web Apps (Free Tier)
+Gambar: disimpan di dalam folder Hugo (static/images/)
+
+Perkiraan Awal:
+
+1 post = 1 Markdown &#43; gambar = ±1 MB total
+Misalnya ada 100 post = ~100 MB total konten
+
+
+💡 Evaluasi Kebutuhan dan Risiko
+Masalah yang Muncul:
+
+GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB)
+Static Web Apps Limit: Free tier hanya mendukung 250 MB total size
+Images Berat: Post galeri foto bisa &gt;10MB per post
+CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar
+
+
+✅ Strategi Final yang Diambil
+1. Konten Markdown dan Hugo HTML tetap di Static Web App
+
+Kecil (5–10 KB per post)
+Cepat dibuild
+Gratis deploy dengan GitHub Actions
+
+2. Gambar dipisah ke Azure Blob Storage
+
+Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg
+Gambar tidak memakan space GitHub maupun Static App
+
+
+🔢 Simulasi Perkiraan Biaya
+
+  
+      
+          Kasus
+          Jumlah Post
+          Size per Post
+          Total Size
+          Biaya GitHub
+          Biaya Azure Storage
+          Biaya Static App
+      
+  
+  
+      
+          Awal (Markdown &#43; Image)
+          10
+          1 MB
+          10 MB
+          0
+          0
+          0
+      
+      
+          Optimal (Markdown only)
+          100
+          10 KB
+          1 MB
+          0
+          ±1 GB Image = Rp1.000–2.000/bln
+          0
+      
+      
+          Skala Besar (&gt;250 MB HTML)
+          500
+          10 KB
+          5 MB
+          Mungkin perlu LFS
+          ±5 GB Image = Rp5.000–10.000/bln
+          Butuh Tier Berbayar
+      
+  
+
+
+📦 Perbandingan Hosting Hugo
+
+  
+      
+          Opsi
+          Keunggulan
+          Kekurangan
+          Biaya
+      
+  
+  
+      
+          Azure Static Web (Free)
+          Auto SSL, CI/CD, ringan
+          Limit 250MB total
+          Gratis
+      
+      
+          Azure Blob Static Website
+          Bisa simpan ratusan GB
+          Manual deploy/CI perlu setup
+          ±Rp1.000–2.000/GB/bulan
+      
+      
+          Azure Static Web (Standard)
+          SLA, staging, domain lebih banyak
+          Biaya tetap meski trafik kecil
+          ±Rp140.000/bln
+      
+      
+          GitHub Pages
+          Gratis, gampang untuk markdown blog
+          Gambar besar tetap bermasalah
+          Gratis
+      
+      
+          VPS / WordPress
+          Bebas kontrol, plugin, database
+          Harus urus security, patching, dll
+          ±Rp50.000–200.000/bln
+      
+  
+
+
+🧭 Kapan Harus Upgrade?
+
+Sudah &gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob
+Sudah &gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus
+Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG &#43; API
+Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu
+
+
+✍️ Penutup
+Untuk saat ini, setup ini sangat efisien dan scalable:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Rencana Deployment Blog: Pertimbangan Teknis dan Biaya",
+      "item": "http://localhost:1313/posts/deployment-strategy-hugo/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Rencana Deployment Blog: Pertimbangan Teknis dan Biaya",
+  "name": "Rencana Deployment Blog: Pertimbangan Teknis dan Biaya",
+  "description": "Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.\n🧱 Arsitektur Awal Komponen: Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo Tema: PaperMod Hosting: Azure Static Web Apps (Free Tier) Gambar: disimpan di dalam folder Hugo (static/images/) Perkiraan Awal: 1 post = 1 Markdown + gambar = ±1 MB total Misalnya ada 100 post = ~100 MB total konten 💡 Evaluasi Kebutuhan dan Risiko Masalah yang Muncul: GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB) Static Web Apps Limit: Free tier hanya mendukung 250 MB total size Images Berat: Post galeri foto bisa \u0026gt;10MB per post CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar ✅ Strategi Final yang Diambil 1. Konten Markdown dan Hugo HTML tetap di Static Web App Kecil (5–10 KB per post) Cepat dibuild Gratis deploy dengan GitHub Actions 2. Gambar dipisah ke Azure Blob Storage Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg Gambar tidak memakan space GitHub maupun Static App 🔢 Simulasi Perkiraan Biaya Kasus Jumlah Post Size per Post Total Size Biaya GitHub Biaya Azure Storage Biaya Static App Awal (Markdown + Image) 10 1 MB 10 MB 0 0 0 Optimal (Markdown only) 100 10 KB 1 MB 0 ±1 GB Image = Rp1.000–2.000/bln 0 Skala Besar (\u0026gt;250 MB HTML) 500 10 KB 5 MB Mungkin perlu LFS ±5 GB Image = Rp5.000–10.000/bln Butuh Tier Berbayar 📦 Perbandingan Hosting Hugo Opsi Keunggulan Kekurangan Biaya Azure Static Web (Free) Auto SSL, CI/CD, ringan Limit 250MB total Gratis Azure Blob Static Website Bisa simpan ratusan GB Manual deploy/CI perlu setup ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging, domain lebih banyak Biaya tetap meski trafik kecil ±Rp140.000/bln GitHub Pages Gratis, gampang untuk markdown blog Gambar besar tetap bermasalah Gratis VPS / WordPress Bebas kontrol, plugin, database Harus urus security, patching, dll ±Rp50.000–200.000/bln 🧭 Kapan Harus Upgrade? Sudah \u0026gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob Sudah \u0026gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu ✍️ Penutup Untuk saat ini, setup ini sangat efisien dan scalable:\n",
+  "keywords": [
+    "hugo", "azure", "blog", "deployment", "biaya"
+  ],
+  "articleBody": "Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.\n🧱 Arsitektur Awal Komponen: Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo Tema: PaperMod Hosting: Azure Static Web Apps (Free Tier) Gambar: disimpan di dalam folder Hugo (static/images/) Perkiraan Awal: 1 post = 1 Markdown + gambar = ±1 MB total Misalnya ada 100 post = ~100 MB total konten 💡 Evaluasi Kebutuhan dan Risiko Masalah yang Muncul: GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB) Static Web Apps Limit: Free tier hanya mendukung 250 MB total size Images Berat: Post galeri foto bisa \u003e10MB per post CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar ✅ Strategi Final yang Diambil 1. Konten Markdown dan Hugo HTML tetap di Static Web App Kecil (5–10 KB per post) Cepat dibuild Gratis deploy dengan GitHub Actions 2. Gambar dipisah ke Azure Blob Storage Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg Gambar tidak memakan space GitHub maupun Static App 🔢 Simulasi Perkiraan Biaya Kasus Jumlah Post Size per Post Total Size Biaya GitHub Biaya Azure Storage Biaya Static App Awal (Markdown + Image) 10 1 MB 10 MB 0 0 0 Optimal (Markdown only) 100 10 KB 1 MB 0 ±1 GB Image = Rp1.000–2.000/bln 0 Skala Besar (\u003e250 MB HTML) 500 10 KB 5 MB Mungkin perlu LFS ±5 GB Image = Rp5.000–10.000/bln Butuh Tier Berbayar 📦 Perbandingan Hosting Hugo Opsi Keunggulan Kekurangan Biaya Azure Static Web (Free) Auto SSL, CI/CD, ringan Limit 250MB total Gratis Azure Blob Static Website Bisa simpan ratusan GB Manual deploy/CI perlu setup ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging, domain lebih banyak Biaya tetap meski trafik kecil ±Rp140.000/bln GitHub Pages Gratis, gampang untuk markdown blog Gambar besar tetap bermasalah Gratis VPS / WordPress Bebas kontrol, plugin, database Harus urus security, patching, dll ±Rp50.000–200.000/bln 🧭 Kapan Harus Upgrade? Sudah \u003e250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob Sudah \u003e1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu ✍️ Penutup Untuk saat ini, setup ini sangat efisien dan scalable:\nMarkdown kecil → Static Web App Gambar → Blob Storage Biaya hampir nol, dan bisa naik bertahap tanpa ganti platform Kalau kamu memulai blog atau galeri pribadi, strategi ini layak dipertimbangkan sebelum pakai solusi besar yang mahal dari awal.\nHemat bukan berarti murahan — kadang justru efisien itu yang profesional.\n",
+  "wordCount" : "451",
+  "inLanguage": "en",
+  "datePublished": "2025-05-02T00:00:00Z",
+  "dateModified": "2025-05-02T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/deployment-strategy-hugo/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Rencana Deployment Blog: Pertimbangan Teknis dan Biaya
+    </h1>
+    <div class="post-meta"><span title='2025-05-02 00:00:00 +0000 UTC'>May 2, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal <strong>deployment</strong> dan <strong>biaya operasional</strong> jangka panjang. Blog ini dibangun dengan <a href="https://gohugo.io">Hugo</a> dan menggunakan tema <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a>. Berikut ini adalah rangkuman pertimbangan kami.</p>
+<hr>
+<h2 id="-arsitektur-awal">🧱 Arsitektur Awal<a hidden class="anchor" aria-hidden="true" href="#-arsitektur-awal">#</a></h2>
+<h3 id="komponen">Komponen:<a hidden class="anchor" aria-hidden="true" href="#komponen">#</a></h3>
+<ul>
+<li><strong>Konten:</strong> Markdown (<code>.md</code>) yang dikonversi ke HTML dengan Hugo</li>
+<li><strong>Tema:</strong> PaperMod</li>
+<li><strong>Hosting:</strong> Azure Static Web Apps (Free Tier)</li>
+<li><strong>Gambar:</strong> disimpan di dalam folder Hugo (<code>static/images/</code>)</li>
+</ul>
+<h3 id="perkiraan-awal">Perkiraan Awal:<a hidden class="anchor" aria-hidden="true" href="#perkiraan-awal">#</a></h3>
+<ul>
+<li>1 post = 1 Markdown + gambar = <strong>±1 MB total</strong></li>
+<li>Misalnya ada 100 post = <strong>~100 MB</strong> total konten</li>
+</ul>
+<hr>
+<h2 id="-evaluasi-kebutuhan-dan-risiko">💡 Evaluasi Kebutuhan dan Risiko<a hidden class="anchor" aria-hidden="true" href="#-evaluasi-kebutuhan-dan-risiko">#</a></h2>
+<h3 id="masalah-yang-muncul">Masalah yang Muncul:<a hidden class="anchor" aria-hidden="true" href="#masalah-yang-muncul">#</a></h3>
+<ul>
+<li><strong>GitHub Repo Limit:</strong> GitHub membatasi size repo, dan ada limit per file (100MB)</li>
+<li><strong>Static Web Apps Limit:</strong> Free tier hanya mendukung <strong>250 MB</strong> total size</li>
+<li><strong>Images Berat:</strong> Post galeri foto bisa &gt;10MB per post</li>
+<li><strong>CI/CD GitHub Actions:</strong> meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar</li>
+</ul>
+<hr>
+<h2 id="-strategi-final-yang-diambil">✅ Strategi Final yang Diambil<a hidden class="anchor" aria-hidden="true" href="#-strategi-final-yang-diambil">#</a></h2>
+<h3 id="1-konten-markdown-dan-hugo-html-tetap-di-static-web-app">1. <strong>Konten Markdown dan Hugo HTML tetap di Static Web App</strong><a hidden class="anchor" aria-hidden="true" href="#1-konten-markdown-dan-hugo-html-tetap-di-static-web-app">#</a></h3>
+<ul>
+<li>Kecil (5–10 KB per post)</li>
+<li>Cepat dibuild</li>
+<li>Gratis deploy dengan GitHub Actions</li>
+</ul>
+<h3 id="2-gambar-dipisah-ke-azure-blob-storage">2. <strong>Gambar dipisah ke Azure Blob Storage</strong><a hidden class="anchor" aria-hidden="true" href="#2-gambar-dipisah-ke-azure-blob-storage">#</a></h3>
+<ul>
+<li>Contoh link: <code>https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg</code></li>
+<li>Gambar tidak memakan space GitHub maupun Static App</li>
+</ul>
+<hr>
+<h2 id="-simulasi-perkiraan-biaya">🔢 Simulasi Perkiraan Biaya<a hidden class="anchor" aria-hidden="true" href="#-simulasi-perkiraan-biaya">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Kasus</th>
+          <th>Jumlah Post</th>
+          <th>Size per Post</th>
+          <th>Total Size</th>
+          <th>Biaya GitHub</th>
+          <th>Biaya Azure Storage</th>
+          <th>Biaya Static App</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Awal (Markdown + Image)</td>
+          <td>10</td>
+          <td>1 MB</td>
+          <td>10 MB</td>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>Optimal (Markdown only)</td>
+          <td>100</td>
+          <td>10 KB</td>
+          <td>1 MB</td>
+          <td>0</td>
+          <td>±1 GB Image = Rp1.000–2.000/bln</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>Skala Besar (&gt;250 MB HTML)</td>
+          <td>500</td>
+          <td>10 KB</td>
+          <td>5 MB</td>
+          <td>Mungkin perlu LFS</td>
+          <td>±5 GB Image = Rp5.000–10.000/bln</td>
+          <td>Butuh Tier Berbayar</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-perbandingan-hosting-hugo">📦 Perbandingan Hosting Hugo<a hidden class="anchor" aria-hidden="true" href="#-perbandingan-hosting-hugo">#</a></h2>
+<table>
+  <thead>
+      <tr>
+          <th>Opsi</th>
+          <th>Keunggulan</th>
+          <th>Kekurangan</th>
+          <th>Biaya</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Azure Static Web (Free)</strong></td>
+          <td>Auto SSL, CI/CD, ringan</td>
+          <td>Limit 250MB total</td>
+          <td>Gratis</td>
+      </tr>
+      <tr>
+          <td><strong>Azure Blob Static Website</strong></td>
+          <td>Bisa simpan ratusan GB</td>
+          <td>Manual deploy/CI perlu setup</td>
+          <td>±Rp1.000–2.000/GB/bulan</td>
+      </tr>
+      <tr>
+          <td><strong>Azure Static Web (Standard)</strong></td>
+          <td>SLA, staging, domain lebih banyak</td>
+          <td>Biaya tetap meski trafik kecil</td>
+          <td>±Rp140.000/bln</td>
+      </tr>
+      <tr>
+          <td><strong>GitHub Pages</strong></td>
+          <td>Gratis, gampang untuk markdown blog</td>
+          <td>Gambar besar tetap bermasalah</td>
+          <td>Gratis</td>
+      </tr>
+      <tr>
+          <td><strong>VPS / WordPress</strong></td>
+          <td>Bebas kontrol, plugin, database</td>
+          <td>Harus urus security, patching, dll</td>
+          <td>±Rp50.000–200.000/bln</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-kapan-harus-upgrade">🧭 Kapan Harus Upgrade?<a hidden class="anchor" aria-hidden="true" href="#-kapan-harus-upgrade">#</a></h2>
+<ul>
+<li><strong>Sudah &gt;250MB konten HTML</strong>: Pertimbangkan Standard Tier atau pindah ke Blob</li>
+<li><strong>Sudah &gt;1GB gambar dan traffic tinggi</strong>: Pasang Azure CDN atau pindah ke hosting khusus</li>
+<li><strong>Butuh login, form, backend</strong>: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API</li>
+<li><strong>Repo GitHub makin besar</strong>: Pisahkan gambar ke Blob, pakai LFS kalau perlu</li>
+</ul>
+<hr>
+<h2 id="-penutup">✍️ Penutup<a hidden class="anchor" aria-hidden="true" href="#-penutup">#</a></h2>
+<p>Untuk saat ini, setup ini sangat efisien dan scalable:</p>
+<ul>
+<li>Markdown kecil → Static Web App</li>
+<li>Gambar → Blob Storage</li>
+<li>Biaya hampir <strong>nol</strong>, dan bisa <strong>naik bertahap tanpa ganti platform</strong></li>
+</ul>
+<p>Kalau kamu memulai blog atau galeri pribadi, strategi ini layak dipertimbangkan sebelum pakai solusi besar yang mahal dari awal.</p>
+<blockquote>
+<p>Hemat bukan berarti murahan — kadang justru efisien itu yang profesional.</p></blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/hugo/">Hugo</a></li>
+      <li><a href="http://localhost:1313/tags/azure/">Azure</a></li>
+      <li><a href="http://localhost:1313/tags/blog/">Blog</a></li>
+      <li><a href="http://localhost:1313/tags/deployment/">Deployment</a></li>
+      <li><a href="http://localhost:1313/tags/biaya/">Biaya</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

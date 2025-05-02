@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Danny Agus</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Danny Agus</description>
+    <title>Biaya on Danny Agus</title>
+    <link>http://localhost:1313/tags/biaya/</link>
+    <description>Recent content in Biaya on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
     <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/biaya/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rencana Deployment Blog: Pertimbangan Teknis dan Biaya</title>
       <link>http://localhost:1313/posts/deployment-strategy-hugo/</link>
@@ -149,21 +149,6 @@
 &lt;hr&gt;
 &lt;h2 id=&#34;-penutup&#34;&gt;✍️ Penutup&lt;/h2&gt;
 &lt;p&gt;Untuk saat ini, setup ini sangat efisien dan scalable:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Halo Dunia</title>
-      <link>http://localhost:1313/posts/halo-dunia/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/halo-dunia/</guid>
-      <description>&lt;p&gt;Halo! Ini postingan pertama saya di blog Hugo + PaperMod 🎉&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web</title>
-      <link>http://localhost:1313/posts/petualangan-hugo/</link>
-      <pubDate>Thu, 01 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/petualangan-hugo/</guid>
-      <description>&lt;p&gt;Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-&lt;em&gt;upload&lt;/em&gt;. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.&lt;/p&gt;
-&lt;p&gt;Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, 6 bulan sekali kena virus, dan saya harus restore. Restore pun agak menyebalkan, karena harus delete dan reupload ftp.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

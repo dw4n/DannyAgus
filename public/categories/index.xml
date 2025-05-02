@@ -6,8 +6,15 @@
     <description>Recent content in Categories on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Thu, 01 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Teknologi</title>
+      <link>http://localhost:1313/categories/teknologi/</link>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/teknologi/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Umum</title>
       <link>http://localhost:1313/categories/umum/</link>
