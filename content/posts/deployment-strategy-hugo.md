@@ -1,7 +1,6 @@
-
 ---
 title: "Rencana Deployment Blog: Pertimbangan Teknis dan Biaya"
-date: 2025-05-02
+date: 2025-05-02T14:00:00+08:00
 tags: ["hugo", "azure", "blog", "deployment", "biaya"]
 categories: ["Teknologi"]
 draft: false

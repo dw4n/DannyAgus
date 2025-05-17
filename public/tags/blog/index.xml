@@ -6,12 +6,12 @@
     <description>Recent content in Blog on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Fri, 02 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 May 2025 14:30:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rencana Deployment Blog: Pertimbangan Teknis dan Biaya</title>
       <link>http://localhost:1313/posts/deployment-strategy-hugo/</link>
-      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 02 May 2025 14:30:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/deployment-strategy-hugo/</guid>
       <description>&lt;p&gt;Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal &lt;strong&gt;deployment&lt;/strong&gt; dan &lt;strong&gt;biaya operasional&lt;/strong&gt; jangka panjang. Blog ini dibangun dengan &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; dan menggunakan tema &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt;. Berikut ini adalah rangkuman pertimbangan kami.&lt;/p&gt;
 &lt;hr&gt;

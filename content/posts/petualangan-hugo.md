@@ -1,19 +1,18 @@
-
 ---
 title: "Petualangan Membuat Blog dengan Hugo + Azure Static Web"
-date: 2025-05-01
+date: 2025-05-01T11:00:00+08:00
 tags: ["hugo", "azure", "static site", "papermod"]
 categories: ["Teknologi"]
 draft: false
 ---
-
 Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-*upload*. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.
 
-Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, 6 bulan sekali kena virus, dan saya harus restore. Restore pun agak menyebalkan, karena harus delete dan reupload ftp. 
+Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, setiap 6 bulan sekali kena virus, dan saya harus restore ke previous backup. Proses restore pun agak menyebalkan, karena harus proses delete dan reupload ftp.
 
 ## 1. Ide Awal
 
 Tujuan utama blog ini:
+
 - Sesimple mungkin
 - Bisa baca atau nulis pakai `.md`
 - Bisa upload gambar sesuai post (misal: `/images/judul-post/`)
@@ -23,12 +22,14 @@ Tujuan utama blog ini:
 ## 2. Pemilihan Stack
 
 Setelah diskusi (dengan Chat GPT), dan berdasarkan pengalaman Wordpress sebelumnya, akhirnya dipilih:
+
 - **Hugo** sebagai Static Site Generator (SSG)
 - **PaperMod** sebagai tema
 - **Azure Static Web Apps** untuk hosting
 - **GitHub Actions** untuk auto deploy (CI/CD)
 
 Kenapa Hugo?
+
 - Super cepat
 - Native support Markdown
 - Outputnya HTML statis, cocok banget buat Azure
@@ -38,6 +39,7 @@ Sebenernya niat awal buat sendiri, menggunakan html, css, dan js. Tapi kalau sud
 ## 3. Setup Hugo Lokal (Tanpa Install)
 
 Download Hugo Extended ZIP dari GitHub:
+
 - [https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
 
 Ekstrak `hugo.exe` ke folder mana saja. Jalankan langsung dari terminal tanpa masuk PATH.
@@ -171,6 +173,7 @@ Salah satu kebutuhan umum saat menulis blog (terutama tutorial atau dokumentasi)
 Dalam kasus ini, gambar-gambar disimpan di Azure Blob Storage agar mudah diakses secara publik. Struktur dan pengaturannya akan dibahas lebih detail nanti di bagian tersendiri.
 
 Contoh URL gambar:
+
 ```
 https://stdwanprod.blob.core.windows.net/dannyaguspublic/img/202505/20250502092521-petualanganHugo-tampilanSearchTagsCategories.png
 ```
@@ -181,7 +184,8 @@ https://stdwanprod.blob.core.windows.net/dannyaguspublic/img/202505/202505020925
 
 ### 2️⃣ Menambahkan Shortcode `img`
 
-Buat file di:  
+Buat file di:
+
 ```
 layouts/shortcodes/img.html
 ```
@@ -200,6 +204,7 @@ Isi file:
 ```
 
 Shortcode ini:
+
 - Menampilkan gambar dengan ukuran fleksibel dan responsif.
 - Memposisikan caption di tengah, mirip gaya tesis atau laporan ilmiah.
 
@@ -220,6 +225,7 @@ Hasilnya akan menampilkan gambar dan caption seperti pada bagian sebelumnya. Kam
 ## Penutup
 
 Petualangan ini baru dimulai. Next:
+
 - Memastikan semua fitur saat ini baik baik saja, terutama search.
 - Menambahkan fitur multilingual
 - Eksperimen dengan halaman khusus proyek & dokumentasi

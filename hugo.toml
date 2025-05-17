@@ -11,6 +11,7 @@ theme = "PaperMod"
   env = "production"
   ShowSearch = true
   ShowArchive = true
+  showDate = true
 
 [params.homeInfoParams]
   Title = "Selamat datang 👋"
