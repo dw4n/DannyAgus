@@ -162,7 +162,6 @@ jobs:
 
 {{< img src="https://stdwanprod.blob.core.windows.net/dannyaguspublic/img/202505/20250502092521-petualanganHugo-tampilanSearchTagsCategories.png" alt="Tampilan search, tags, categories" width="400" caption="Gambar 2: Tampilan navigasi search, tags, categories pada Hugo PaperMod." >}}
 
----
 
 ## 9. Menyisipkan Gambar dengan Caption
 
@@ -229,6 +228,6 @@ Petualangan ini baru dimulai. Next:
 - Memastikan semua fitur saat ini baik baik saja, terutama search.
 - Menambahkan fitur multilingual
 - Eksperimen dengan halaman khusus proyek & dokumentasi
-- Berfikir mengenai deployment, apakah worth harganya?
+- Berfikir mengenai deployment, apakah sesuai harganya?
 
 > Semua ini dimulai dari `.md` sederhana. Tapi hasilnya? Sebuah blog modern, ringan, dan powerful.

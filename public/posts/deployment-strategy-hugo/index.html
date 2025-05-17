@@ -7,142 +7,18 @@
 <meta name="robots" content="index, follow">
 <title>Rencana Deployment Blog: Pertimbangan Teknis dan Biaya | Danny Agus</title>
 <meta name="keywords" content="hugo, azure, blog, deployment, biaya">
-<meta name="description" content="Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.
+<meta name="description" content="Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai deployment dan biaya operasional jangka panjang. Blog ini dibangun menggunakan Hugo dan tema PaperMod, yang ringan dan fleksibel.
+Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.
+Arsitektur Awal
+Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.
+Komponen utama:
 
-🧱 Arsitektur Awal
-Komponen:
+Konten ditulis dalam Markdown (.md) dan dikonversi ke HTML menggunakan Hugo.
+Menggunakan tema PaperMod.
+Dihosting di Azure Static Web Apps (paket gratis).
+Gambar disimpan langsung di dalam folder Hugo (static/images/).
 
-Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo
-Tema: PaperMod
-Hosting: Azure Static Web Apps (Free Tier)
-Gambar: disimpan di dalam folder Hugo (static/images/)
-
-Perkiraan Awal:
-
-1 post = 1 Markdown &#43; gambar = ±1 MB total
-Misalnya ada 100 post = ~100 MB total konten
-
-
-💡 Evaluasi Kebutuhan dan Risiko
-Masalah yang Muncul:
-
-GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB)
-Static Web Apps Limit: Free tier hanya mendukung 250 MB total size
-Images Berat: Post galeri foto bisa &gt;10MB per post
-CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar
-
-
-✅ Strategi Final yang Diambil
-1. Konten Markdown dan Hugo HTML tetap di Static Web App
-
-Kecil (5–10 KB per post)
-Cepat dibuild
-Gratis deploy dengan GitHub Actions
-
-2. Gambar dipisah ke Azure Blob Storage
-
-Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg
-Gambar tidak memakan space GitHub maupun Static App
-
-
-🔢 Simulasi Perkiraan Biaya
-
-  
-      
-          Kasus
-          Jumlah Post
-          Size per Post
-          Total Size
-          Biaya GitHub
-          Biaya Azure Storage
-          Biaya Static App
-      
-  
-  
-      
-          Awal (Markdown &#43; Image)
-          10
-          1 MB
-          10 MB
-          0
-          0
-          0
-      
-      
-          Optimal (Markdown only)
-          100
-          10 KB
-          1 MB
-          0
-          ±1 GB Image = Rp1.000–2.000/bln
-          0
-      
-      
-          Skala Besar (&gt;250 MB HTML)
-          500
-          10 KB
-          5 MB
-          Mungkin perlu LFS
-          ±5 GB Image = Rp5.000–10.000/bln
-          Butuh Tier Berbayar
-      
-  
-
-
-📦 Perbandingan Hosting Hugo
-
-  
-      
-          Opsi
-          Keunggulan
-          Kekurangan
-          Biaya
-      
-  
-  
-      
-          Azure Static Web (Free)
-          Auto SSL, CI/CD, ringan
-          Limit 250MB total
-          Gratis
-      
-      
-          Azure Blob Static Website
-          Bisa simpan ratusan GB
-          Manual deploy/CI perlu setup
-          ±Rp1.000–2.000/GB/bulan
-      
-      
-          Azure Static Web (Standard)
-          SLA, staging, domain lebih banyak
-          Biaya tetap meski trafik kecil
-          ±Rp140.000/bln
-      
-      
-          GitHub Pages
-          Gratis, gampang untuk markdown blog
-          Gambar besar tetap bermasalah
-          Gratis
-      
-      
-          VPS / WordPress
-          Bebas kontrol, plugin, database
-          Harus urus security, patching, dll
-          ±Rp50.000–200.000/bln
-      
-  
-
-
-🧭 Kapan Harus Upgrade?
-
-Sudah &gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob
-Sudah &gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus
-Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG &#43; API
-Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu
-
-
-✍️ Penutup
-Untuk saat ini, setup ini sangat efisien dan scalable:">
+Estimasi awal kebutuhan:">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/deployment-strategy-hugo/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
@@ -193,8 +69,11 @@ Untuk saat ini, setup ini sangat efisien dan scalable:">
 </noscript><meta property="og:url" content="http://localhost:1313/posts/deployment-strategy-hugo/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Rencana Deployment Blog: Pertimbangan Teknis dan Biaya">
-  <meta property="og:description" content="Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.
-🧱 Arsitektur Awal Komponen: Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo Tema: PaperMod Hosting: Azure Static Web Apps (Free Tier) Gambar: disimpan di dalam folder Hugo (static/images/) Perkiraan Awal: 1 post = 1 Markdown &#43; gambar = ±1 MB total Misalnya ada 100 post = ~100 MB total konten 💡 Evaluasi Kebutuhan dan Risiko Masalah yang Muncul: GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB) Static Web Apps Limit: Free tier hanya mendukung 250 MB total size Images Berat: Post galeri foto bisa &gt;10MB per post CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar ✅ Strategi Final yang Diambil 1. Konten Markdown dan Hugo HTML tetap di Static Web App Kecil (5–10 KB per post) Cepat dibuild Gratis deploy dengan GitHub Actions 2. Gambar dipisah ke Azure Blob Storage Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg Gambar tidak memakan space GitHub maupun Static App 🔢 Simulasi Perkiraan Biaya Kasus Jumlah Post Size per Post Total Size Biaya GitHub Biaya Azure Storage Biaya Static App Awal (Markdown &#43; Image) 10 1 MB 10 MB 0 0 0 Optimal (Markdown only) 100 10 KB 1 MB 0 ±1 GB Image = Rp1.000–2.000/bln 0 Skala Besar (&gt;250 MB HTML) 500 10 KB 5 MB Mungkin perlu LFS ±5 GB Image = Rp5.000–10.000/bln Butuh Tier Berbayar 📦 Perbandingan Hosting Hugo Opsi Keunggulan Kekurangan Biaya Azure Static Web (Free) Auto SSL, CI/CD, ringan Limit 250MB total Gratis Azure Blob Static Website Bisa simpan ratusan GB Manual deploy/CI perlu setup ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging, domain lebih banyak Biaya tetap meski trafik kecil ±Rp140.000/bln GitHub Pages Gratis, gampang untuk markdown blog Gambar besar tetap bermasalah Gratis VPS / WordPress Bebas kontrol, plugin, database Harus urus security, patching, dll ±Rp50.000–200.000/bln 🧭 Kapan Harus Upgrade? Sudah &gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob Sudah &gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG &#43; API Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu ✍️ Penutup Untuk saat ini, setup ini sangat efisien dan scalable:">
+  <meta property="og:description" content="Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai deployment dan biaya operasional jangka panjang. Blog ini dibangun menggunakan Hugo dan tema PaperMod, yang ringan dan fleksibel.
+Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.
+Arsitektur Awal Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.
+Komponen utama:
+Konten ditulis dalam Markdown (.md) dan dikonversi ke HTML menggunakan Hugo. Menggunakan tema PaperMod. Dihosting di Azure Static Web Apps (paket gratis). Gambar disimpan langsung di dalam folder Hugo (static/images/). Estimasi awal kebutuhan:">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -207,142 +86,18 @@ Untuk saat ini, setup ini sangat efisien dan scalable:">
     <meta property="article:tag" content="Biaya">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rencana Deployment Blog: Pertimbangan Teknis dan Biaya">
-<meta name="twitter:description" content="Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.
+<meta name="twitter:description" content="Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai deployment dan biaya operasional jangka panjang. Blog ini dibangun menggunakan Hugo dan tema PaperMod, yang ringan dan fleksibel.
+Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.
+Arsitektur Awal
+Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.
+Komponen utama:
 
-🧱 Arsitektur Awal
-Komponen:
+Konten ditulis dalam Markdown (.md) dan dikonversi ke HTML menggunakan Hugo.
+Menggunakan tema PaperMod.
+Dihosting di Azure Static Web Apps (paket gratis).
+Gambar disimpan langsung di dalam folder Hugo (static/images/).
 
-Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo
-Tema: PaperMod
-Hosting: Azure Static Web Apps (Free Tier)
-Gambar: disimpan di dalam folder Hugo (static/images/)
-
-Perkiraan Awal:
-
-1 post = 1 Markdown &#43; gambar = ±1 MB total
-Misalnya ada 100 post = ~100 MB total konten
-
-
-💡 Evaluasi Kebutuhan dan Risiko
-Masalah yang Muncul:
-
-GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB)
-Static Web Apps Limit: Free tier hanya mendukung 250 MB total size
-Images Berat: Post galeri foto bisa &gt;10MB per post
-CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar
-
-
-✅ Strategi Final yang Diambil
-1. Konten Markdown dan Hugo HTML tetap di Static Web App
-
-Kecil (5–10 KB per post)
-Cepat dibuild
-Gratis deploy dengan GitHub Actions
-
-2. Gambar dipisah ke Azure Blob Storage
-
-Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg
-Gambar tidak memakan space GitHub maupun Static App
-
-
-🔢 Simulasi Perkiraan Biaya
-
-  
-      
-          Kasus
-          Jumlah Post
-          Size per Post
-          Total Size
-          Biaya GitHub
-          Biaya Azure Storage
-          Biaya Static App
-      
-  
-  
-      
-          Awal (Markdown &#43; Image)
-          10
-          1 MB
-          10 MB
-          0
-          0
-          0
-      
-      
-          Optimal (Markdown only)
-          100
-          10 KB
-          1 MB
-          0
-          ±1 GB Image = Rp1.000–2.000/bln
-          0
-      
-      
-          Skala Besar (&gt;250 MB HTML)
-          500
-          10 KB
-          5 MB
-          Mungkin perlu LFS
-          ±5 GB Image = Rp5.000–10.000/bln
-          Butuh Tier Berbayar
-      
-  
-
-
-📦 Perbandingan Hosting Hugo
-
-  
-      
-          Opsi
-          Keunggulan
-          Kekurangan
-          Biaya
-      
-  
-  
-      
-          Azure Static Web (Free)
-          Auto SSL, CI/CD, ringan
-          Limit 250MB total
-          Gratis
-      
-      
-          Azure Blob Static Website
-          Bisa simpan ratusan GB
-          Manual deploy/CI perlu setup
-          ±Rp1.000–2.000/GB/bulan
-      
-      
-          Azure Static Web (Standard)
-          SLA, staging, domain lebih banyak
-          Biaya tetap meski trafik kecil
-          ±Rp140.000/bln
-      
-      
-          GitHub Pages
-          Gratis, gampang untuk markdown blog
-          Gambar besar tetap bermasalah
-          Gratis
-      
-      
-          VPS / WordPress
-          Bebas kontrol, plugin, database
-          Harus urus security, patching, dll
-          ±Rp50.000–200.000/bln
-      
-  
-
-
-🧭 Kapan Harus Upgrade?
-
-Sudah &gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob
-Sudah &gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus
-Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG &#43; API
-Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu
-
-
-✍️ Penutup
-Untuk saat ini, setup ini sangat efisien dan scalable:">
+Estimasi awal kebutuhan:">
 
 
 <script type="application/ld+json">
@@ -371,12 +126,12 @@ Untuk saat ini, setup ini sangat efisien dan scalable:">
   "@type": "BlogPosting",
   "headline": "Rencana Deployment Blog: Pertimbangan Teknis dan Biaya",
   "name": "Rencana Deployment Blog: Pertimbangan Teknis dan Biaya",
-  "description": "Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.\n🧱 Arsitektur Awal Komponen: Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo Tema: PaperMod Hosting: Azure Static Web Apps (Free Tier) Gambar: disimpan di dalam folder Hugo (static/images/) Perkiraan Awal: 1 post = 1 Markdown + gambar = ±1 MB total Misalnya ada 100 post = ~100 MB total konten 💡 Evaluasi Kebutuhan dan Risiko Masalah yang Muncul: GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB) Static Web Apps Limit: Free tier hanya mendukung 250 MB total size Images Berat: Post galeri foto bisa \u0026gt;10MB per post CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar ✅ Strategi Final yang Diambil 1. Konten Markdown dan Hugo HTML tetap di Static Web App Kecil (5–10 KB per post) Cepat dibuild Gratis deploy dengan GitHub Actions 2. Gambar dipisah ke Azure Blob Storage Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg Gambar tidak memakan space GitHub maupun Static App 🔢 Simulasi Perkiraan Biaya Kasus Jumlah Post Size per Post Total Size Biaya GitHub Biaya Azure Storage Biaya Static App Awal (Markdown + Image) 10 1 MB 10 MB 0 0 0 Optimal (Markdown only) 100 10 KB 1 MB 0 ±1 GB Image = Rp1.000–2.000/bln 0 Skala Besar (\u0026gt;250 MB HTML) 500 10 KB 5 MB Mungkin perlu LFS ±5 GB Image = Rp5.000–10.000/bln Butuh Tier Berbayar 📦 Perbandingan Hosting Hugo Opsi Keunggulan Kekurangan Biaya Azure Static Web (Free) Auto SSL, CI/CD, ringan Limit 250MB total Gratis Azure Blob Static Website Bisa simpan ratusan GB Manual deploy/CI perlu setup ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging, domain lebih banyak Biaya tetap meski trafik kecil ±Rp140.000/bln GitHub Pages Gratis, gampang untuk markdown blog Gambar besar tetap bermasalah Gratis VPS / WordPress Bebas kontrol, plugin, database Harus urus security, patching, dll ±Rp50.000–200.000/bln 🧭 Kapan Harus Upgrade? Sudah \u0026gt;250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob Sudah \u0026gt;1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu ✍️ Penutup Untuk saat ini, setup ini sangat efisien dan scalable:\n",
+  "description": "Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai deployment dan biaya operasional jangka panjang. Blog ini dibangun menggunakan Hugo dan tema PaperMod, yang ringan dan fleksibel.\nBerikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.\nArsitektur Awal Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.\nKomponen utama:\nKonten ditulis dalam Markdown (.md) dan dikonversi ke HTML menggunakan Hugo. Menggunakan tema PaperMod. Dihosting di Azure Static Web Apps (paket gratis). Gambar disimpan langsung di dalam folder Hugo (static/images/). Estimasi awal kebutuhan:\n",
   "keywords": [
     "hugo", "azure", "blog", "deployment", "biaya"
   ],
-  "articleBody": "Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal deployment dan biaya operasional jangka panjang. Blog ini dibangun dengan Hugo dan menggunakan tema PaperMod. Berikut ini adalah rangkuman pertimbangan kami.\n🧱 Arsitektur Awal Komponen: Konten: Markdown (.md) yang dikonversi ke HTML dengan Hugo Tema: PaperMod Hosting: Azure Static Web Apps (Free Tier) Gambar: disimpan di dalam folder Hugo (static/images/) Perkiraan Awal: 1 post = 1 Markdown + gambar = ±1 MB total Misalnya ada 100 post = ~100 MB total konten 💡 Evaluasi Kebutuhan dan Risiko Masalah yang Muncul: GitHub Repo Limit: GitHub membatasi size repo, dan ada limit per file (100MB) Static Web Apps Limit: Free tier hanya mendukung 250 MB total size Images Berat: Post galeri foto bisa \u003e10MB per post CI/CD GitHub Actions: meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar ✅ Strategi Final yang Diambil 1. Konten Markdown dan Hugo HTML tetap di Static Web App Kecil (5–10 KB per post) Cepat dibuild Gratis deploy dengan GitHub Actions 2. Gambar dipisah ke Azure Blob Storage Contoh link: https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg Gambar tidak memakan space GitHub maupun Static App 🔢 Simulasi Perkiraan Biaya Kasus Jumlah Post Size per Post Total Size Biaya GitHub Biaya Azure Storage Biaya Static App Awal (Markdown + Image) 10 1 MB 10 MB 0 0 0 Optimal (Markdown only) 100 10 KB 1 MB 0 ±1 GB Image = Rp1.000–2.000/bln 0 Skala Besar (\u003e250 MB HTML) 500 10 KB 5 MB Mungkin perlu LFS ±5 GB Image = Rp5.000–10.000/bln Butuh Tier Berbayar 📦 Perbandingan Hosting Hugo Opsi Keunggulan Kekurangan Biaya Azure Static Web (Free) Auto SSL, CI/CD, ringan Limit 250MB total Gratis Azure Blob Static Website Bisa simpan ratusan GB Manual deploy/CI perlu setup ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging, domain lebih banyak Biaya tetap meski trafik kecil ±Rp140.000/bln GitHub Pages Gratis, gampang untuk markdown blog Gambar besar tetap bermasalah Gratis VPS / WordPress Bebas kontrol, plugin, database Harus urus security, patching, dll ±Rp50.000–200.000/bln 🧭 Kapan Harus Upgrade? Sudah \u003e250MB konten HTML: Pertimbangkan Standard Tier atau pindah ke Blob Sudah \u003e1GB gambar dan traffic tinggi: Pasang Azure CDN atau pindah ke hosting khusus Butuh login, form, backend: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API Repo GitHub makin besar: Pisahkan gambar ke Blob, pakai LFS kalau perlu ✍️ Penutup Untuk saat ini, setup ini sangat efisien dan scalable:\nMarkdown kecil → Static Web App Gambar → Blob Storage Biaya hampir nol, dan bisa naik bertahap tanpa ganti platform Kalau kamu memulai blog atau galeri pribadi, strategi ini layak dipertimbangkan sebelum pakai solusi besar yang mahal dari awal.\nHemat bukan berarti murahan — kadang justru efisien itu yang profesional.\n",
-  "wordCount" : "451",
+  "articleBody": "Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai deployment dan biaya operasional jangka panjang. Blog ini dibangun menggunakan Hugo dan tema PaperMod, yang ringan dan fleksibel.\nBerikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.\nArsitektur Awal Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.\nKomponen utama:\nKonten ditulis dalam Markdown (.md) dan dikonversi ke HTML menggunakan Hugo. Menggunakan tema PaperMod. Dihosting di Azure Static Web Apps (paket gratis). Gambar disimpan langsung di dalam folder Hugo (static/images/). Estimasi awal kebutuhan:\n1 post = ±1 MB (Markdown + gambar) Jika ada 100 post = sekitar 100 MB total konten Untuk tahap awal, semua ini terasa cukup efisien dan praktis.\nEvaluasi Kebutuhan dan Potensi Masalah Namun, seiring pertumbuhan konten, beberapa batasan mulai muncul:\nGitHub Repository punya batasan ukuran file (100 MB per file) dan total repo. Azure Static Web Apps Free Tier hanya mendukung maksimal 250 MB konten. Gambar bisa membengkak ukurannya, terutama jika ada post bergaya galeri. GitHub Actions hanya gratis hingga 2000 menit/bulan — cukup, tapi bisa jadi hambatan saat build makin besar. Dengan mempertimbangkan risiko-risiko ini, saya mulai memikirkan strategi yang lebih efisien untuk jangka panjang.\nStrategi yang Saya Ambil Solusinya: pisahkan konten dan aset berat.\nMarkdown dan hasil build HTML tetap di Azure Static Web Apps\nFile ini kecil (5–10 KB per post), build-nya cepat, dan gratis dideploy melalui GitHub Actions.\nGambar dipindahkan ke Azure Blob Storage\nDengan cara ini, ukuran repo GitHub tetap kecil dan storage bisa tumbuh secara terpisah. Contoh link gambar:\nhttps://namastorage.blob.core.windows.net/images/post-a/foto1.jpg\nStrategi ini memberikan fleksibilitas lebih besar dan memisahkan antara “konten ringan” dan “aset berat”.\nSimulasi Biaya Kasus Jumlah Post Size per Post Total Size GitHub Azure Storage Static App Awal (Markdown + Gambar) 10 1 MB 10 MB Gratis Gratis Gratis Optimal (Markdown saja) 100 10 KB 1 MB Gratis ±1 GB gambar = Rp1.000–2.000/bln Gratis Skala Besar (\u003e250MB HTML) 500 10 KB 5 MB Perlu LFS ±5 GB gambar = Rp5.000–10.000/bln Upgrade ke tier berbayar Perbandingan Alternatif Hosting Berikut beberapa opsi hosting yang saya pertimbangkan:\nOpsi Keunggulan Kekurangan Estimasi Biaya Azure Static Web (Free) Auto SSL, CI/CD, cepat dan ringan Batas 250MB total konten Gratis Azure Blob Static Site Bisa simpan ratusan GB aset Deploy manual atau setup CI sendiri ±Rp1.000–2.000/GB/bulan Azure Static Web (Standard) SLA, staging slot, custom domain banyak Bayar tetap meski trafik kecil ±Rp140.000/bulan GitHub Pages Sangat cocok untuk markdown blog Tidak ideal untuk gambar besar Gratis VPS / WordPress Bebas kontrol, plugin, database Perlu urus patching, keamanan, dsb ±Rp50.000–200.000/bulan Kapan Sebaiknya Upgrade? Berikut beberapa tanda bahwa sudah waktunya mempertimbangkan opsi lebih serius:\nKonten HTML melebihi 250 MB → pertimbangkan upgrade ke Azure Standard atau pindah ke Blob. Gambar makin besar dan trafik tinggi → aktifkan Azure CDN atau cari hosting gambar khusus. Mulai butuh backend seperti form, login, atau database → Hugo tidak cukup. Pertimbangkan headless CMS atau gabungan SSG + API. Repo GitHub makin berat → pisahkan aset ke Blob atau aktifkan Git LFS. Kesimpulan Untuk saat ini, setup yang saya gunakan sangat efisien:\nMarkdown tetap ringan dan cepat di-deploy di Static Web App Gambar ditangani terpisah via Blob Storage Biaya bisa mendekati nol dan tumbuh secara bertahap tanpa migrasi platform besar-besaran Jika kamu sedang membangun blog pribadi atau proyek kecil, strategi ini layak dipertimbangkan sebelum langsung loncat ke solusi besar yang mahal.\nHemat bukan berarti murahan. Justru, solusi yang efisien dan tepat sasaran bisa jadi lebih profesional.\n",
+  "wordCount" : "583",
   "inLanguage": "en",
   "datePublished": "2025-05-02T14:00:00+08:00",
   "dateModified": "2025-05-02T14:00:00+08:00",
@@ -476,45 +231,47 @@ Untuk saat ini, setup ini sangat efisien dan scalable:">
 
 </div>
   </header> 
-  <div class="post-content"><p>Dalam proses membangun blog ini, kami tidak hanya membahas tampilan dan fitur, tapi juga melakukan perencanaan matang soal <strong>deployment</strong> dan <strong>biaya operasional</strong> jangka panjang. Blog ini dibangun dengan <a href="https://gohugo.io">Hugo</a> dan menggunakan tema <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a>. Berikut ini adalah rangkuman pertimbangan kami.</p>
-<hr>
-<h2 id="-arsitektur-awal">🧱 Arsitektur Awal<a hidden class="anchor" aria-hidden="true" href="#-arsitektur-awal">#</a></h2>
-<h3 id="komponen">Komponen:<a hidden class="anchor" aria-hidden="true" href="#komponen">#</a></h3>
+  <div class="post-content"><p>Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai <strong>deployment</strong> dan <strong>biaya operasional</strong> jangka panjang. Blog ini dibangun menggunakan <a href="https://gohugo.io">Hugo</a> dan tema <a href="https://github.com/adityatelange/hugo-PaperMod">PaperMod</a>, yang ringan dan fleksibel.</p>
+<p>Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.</p>
+<h2 id="arsitektur-awal">Arsitektur Awal<a hidden class="anchor" aria-hidden="true" href="#arsitektur-awal">#</a></h2>
+<p>Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.</p>
+<p><strong>Komponen utama:</strong></p>
 <ul>
-<li><strong>Konten:</strong> Markdown (<code>.md</code>) yang dikonversi ke HTML dengan Hugo</li>
-<li><strong>Tema:</strong> PaperMod</li>
-<li><strong>Hosting:</strong> Azure Static Web Apps (Free Tier)</li>
-<li><strong>Gambar:</strong> disimpan di dalam folder Hugo (<code>static/images/</code>)</li>
+<li>Konten ditulis dalam Markdown (<code>.md</code>) dan dikonversi ke HTML menggunakan Hugo.</li>
+<li>Menggunakan tema PaperMod.</li>
+<li>Dihosting di Azure Static Web Apps (paket gratis).</li>
+<li>Gambar disimpan langsung di dalam folder Hugo (<code>static/images/</code>).</li>
 </ul>
-<h3 id="perkiraan-awal">Perkiraan Awal:<a hidden class="anchor" aria-hidden="true" href="#perkiraan-awal">#</a></h3>
+<p><strong>Estimasi awal kebutuhan:</strong></p>
 <ul>
-<li>1 post = 1 Markdown + gambar = <strong>±1 MB total</strong></li>
-<li>Misalnya ada 100 post = <strong>~100 MB</strong> total konten</li>
+<li>1 post = ±1 MB (Markdown + gambar)</li>
+<li>Jika ada 100 post = sekitar 100 MB total konten</li>
 </ul>
-<hr>
-<h2 id="-evaluasi-kebutuhan-dan-risiko">💡 Evaluasi Kebutuhan dan Risiko<a hidden class="anchor" aria-hidden="true" href="#-evaluasi-kebutuhan-dan-risiko">#</a></h2>
-<h3 id="masalah-yang-muncul">Masalah yang Muncul:<a hidden class="anchor" aria-hidden="true" href="#masalah-yang-muncul">#</a></h3>
+<p>Untuk tahap awal, semua ini terasa cukup efisien dan praktis.</p>
+<h2 id="evaluasi-kebutuhan-dan-potensi-masalah">Evaluasi Kebutuhan dan Potensi Masalah<a hidden class="anchor" aria-hidden="true" href="#evaluasi-kebutuhan-dan-potensi-masalah">#</a></h2>
+<p>Namun, seiring pertumbuhan konten, beberapa batasan mulai muncul:</p>
 <ul>
-<li><strong>GitHub Repo Limit:</strong> GitHub membatasi size repo, dan ada limit per file (100MB)</li>
-<li><strong>Static Web Apps Limit:</strong> Free tier hanya mendukung <strong>250 MB</strong> total size</li>
-<li><strong>Images Berat:</strong> Post galeri foto bisa &gt;10MB per post</li>
-<li><strong>CI/CD GitHub Actions:</strong> meski gratis 2000 menit/bulan, tetap terbatas kalau repo makin besar</li>
+<li><strong>GitHub Repository</strong> punya batasan ukuran file (100 MB per file) dan total repo.</li>
+<li><strong>Azure Static Web Apps Free Tier</strong> hanya mendukung maksimal <strong>250 MB</strong> konten.</li>
+<li><strong>Gambar</strong> bisa membengkak ukurannya, terutama jika ada post bergaya galeri.</li>
+<li><strong>GitHub Actions</strong> hanya gratis hingga 2000 menit/bulan — cukup, tapi bisa jadi hambatan saat build makin besar.</li>
 </ul>
-<hr>
-<h2 id="-strategi-final-yang-diambil">✅ Strategi Final yang Diambil<a hidden class="anchor" aria-hidden="true" href="#-strategi-final-yang-diambil">#</a></h2>
-<h3 id="1-konten-markdown-dan-hugo-html-tetap-di-static-web-app">1. <strong>Konten Markdown dan Hugo HTML tetap di Static Web App</strong><a hidden class="anchor" aria-hidden="true" href="#1-konten-markdown-dan-hugo-html-tetap-di-static-web-app">#</a></h3>
-<ul>
-<li>Kecil (5–10 KB per post)</li>
-<li>Cepat dibuild</li>
-<li>Gratis deploy dengan GitHub Actions</li>
-</ul>
-<h3 id="2-gambar-dipisah-ke-azure-blob-storage">2. <strong>Gambar dipisah ke Azure Blob Storage</strong><a hidden class="anchor" aria-hidden="true" href="#2-gambar-dipisah-ke-azure-blob-storage">#</a></h3>
-<ul>
-<li>Contoh link: <code>https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg</code></li>
-<li>Gambar tidak memakan space GitHub maupun Static App</li>
-</ul>
-<hr>
-<h2 id="-simulasi-perkiraan-biaya">🔢 Simulasi Perkiraan Biaya<a hidden class="anchor" aria-hidden="true" href="#-simulasi-perkiraan-biaya">#</a></h2>
+<p>Dengan mempertimbangkan risiko-risiko ini, saya mulai memikirkan strategi yang lebih efisien untuk jangka panjang.</p>
+<h2 id="strategi-yang-saya-ambil">Strategi yang Saya Ambil<a hidden class="anchor" aria-hidden="true" href="#strategi-yang-saya-ambil">#</a></h2>
+<p>Solusinya: pisahkan konten dan aset berat.</p>
+<ol>
+<li>
+<p><strong>Markdown dan hasil build HTML tetap di Azure Static Web Apps</strong><br>
+File ini kecil (5–10 KB per post), build-nya cepat, dan gratis dideploy melalui GitHub Actions.</p>
+</li>
+<li>
+<p><strong>Gambar dipindahkan ke Azure Blob Storage</strong><br>
+Dengan cara ini, ukuran repo GitHub tetap kecil dan storage bisa tumbuh secara terpisah. Contoh link gambar:<br>
+<code>https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg</code></p>
+</li>
+</ol>
+<p>Strategi ini memberikan fleksibilitas lebih besar dan memisahkan antara “konten ringan” dan “aset berat”.</p>
+<h2 id="simulasi-biaya">Simulasi Biaya<a hidden class="anchor" aria-hidden="true" href="#simulasi-biaya">#</a></h2>
 <table>
   <thead>
       <tr>
@@ -522,104 +279,103 @@ Untuk saat ini, setup ini sangat efisien dan scalable:">
           <th>Jumlah Post</th>
           <th>Size per Post</th>
           <th>Total Size</th>
-          <th>Biaya GitHub</th>
-          <th>Biaya Azure Storage</th>
-          <th>Biaya Static App</th>
+          <th>GitHub</th>
+          <th>Azure Storage</th>
+          <th>Static App</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td>Awal (Markdown + Image)</td>
+          <td>Awal (Markdown + Gambar)</td>
           <td>10</td>
           <td>1 MB</td>
           <td>10 MB</td>
-          <td>0</td>
-          <td>0</td>
-          <td>0</td>
+          <td>Gratis</td>
+          <td>Gratis</td>
+          <td>Gratis</td>
       </tr>
       <tr>
-          <td>Optimal (Markdown only)</td>
+          <td>Optimal (Markdown saja)</td>
           <td>100</td>
           <td>10 KB</td>
           <td>1 MB</td>
-          <td>0</td>
-          <td>±1 GB Image = Rp1.000–2.000/bln</td>
-          <td>0</td>
+          <td>Gratis</td>
+          <td>±1 GB gambar = Rp1.000–2.000/bln</td>
+          <td>Gratis</td>
       </tr>
       <tr>
-          <td>Skala Besar (&gt;250 MB HTML)</td>
+          <td>Skala Besar (&gt;250MB HTML)</td>
           <td>500</td>
           <td>10 KB</td>
           <td>5 MB</td>
-          <td>Mungkin perlu LFS</td>
-          <td>±5 GB Image = Rp5.000–10.000/bln</td>
-          <td>Butuh Tier Berbayar</td>
+          <td>Perlu LFS</td>
+          <td>±5 GB gambar = Rp5.000–10.000/bln</td>
+          <td>Upgrade ke tier berbayar</td>
       </tr>
   </tbody>
 </table>
-<hr>
-<h2 id="-perbandingan-hosting-hugo">📦 Perbandingan Hosting Hugo<a hidden class="anchor" aria-hidden="true" href="#-perbandingan-hosting-hugo">#</a></h2>
+<h2 id="perbandingan-alternatif-hosting">Perbandingan Alternatif Hosting<a hidden class="anchor" aria-hidden="true" href="#perbandingan-alternatif-hosting">#</a></h2>
+<p>Berikut beberapa opsi hosting yang saya pertimbangkan:</p>
 <table>
   <thead>
       <tr>
           <th>Opsi</th>
           <th>Keunggulan</th>
           <th>Kekurangan</th>
-          <th>Biaya</th>
+          <th>Estimasi Biaya</th>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td><strong>Azure Static Web (Free)</strong></td>
-          <td>Auto SSL, CI/CD, ringan</td>
-          <td>Limit 250MB total</td>
+          <td>Auto SSL, CI/CD, cepat dan ringan</td>
+          <td>Batas 250MB total konten</td>
           <td>Gratis</td>
       </tr>
       <tr>
-          <td><strong>Azure Blob Static Website</strong></td>
-          <td>Bisa simpan ratusan GB</td>
-          <td>Manual deploy/CI perlu setup</td>
+          <td><strong>Azure Blob Static Site</strong></td>
+          <td>Bisa simpan ratusan GB aset</td>
+          <td>Deploy manual atau setup CI sendiri</td>
           <td>±Rp1.000–2.000/GB/bulan</td>
       </tr>
       <tr>
           <td><strong>Azure Static Web (Standard)</strong></td>
-          <td>SLA, staging, domain lebih banyak</td>
-          <td>Biaya tetap meski trafik kecil</td>
-          <td>±Rp140.000/bln</td>
+          <td>SLA, staging slot, custom domain banyak</td>
+          <td>Bayar tetap meski trafik kecil</td>
+          <td>±Rp140.000/bulan</td>
       </tr>
       <tr>
           <td><strong>GitHub Pages</strong></td>
-          <td>Gratis, gampang untuk markdown blog</td>
-          <td>Gambar besar tetap bermasalah</td>
+          <td>Sangat cocok untuk markdown blog</td>
+          <td>Tidak ideal untuk gambar besar</td>
           <td>Gratis</td>
       </tr>
       <tr>
           <td><strong>VPS / WordPress</strong></td>
           <td>Bebas kontrol, plugin, database</td>
-          <td>Harus urus security, patching, dll</td>
-          <td>±Rp50.000–200.000/bln</td>
+          <td>Perlu urus patching, keamanan, dsb</td>
+          <td>±Rp50.000–200.000/bulan</td>
       </tr>
   </tbody>
 </table>
-<hr>
-<h2 id="-kapan-harus-upgrade">🧭 Kapan Harus Upgrade?<a hidden class="anchor" aria-hidden="true" href="#-kapan-harus-upgrade">#</a></h2>
+<h2 id="kapan-sebaiknya-upgrade">Kapan Sebaiknya Upgrade?<a hidden class="anchor" aria-hidden="true" href="#kapan-sebaiknya-upgrade">#</a></h2>
+<p>Berikut beberapa tanda bahwa sudah waktunya mempertimbangkan opsi lebih serius:</p>
 <ul>
-<li><strong>Sudah &gt;250MB konten HTML</strong>: Pertimbangkan Standard Tier atau pindah ke Blob</li>
-<li><strong>Sudah &gt;1GB gambar dan traffic tinggi</strong>: Pasang Azure CDN atau pindah ke hosting khusus</li>
-<li><strong>Butuh login, form, backend</strong>: Hugo tidak cukup — bisa pindah ke headless CMS atau SSG + API</li>
-<li><strong>Repo GitHub makin besar</strong>: Pisahkan gambar ke Blob, pakai LFS kalau perlu</li>
+<li>Konten HTML melebihi 250 MB → pertimbangkan upgrade ke Azure Standard atau pindah ke Blob.</li>
+<li>Gambar makin besar dan trafik tinggi → aktifkan Azure CDN atau cari hosting gambar khusus.</li>
+<li>Mulai butuh backend seperti form, login, atau database → Hugo tidak cukup. Pertimbangkan headless CMS atau gabungan SSG + API.</li>
+<li>Repo GitHub makin berat → pisahkan aset ke Blob atau aktifkan Git LFS.</li>
 </ul>
-<hr>
-<h2 id="-penutup">✍️ Penutup<a hidden class="anchor" aria-hidden="true" href="#-penutup">#</a></h2>
-<p>Untuk saat ini, setup ini sangat efisien dan scalable:</p>
+<h2 id="kesimpulan">Kesimpulan<a hidden class="anchor" aria-hidden="true" href="#kesimpulan">#</a></h2>
+<p>Untuk saat ini, setup yang saya gunakan sangat efisien:</p>
 <ul>
-<li>Markdown kecil → Static Web App</li>
-<li>Gambar → Blob Storage</li>
-<li>Biaya hampir <strong>nol</strong>, dan bisa <strong>naik bertahap tanpa ganti platform</strong></li>
+<li><strong>Markdown</strong> tetap ringan dan cepat di-deploy di Static Web App</li>
+<li><strong>Gambar</strong> ditangani terpisah via Blob Storage</li>
+<li><strong>Biaya</strong> bisa mendekati nol dan tumbuh secara bertahap tanpa migrasi platform besar-besaran</li>
 </ul>
-<p>Kalau kamu memulai blog atau galeri pribadi, strategi ini layak dipertimbangkan sebelum pakai solusi besar yang mahal dari awal.</p>
+<p>Jika kamu sedang membangun blog pribadi atau proyek kecil, strategi ini layak dipertimbangkan sebelum langsung loncat ke solusi besar yang mahal.</p>
 <blockquote>
-<p>Hemat bukan berarti murahan — kadang justru efisien itu yang profesional.</p></blockquote>
+<p>Hemat bukan berarti murahan. Justru, solusi yang efisien dan tepat sasaran bisa jadi lebih profesional.</p></blockquote>
 
 
   </div>
