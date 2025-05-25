@@ -6,6 +6,20 @@ categories: ["Menulis"]
 draft: false
 ---
 
+---
+> #### Outline Artikel
+> 1. [Kenapa Sering Bingung Saat Menulis?](#pengantar)
+> 2. [1. Why – Tentukan Tujuan Tulisan](#why)
+> 3. [2. What – Pilih Jenis Tulisan yang Tepat](#what)
+> 4. [3. How – Tentukan Format atau Struktur Penulisan](#how)
+> 5. [4. Where + How to Present – Sesuaikan Gaya dan Media](#where)
+> 6. [5. Who – Kenali Audiensmu](#who)
+> 7. [6. When – Buat Kerangka Sebelum Menulis](#when)
+> 8. [Penutup: Menulis dengan 5W+1H](#penutup)
+---
+
+<span id="pengantar"></span>
+
 Pernah duduk di depan layar kosong sambil berpikir,  
 *"Aku mau nulis... tapi mulai dari mana ya?"*
 
@@ -13,7 +27,9 @@ Kalau iya, kamu tidak sendiri. Rasa bingung ini sering muncul karena kita belum 
 
 Artikel ini menawarkan **enam hal penting** yang bisa kamu jadikan pegangan sebelum mulai menulis esai atau artikel. Enam poin ini disusun berdasarkan prinsip **5W+1H**: *Why, What, How, Where, Who, When* — formula sederhana tapi sangat berguna untuk siapa pun yang ingin menulis lebih terarah.
 
-## 1. Why – Tentukan Tujuan Tulisan
+<span id="why"></span>
+
+### 1. Why – Tentukan Tujuan Tulisan
 
 Sebelum memikirkan judul atau kalimat pembuka, tanyakan dulu pada diri sendiri:  
 **apa yang ingin kamu capai lewat tulisan ini?**
@@ -26,7 +42,9 @@ Apakah ingin:
 
 Tujuan akan membentuk arah tulisanmu, dari struktur paragraf hingga pilihan gaya bahasa. Inilah titik awal yang akan membimbing seluruh proses penulisanmu.
 
-## 2. What – Pilih Jenis Tulisan yang Tepat
+<span id="what"></span>
+
+### 2. What – Pilih Jenis Tulisan yang Tepat
 
 Setelah tahu tujuan, langkah berikutnya adalah memilih jenis tulisan. Ini menentukan *bentuk utama* dari pesan yang ingin kamu sampaikan.
 
@@ -41,7 +59,9 @@ Beberapa jenis yang umum digunakan:
 
 Jenis tulisan ini akan menentukan nada, fokus, dan cara kamu menyusun alur.
 
-## 3. How – Tentukan Format atau Struktur Penulisan
+<span id="how"></span>
+
+### 3. How – Tentukan Format atau Struktur Penulisan
 
 Jenis tulisan sudah ditentukan, sekarang saatnya memilih **struktur** yang akan kamu gunakan untuk menyusun isi tulisan.
 
@@ -55,7 +75,9 @@ Beberapa struktur yang bisa dipertimbangkan:
 
 Struktur ini akan membantumu menjaga alur logis dan menghindari pembahasan yang melompat-lompat.
 
-## 4. Where + How to Present – Sesuaikan Gaya dan Media
+<span id="where"></span>
+
+### 4. Where + How to Present – Sesuaikan Gaya dan Media
 
 Gaya penyajian adalah cara kamu membungkus isi tulisan agar nyaman dibaca. Tapi gaya ini juga harus disesuaikan dengan **platform** tempat tulisan akan diterbitkan.
 
@@ -69,7 +91,9 @@ Beberapa gaya umum:
 
 Memilih gaya yang tepat akan membuat tulisanmu lebih relevan, efektif, dan sesuai konteks.
 
-## 5. Who – Kenali Audiensmu
+<span id="who"></span>
+
+### 5. Who – Kenali Audiensmu
 
 Menulis yang baik selalu mempertimbangkan siapa yang akan membaca.
 
@@ -81,7 +105,9 @@ Tanyakan pada dirimu:
 
 Gaya bahasa dan tingkat kedalaman penjelasan sangat dipengaruhi oleh siapa pembaca tulisanmu. Menulis untuk pelajar tentu berbeda dengan menulis untuk profesional di bidang tertentu.
 
-## 6. When – Buat Kerangka Sebelum Menulis
+<span id="when"></span>
+
+### 6. When – Buat Kerangka Sebelum Menulis
 
 Waktu terbaik untuk membuat outline adalah **sebelum mulai menulis**. Outline bukan hanya daftar isi, tapi peta yang akan memandu arah tulisanmu agar tidak menyimpang.
 
@@ -96,7 +122,9 @@ Topik: *Kenapa Menulis Itu Penting*
 
 Dengan kerangka seperti ini, kamu akan menulis lebih fokus dan efisien.
 
-## Penutup
+<span id="penutup"></span>
+
+### Penutup: Menulis dengan 5W+1H
 
 Menulis bukan hanya soal ide, tapi juga soal **persiapan dan arah yang jelas**. Dengan menjawab enam pertanyaan kunci berdasarkan 5W+1H:
 

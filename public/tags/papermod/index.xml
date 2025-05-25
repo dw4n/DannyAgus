@@ -9,12 +9,27 @@
     <lastBuildDate>Thu, 01 May 2025 11:00:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/papermod/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web</title>
+      <title>Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama</title>
       <link>http://localhost:1313/posts/2-petualangan-hugo/</link>
       <pubDate>Thu, 01 May 2025 11:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/2-petualangan-hugo/</guid>
-      <description>&lt;p&gt;Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-&lt;em&gt;upload&lt;/em&gt;. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.&lt;/p&gt;
-&lt;p&gt;Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, setiap 6 bulan sekali kena virus, dan saya harus restore ke previous backup. Proses restore pun agak menyebalkan, karena harus proses delete dan reupload ftp.&lt;/p&gt;</description>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#pendahuluan&#34;&gt;Pendahuluan: Masalah dengan WordPress&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-1&#34;&gt;Tahap 1: Menentukan Arah dan Stack Teknologi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-2&#34;&gt;Tahap 2: Setup Hugo Lokal Tanpa Install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-3&#34;&gt;Tahap 3: Menambahkan Tema PaperMod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-4&#34;&gt;Tahap 4: Menulis dan Menampilkan Postingan Pertama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-5&#34;&gt;Tahap 5: Otomatisasi Deploy dengan GitHub Actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-6&#34;&gt;Tahap 6: Menambah Fitur Search, Tag, dan Kategori&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-7&#34;&gt;Tahap 7: Menyisipkan Gambar dengan Caption&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#penutup&#34;&gt;Penutup: Apa yang Saya Pelajari&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;pendahuluan&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: &lt;em&gt;apa nggak ada solusi yang lebih simpel, murah, dan aman?&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

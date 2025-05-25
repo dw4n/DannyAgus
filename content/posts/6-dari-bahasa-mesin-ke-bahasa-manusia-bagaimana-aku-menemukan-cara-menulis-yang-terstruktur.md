@@ -6,9 +6,22 @@ categories: ["Menulis"]
 draft: false
 ---
 
+---
+>#### Outline Artikel
+>1. [Pengantar: Tantangan Menulis untuk Manusia](#pengantar)
+>2. [Pertanyaan Kritis: Bisa Nggak Menulis Secara Sistematis?](#pertanyaan-sistematis)
+>3. [Framework Menulis Berbasis 5W+1H](#framework-menulis)
+>4. [Contoh: Format 5 Paragraph Essay dan Lainnya](#contoh-format)
+>5. [Kesimpulan: Menulis Itu Bisa Dipelajari](#kesimpulan)
+---
+
+<span id="pengantar"></span>
+
 Beberapa bulan lalu, saya menerima tugas akhir sebagai syarat kenaikan jabatan di kantor. Saya pikir tantangannya akan berkutat di coding atau sistem seperti biasa. Tapi ternyata saya salah.
 
 Tugas yang diberikan bukan tentang logika program, melainkan tentang **menulis laporan yang bisa dibaca — dan dipahami — oleh manusia.** Sebagai programmer, saya terbiasa berbicara dengan mesin: jelas, terstruktur, dan tanpa emosi. Tapi berbicara lewat tulisan untuk manusia? Itu dunia yang benar-benar berbeda.
+
+<span id="pertanyaan-sistematis"></span>
 
 Kebingungan itu membawa saya kembali ke kenangan lama — saat SMA, atau ketika saya belajar IELTS. Dulu saya pernah menulis artikel ilmiah, tapi pengalaman itu terasa sudah kabur. Namun satu hal yang saya ingat: dalam menulis, selalu ada **struktur dan pola pikir** tertentu. Sesuatu yang bisa dianalogikan seperti fondasi rumah, atau bahkan *blueprint* aplikasi.
 
@@ -16,14 +29,9 @@ Saya mulai bertanya: adakah cara menulis yang sistematis, seperti saat saya menu
 
 Ternyata jawabannya ada. Kita hanya perlu tahu **framework-nya** — sebuah pendekatan berpikir yang bisa diulang, dipakai lintas konteks, dan disesuaikan dengan kebutuhan.
 
-Sebagai programmer, saya sudah terbiasa dengan alur seperti:
+<span id="framework-menulis"></span>
 
-- Ada input → diproses → menghasilkan output  
-- Ada modularisasi, reusable functions, dan struktur logika yang jelas
-
-Menulis, ternyata, bisa mengikuti logika serupa. Kalau kita tahu bagaimana menyusunnya, kita tidak perlu bingung memulai dari mana. Fokus kita cukup tertuju pada apa yang ingin disampaikan.
-
-## Framework Menulis yang Saya Pegang (Berbasis 5W+1H)
+### Framework Menulis yang Saya Pegang (Berbasis 5W+1H)
 
 Setelah mencoba berkali-kali dan gagal di banyak kesempatan, saya akhirnya menemukan sebuah kerangka kerja yang selalu saya pakai setiap kali menulis — mulai dari laporan teknis, artikel opini, sampai email penting.
 
@@ -47,9 +55,13 @@ Kerangka ini saya susun berdasarkan prinsip klasik yang sangat familiar bagi sia
 > 6. **When – Waktu dan Kerangka Penulisan**  
 > Apakah saya sudah membuat outline? Apakah waktunya tepat untuk mulai menulis? Outline ini seperti pseudocode — kerangka yang membuat proses lebih efisien saat mulai bekerja.
 
+<span id="contoh-format"></span>
+
 Contohnya, ketika belajar IELTS dulu, saya terbiasa menggunakan format **5 Paragraph Essay**: satu paragraf pembuka, tiga paragraf isi yang masing-masing memuat satu ide utama, dan satu paragraf penutup. Kini saya tahu bahwa format itu bukan satu-satunya. Ada juga IMRaD untuk laporan ilmiah, struktur perbandingan, atau pola sebab-akibat. Namun intinya tetap sama: **pilih format yang sesuai dengan tujuan dan konteks tulisan.**
 
-## Menulis Itu Bisa Dipelajari
+<span id="kesimpulan"></span>
+
+### Menulis Itu Bisa Dipelajari
 
 Dulu saya pikir menulis adalah soal bakat — sesuatu yang hanya dimiliki oleh “anak bahasa” atau orang-orang kreatif. Tapi ternyata, **menulis juga bisa didekati secara logis dan sistematis**, asal kita tahu strukturnya.
 

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>CNN dan RNN dalam Bahasa Sederhana | Danny Agus</title>
+<meta name="keywords" content="machine learning, cnn, rnn, kecerdasan buatan, pemula, neural network">
+<meta name="description" content="
+
+Outline Artikel
+
+Pengantar: Mesin yang Bisa Melihat dan Mendengar
+Bagaimana CNN Mengenali Gambar
+Bagaimana RNN Memahami Urutan
+CNN vs RNN: Dua Pendekatan yang Saling Melengkapi
+Relevansi CNN dan RNN dalam Kehidupan Sehari-hari
+
+
+
+Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia. Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="CNN dan RNN dalam Bahasa Sederhana">
+  <meta property="og:description" content=" Outline Artikel Pengantar: Mesin yang Bisa Melihat dan Mendengar Bagaimana CNN Mengenali Gambar Bagaimana RNN Memahami Urutan CNN vs RNN: Dua Pendekatan yang Saling Melengkapi Relevansi CNN dan RNN dalam Kehidupan Sehari-hari Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia. Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-25T13:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-25T13:00:00+08:00">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Cnn">
+    <meta property="article:tag" content="Rnn">
+    <meta property="article:tag" content="Kecerdasan Buatan">
+    <meta property="article:tag" content="Pemula">
+    <meta property="article:tag" content="Neural Network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CNN dan RNN dalam Bahasa Sederhana">
+<meta name="twitter:description" content="
+
+Outline Artikel
+
+Pengantar: Mesin yang Bisa Melihat dan Mendengar
+Bagaimana CNN Mengenali Gambar
+Bagaimana RNN Memahami Urutan
+CNN vs RNN: Dua Pendekatan yang Saling Melengkapi
+Relevansi CNN dan RNN dalam Kehidupan Sehari-hari
+
+
+
+Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia. Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "CNN dan RNN dalam Bahasa Sederhana",
+      "item": "http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "CNN dan RNN dalam Bahasa Sederhana",
+  "name": "CNN dan RNN dalam Bahasa Sederhana",
+  "description": " Outline Artikel Pengantar: Mesin yang Bisa Melihat dan Mendengar Bagaimana CNN Mengenali Gambar Bagaimana RNN Memahami Urutan CNN vs RNN: Dua Pendekatan yang Saling Melengkapi Relevansi CNN dan RNN dalam Kehidupan Sehari-hari Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia. Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.\n",
+  "keywords": [
+    "machine learning", "cnn", "rnn", "kecerdasan buatan", "pemula", "neural network"
+  ],
+  "articleBody": " Outline Artikel Pengantar: Mesin yang Bisa Melihat dan Mendengar Bagaimana CNN Mengenali Gambar Bagaimana RNN Memahami Urutan CNN vs RNN: Dua Pendekatan yang Saling Melengkapi Relevansi CNN dan RNN dalam Kehidupan Sehari-hari Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia. Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.\nCNN membantu mesin mengenali gambar dengan memecahnya menjadi bagian-bagian kecil untuk dipahami secara bertahap. Seperti ketika kita melihat wajah seseorang dan memperhatikan bagian-bagian seperti mata, hidung, dan bentuk kepala sebelum menyimpulkan siapa dia, CNN bekerja dengan cara serupa. Gambar digital diproses oleh jaringan ini melalui lapisan-lapisan yang mendeteksi fitur sederhana seperti garis dan warna, lalu secara bertahap membentuk pengertian lebih kompleks seperti objek atau wajah. CNN digunakan dalam banyak hal seperti pengenalan wajah di ponsel dan sistem kamera mobil yang bisa mengenali rambu lalu lintas atau pejalan kaki.\nRNN memungkinkan mesin memahami informasi yang datang secara berurutan, seperti kata dalam kalimat atau nada dalam suara. Mesin tidak hanya butuh melihat, tapi juga mendengarkan dan mengingat. RNN dirancang dengan struktur yang bisa mengingat input sebelumnya, sehingga sangat cocok digunakan dalam situasi yang membutuhkan pemahaman konteks dari waktu ke waktu. Misalnya, ketika kamu mengetik pesan dan ponsel menebak kata selanjutnya, atau ketika Google Translate menerjemahkan kalimat dengan tata bahasa yang tepat, di situlah RNN bekerja. Ia belajar dari urutan data untuk menghasilkan keluaran yang lebih alami dan masuk akal.\nCNN dan RNN adalah dua pendekatan berbeda yang saling melengkapi dalam membuat mesin lebih cerdas. CNN unggul dalam memproses data visual seperti gambar dan video, sedangkan RNN lebih kuat dalam memahami teks, suara, atau data berurutan lainnya. Bayangkan CNN seperti seorang pengamat visual yang mampu menangkap detail dari satu momen, sementara RNN seperti pendengar yang memahami alur cerita dari awal hingga akhir. Dalam praktiknya, keduanya sering digunakan bersama dalam aplikasi yang kompleks, seperti asisten virtual atau sistem pengawasan pintar yang menganalisis video sekaligus mengenali ucapan.\nMemahami CNN dan RNN secara sederhana membantu kita menghargai teknologi yang semakin dekat dengan kehidupan kita sehari-hari. Teknologi ini bukan hanya sekadar istilah rumit dalam dunia akademik, tapi benar-benar ada dalam fitur-fitur yang kita gunakan setiap hari—mulai dari kamera, aplikasi chatting, hingga sistem keamanan. Ketika kita tahu bagaimana cara kerja mereka secara dasar, kita tidak hanya menjadi pengguna yang pasif, tetapi juga seseorang yang siap menyambut masa depan dengan lebih bijak dan mungkin tertarik untuk ikut membentuknya.\n",
+  "wordCount" : "460",
+  "inLanguage": "en",
+  "datePublished": "2025-05-25T13:00:00+08:00",
+  "dateModified": "2025-05-25T13:00:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      CNN dan RNN dalam Bahasa Sederhana
+    </h1>
+    <div class="post-meta"><span title='2025-05-25 13:00:00 +0800 +08'>May 25, 2025 Jam 13</span>
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#pengantar">Pengantar: Mesin yang Bisa Melihat dan Mendengar</a></li>
+<li><a href="#cnn">Bagaimana CNN Mengenali Gambar</a></li>
+<li><a href="#rnn">Bagaimana RNN Memahami Urutan</a></li>
+<li><a href="#perbandingan-cnn-rnn">CNN vs RNN: Dua Pendekatan yang Saling Melengkapi</a></li>
+<li><a href="#relevansi">Relevansi CNN dan RNN dalam Kehidupan Sehari-hari</a></li>
+</ol></blockquote>
+<hr>
+<p><span id="pengantar"></span></p>
+<p><strong>Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia.</strong> Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.</p>
+<p><span id="cnn"></span></p>
+<p><strong>CNN membantu mesin mengenali gambar dengan memecahnya menjadi bagian-bagian kecil untuk dipahami secara bertahap.</strong> Seperti ketika kita melihat wajah seseorang dan memperhatikan bagian-bagian seperti mata, hidung, dan bentuk kepala sebelum menyimpulkan siapa dia, CNN bekerja dengan cara serupa. Gambar digital diproses oleh jaringan ini melalui lapisan-lapisan yang mendeteksi fitur sederhana seperti garis dan warna, lalu secara bertahap membentuk pengertian lebih kompleks seperti objek atau wajah. CNN digunakan dalam banyak hal seperti pengenalan wajah di ponsel dan sistem kamera mobil yang bisa mengenali rambu lalu lintas atau pejalan kaki.</p>
+<p><span id="rnn"></span></p>
+<p><strong>RNN memungkinkan mesin memahami informasi yang datang secara berurutan, seperti kata dalam kalimat atau nada dalam suara.</strong> Mesin tidak hanya butuh melihat, tapi juga mendengarkan dan mengingat. RNN dirancang dengan struktur yang bisa mengingat input sebelumnya, sehingga sangat cocok digunakan dalam situasi yang membutuhkan pemahaman konteks dari waktu ke waktu. Misalnya, ketika kamu mengetik pesan dan ponsel menebak kata selanjutnya, atau ketika Google Translate menerjemahkan kalimat dengan tata bahasa yang tepat, di situlah RNN bekerja. Ia belajar dari urutan data untuk menghasilkan keluaran yang lebih alami dan masuk akal.</p>
+<p><span id="perbandingan-cnn-rnn"></span></p>
+<p><strong>CNN dan RNN adalah dua pendekatan berbeda yang saling melengkapi dalam membuat mesin lebih cerdas.</strong> CNN unggul dalam memproses data visual seperti gambar dan video, sedangkan RNN lebih kuat dalam memahami teks, suara, atau data berurutan lainnya. Bayangkan CNN seperti seorang pengamat visual yang mampu menangkap detail dari satu momen, sementara RNN seperti pendengar yang memahami alur cerita dari awal hingga akhir. Dalam praktiknya, keduanya sering digunakan bersama dalam aplikasi yang kompleks, seperti asisten virtual atau sistem pengawasan pintar yang menganalisis video sekaligus mengenali ucapan.</p>
+<p><span id="relevansi"></span></p>
+<p><strong>Memahami CNN dan RNN secara sederhana membantu kita menghargai teknologi yang semakin dekat dengan kehidupan kita sehari-hari.</strong> Teknologi ini bukan hanya sekadar istilah rumit dalam dunia akademik, tapi benar-benar ada dalam fitur-fitur yang kita gunakan setiap hari—mulai dari kamera, aplikasi chatting, hingga sistem keamanan. Ketika kita tahu bagaimana cara kerja mereka secara dasar, kita tidak hanya menjadi pengguna yang pasif, tetapi juga seseorang yang siap menyambut masa depan dengan lebih bijak dan mungkin tertarik untuk ikut membentuknya.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/machine-learning/">Machine Learning</a></li>
+      <li><a href="http://localhost:1313/tags/cnn/">Cnn</a></li>
+      <li><a href="http://localhost:1313/tags/rnn/">Rnn</a></li>
+      <li><a href="http://localhost:1313/tags/kecerdasan-buatan/">Kecerdasan Buatan</a></li>
+      <li><a href="http://localhost:1313/tags/pemula/">Pemula</a></li>
+      <li><a href="http://localhost:1313/tags/neural-network/">Neural Network</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

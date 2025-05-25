@@ -6,6 +6,20 @@ categories: ["Menulis"]
 draft: false
 ---
 
+---
+> #### Outline Artikel
+> 1. [Kenapa Perlu Framework Menulis?](#kenapa-framework)
+> 2. [1. Tentukan Tujuan Tulisan (Why)](#tujuan)
+> 3. [2. Pilih Jenis Tulisan (What)](#jenis)
+> 4. [3. Tentukan Format atau Struktur (How)](#struktur)
+> 5. [4. Sesuaikan Gaya Penyajian (Where & How)](#gaya)
+> 6. [5. Kenali Audiensmu (Who)](#audiens)
+> 7. [6. Susun Kerangka Sebelum Menulis (When)](#outline)
+> 8. [Penutup: Menulis dengan 5W+1H](#penutup)
+---
+
+<span id="kenapa-framework"></span>
+
 Banyak orang merasa bingung saat hendak menulis.  
 *"Aku mau nulis, tapi mulai dari mana ya?"*
 
@@ -13,7 +27,9 @@ Pertanyaan seperti ini sangat umum — bahkan penulis berpengalaman pun kadang m
 
 Artikel ini akan membantumu mengenali **enam elemen penting** yang bisa dijadikan pegangan sebelum mulai menulis. Elemen-elemen ini merujuk pada prinsip berpikir klasik: **5W + 1H** — *Why, What, Who, Where, When, How*. Bukan aturan kaku, melainkan panduan untuk menulis dengan lebih terarah dan efisien.
 
-## 1. Tentukan Tujuan Tulisan (Why)
+<span id="tujuan"></span>
+
+### 1. Tentukan Tujuan Tulisan (Why)
 
 Langkah pertama adalah menjawab pertanyaan:  
 **“Saya ingin pembaca tahu atau merasa apa setelah membaca tulisan ini?”**
@@ -26,7 +42,9 @@ Tujuan ini akan menentukan arah, nada, dan pendekatan tulisanmu. Misalnya:
 
 Tujuan yang jelas akan menjadi pondasi bagi setiap keputusan penulisan selanjutnya.
 
-## 2. Pilih Jenis Tulisan (What)
+<span id="jenis"></span>
+
+### 2. Pilih Jenis Tulisan (What)
 
 Jenis tulisan berkaitan dengan **apa** yang ingin kamu sampaikan dan bagaimana kamu ingin menyampaikannya. Menentukan ini akan membantumu memilih nada, struktur, dan isi yang tepat.
 
@@ -41,7 +59,9 @@ Jenis tulisan berkaitan dengan **apa** yang ingin kamu sampaikan dan bagaimana k
 
 Dengan jenis yang sesuai, tulisanmu akan lebih fokus dan mudah dipahami.
 
-## 3. Tentukan Format atau Struktur Tulisan (How)
+<span id="struktur"></span>
+
+### 3. Tentukan Format atau Struktur Tulisan (How)
 
 Setelah tahu tujuan dan jenis tulisan, pikirkan bagaimana menyusun isi tulisan secara logis dan mudah diikuti.
 
@@ -59,7 +79,9 @@ Sebagai contoh, struktur **5 Paragraph Essay** cocok untuk pemula karena formatn
 - Paragraf 2–4: Tiga ide utama  
 - Paragraf 5: Kesimpulan
 
-## 4. Sesuaikan Gaya Penyajian dengan Media (Where & How to Present)
+<span id="gaya"></span>
+
+### 4. Sesuaikan Gaya Penyajian dengan Media (Where & How to Present)
 
 Gaya penyajian memengaruhi cara pembaca menerima informasi. Ini sangat bergantung pada **di mana** tulisanmu akan diterbitkan dan untuk siapa.
 
@@ -74,7 +96,9 @@ Gaya penyajian memengaruhi cara pembaca menerima informasi. Ini sangat bergantun
 
 Pilih gaya yang sesuai dengan media tempat tulisanmu akan muncul, serta kebiasaan pembacanya.
 
-## 5. Kenali Audiensmu (Who)
+<span id="audiens"></span>
+
+### 5. Kenali Audiensmu (Who)
 
 Mengetahui siapa yang akan membaca tulisanmu sangat penting agar kamu bisa menyesuaikan:
 
@@ -85,7 +109,9 @@ Mengetahui siapa yang akan membaca tulisanmu sangat penting agar kamu bisa menye
 
 Menulis untuk siswa sekolah tentu berbeda dengan menulis untuk profesional. Semakin kamu mengenal audiensmu, semakin efektif pesan yang kamu sampaikan.
 
-## 6. Susun Kerangka Sebelum Menulis (When → Sekarang, Sebelum Mulai)
+<span id="outline"></span>
+
+### 6. Susun Kerangka Sebelum Menulis (When → Sekarang, Sebelum Mulai)
 
 Langkah ini sering dilewatkan, padahal menyusun kerangka atau **outline** bisa sangat menghemat waktu dan tenaga saat menulis.
 
@@ -100,7 +126,9 @@ Topik: *Kenapa Menulis Itu Penting*
 
 Outline ini berfungsi seperti blueprint — memberi arah dan struktur yang jelas sebelum kamu mulai merangkai kalimat.
 
-## Penutup
+<span id="penutup"></span>
+
+### Penutup: Menulis dengan 5W+1H
 
 Menulis akan terasa lebih mudah ketika kamu tahu **apa yang ingin ditulis, untuk siapa, dan bagaimana cara menyampaikannya.** Framework ini tidak dimaksudkan sebagai aturan kaku, tetapi sebagai alat bantu yang bisa membuat proses menulis lebih lancar dan hasilnya lebih kuat.
 

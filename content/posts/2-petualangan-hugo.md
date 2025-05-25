@@ -1,93 +1,111 @@
 ---
-title: "Petualangan Membuat Blog dengan Hugo + Azure Static Web"
+title: "Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama"
 date: 2025-05-01T11:00:00+08:00
 tags: ["hugo", "azure", "static site", "papermod"]
-categories: ["Teknologi"]
+categories: ["Blog"]
 draft: false
 ---
-Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-*upload*. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.
 
-Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, setiap 6 bulan sekali kena virus, dan saya harus restore ke previous backup. Proses restore pun agak menyebalkan, karena harus proses delete dan reupload ftp.
+---
+> #### Outline Artikel
+> 1. [Pendahuluan: Masalah dengan WordPress](#pendahuluan)
+> 2. [Tahap 1: Menentukan Arah dan Stack Teknologi](#tahap-1)
+> 3. [Tahap 2: Setup Hugo Lokal Tanpa Install](#tahap-2)
+> 4. [Tahap 3: Menambahkan Tema PaperMod](#tahap-3)
+> 5. [Tahap 4: Menulis dan Menampilkan Postingan Pertama](#tahap-4)
+> 6. [Tahap 5: Otomatisasi Deploy dengan GitHub Actions](#tahap-5)
+> 7. [Tahap 6: Menambah Fitur Search, Tag, dan Kategori](#tahap-6)
+> 8. [Tahap 7: Menyisipkan Gambar dengan Caption](#tahap-7)
+> 9. [Penutup: Apa yang Saya Pelajari](#penutup)
+---
 
-## 1. Ide Awal
+<span id="pendahuluan"></span>
 
-Tujuan utama blog ini:
+Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: *apa nggak ada solusi yang lebih simpel, murah, dan aman?*
 
-- Sesimple mungkin
-- Bisa baca atau nulis pakai `.md`
-- Bisa upload gambar sesuai post (misal: `/images/judul-post/`)
-- Bisa di-*deploy* ke Azure (karena udah ada akun gratis)
-- Bisa upload lewat FTP/manual kalau perlu
+Dari situlah petualangan ini dimulai. Saya menemukan Hugo — static site generator yang ringan dan cepat — dan memadukannya dengan Azure Static Web Apps. Yang tadinya hanya ingin blog sederhana, ternyata berkembang jadi mini-proyek dengan CI/CD, fitur pencarian, tagging, dan tampilan kece berkat PaperMod.
 
-## 2. Pemilihan Stack
+<span id="tahap-1"></span>
 
-Setelah diskusi (dengan Chat GPT), dan berdasarkan pengalaman Wordpress sebelumnya, akhirnya dipilih:
+### Tahap 1: Menentukan Arah dan Stack Teknologi
 
-- **Hugo** sebagai Static Site Generator (SSG)
-- **PaperMod** sebagai tema
-- **Azure Static Web Apps** untuk hosting
-- **GitHub Actions** untuk auto deploy (CI/CD)
+Sebelum menyentuh kode, saya perlu memetakan kebutuhan. Tujuannya jelas:
 
-Kenapa Hugo?
+- Blog sesimpel mungkin
+- Bisa ditulis pakai `.md`
+- Mendukung gambar sesuai posting (struktur `/images/nama-post/`)
+- Bisa dideploy ke Azure
+- Masih bisa manual lewat FTP kalau terpaksa
 
-- Super cepat
-- Native support Markdown
-- Outputnya HTML statis, cocok banget buat Azure
+Setelah eksplorasi dan ngobrol dengan beberapa tools (termasuk ChatGPT), saya putuskan kombinasi berikut:
 
-Sebenernya niat awal buat sendiri, menggunakan html, css, dan js. Tapi kalau sudah ada yang sesuai keinginan, why not?.
+- Hugo untuk generatornya
+- PaperMod untuk tema
+- Azure Static Web Apps sebagai hosting
+- GitHub Actions sebagai jalur deploy otomatis
 
-## 3. Setup Hugo Lokal (Tanpa Install)
+<span id="tahap-2"></span>
 
-Download Hugo Extended ZIP dari GitHub:
+### Tahap 2: Setup Hugo Lokal Tanpa Install
 
-- [https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
+Langkah pertama adalah membuat fondasi blog-nya. Enaknya Hugo, kita bisa pakai executable tanpa harus instalasi penuh.
 
-Ekstrak `hugo.exe` ke folder mana saja. Jalankan langsung dari terminal tanpa masuk PATH.
+Unduh Hugo Extended dari:  
+[https://github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
+
+Setelah diekstrak, cukup jalankan:
 
 ```bash
 .\hugo.exe new site blog-saya
 cd blog-saya
 ```
 
-**figure: `.\hugo.exe` dijalankan langsung tanpa instalasi**
+Dengan ini, kita sudah punya struktur dasar proyek Hugo.
 
-## 4. Menambahkan Tema PaperMod
+<span id="tahap-3"></span>
 
-Download PaperMod dari [https://github.com/adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+### Tahap 3: Menambahkan Tema PaperMod
 
-Ekstrak dan taruh di:
+Setelah struktur dasar siap, kita butuh tampilan yang enak dilihat. Pilihan saya jatuh ke PaperMod — tema clean, cepat, dan aktif dikembangkan.
+
+Download dari:  
+[https://github.com/adityatelange/hugo-PaperMod](https://github.com/adityatelange/hugo-PaperMod)
+
+Taruh hasilnya di:
 
 ```text
 blog-saya/themes/PaperMod/
 ```
 
-Lalu edit `config.toml`:
+Edit `config.toml`:
 
 ```toml
-baseURL = "https://namablog.azurestaticapps.net/" #atau localhost
+baseURL = "https://namablog.azurestaticapps.net/"
 languageCode = "id"
 title = "Blog Saya"
 theme = "PaperMod"
 
 [params]
   homeInfoParams = { Title = "Selamat datang", Content = "Blog ini ditulis dengan Markdown dan dibangun dengan Hugo + Azure." }
-
-[outputs]
-  home = ["HTML", "JSON"]
-
-[params]
   ShowSearch = true
   ShowReadingTime = true
   ShowShareButtons = true
+
+[outputs]
+  home = ["HTML", "JSON"]
 ```
 
-## 5. Menulis Post Pertama
+<span id="tahap-4"></span>
+
+### Tahap 4: Menulis dan Menampilkan Postingan Pertama
+
+Setelah konfigurasi dasar beres, saatnya mencoba menulis posting pertama.
 
 ```bash
 .\hugo.exe new posts/halo-dunia.md
 ```
 
-Isi Markdown:
+Isi Markdown-nya seperti ini:
 
 ```markdown
 ---
@@ -104,27 +122,29 @@ Ini adalah postingan pertama saya. Gambar bisa ditaruh di `/static/images/halo-d
 figure: contoh penyisipan gambar di Markdown
 ```
 
-Taruh gambar kamu di:
+Jangan lupa menaruh gambar kamu di:
 
 ```text
 static/images/halo-dunia/foto1.jpg
 ```
 
-## 6. Menjalankan Lokal
+Untuk melihat hasilnya:
 
 ```bash
 .\hugo.exe server
 ```
 
-Buka [http://localhost:1313](http://localhost:1313) untuk lihat hasilnya.
+Buka `http://localhost:1313`.
 
-**image: hasil tampilan blog lokal di browser**
+<span id="tahap-5"></span>
 
-## 7. Menyiapkan Deploy ke Azure
+### Tahap 5: Otomatisasi Deploy dengan GitHub Actions
+
+Blog sudah berjalan lokal. Sekarang kita ingin setiap perubahan otomatis di-deploy ke Azure.
 
 1. Buat repository GitHub
-2. Push semua isi project Hugo
-3. Tambahkan folder `.github/workflows/azure.yml`:
+2. Push isi blog
+3. Tambahkan file workflow berikut ke `.github/workflows/azure.yml`:
 
 ```yaml
 name: Azure Static Web Apps CI/CD
@@ -154,42 +174,29 @@ jobs:
           app_location: "public"
 ```
 
-## 8. Fitur Search, Tag, Categories
+<span id="tahap-6"></span>
 
-- `index.json` dibuat otomatis oleh Hugo untuk search
-- PaperMod pakai JavaScript (Fuse.js) untuk cari dari isi `index.json`
-- Tags dan Categories diambil dari front matter masing-masing `.md`
+### Tahap 6: Menambah Fitur Search, Tag, dan Kategori
 
-{{< img src="https://stdwanprod.blob.core.windows.net/dannyaguspublic/img/202505/20250502092521-petualanganHugo-tampilanSearchTagsCategories.png" alt="Tampilan search, tags, categories" width="400" caption="Gambar 2: Tampilan navigasi search, tags, categories pada Hugo PaperMod." >}}
+Agar blog lebih nyaman dijelajahi, saya aktifkan fitur pencarian dan kategorisasi.
 
+- Hugo secara otomatis membuat `index.json` untuk search
+- PaperMod menggunakan Fuse.js untuk pencarian berbasis JavaScript
+- Tag dan kategori diambil dari front matter setiap postingan
 
-## 9. Menyisipkan Gambar dengan Caption
+<span id="tahap-7"></span>
 
-Salah satu kebutuhan umum saat menulis blog (terutama tutorial atau dokumentasi) adalah menyisipkan gambar dengan **caption**, seperti `Figure 1: ...`. PaperMod mendukung HTML dalam Markdown, tapi agar lebih praktis dan rapi, kita bisa membuat **shortcode custom bernama `img`**.
+### Tahap 7: Menyisipkan Gambar dengan Caption
 
-### 1️⃣ Menyimpan Gambar
+Agar dokumentasi lebih rapi, saya buat shortcode `img` sendiri.
 
-Dalam kasus ini, gambar-gambar disimpan di Azure Blob Storage agar mudah diakses secara publik. Struktur dan pengaturannya akan dibahas lebih detail nanti di bagian tersendiri.
-
-Contoh URL gambar:
-
-```
-https://stdwanprod.blob.core.windows.net/dannyaguspublic/img/202505/20250502092521-petualanganHugo-tampilanSearchTagsCategories.png
-```
-
-> Keuntungan menyimpan di storage: tidak membebani repo GitHub, dan mudah dikelola terpisah dari konten Markdown.
-
----
-
-### 2️⃣ Menambahkan Shortcode `img`
-
-Buat file di:
+Buat file:
 
 ```
 layouts/shortcodes/img.html
 ```
 
-Isi file:
+Isi:
 
 ```html
 <figure style="display: flex; flex-direction: column; align-items: center; text-align: center; margin: 1.5em 0;">
@@ -202,32 +209,23 @@ Isi file:
 </figure>
 ```
 
-Shortcode ini:
-
-- Menampilkan gambar dengan ukuran fleksibel dan responsif.
-- Memposisikan caption di tengah, mirip gaya tesis atau laporan ilmiah.
-
----
-
-### 3️⃣ Contoh Penggunaan
-
-Di file Markdown (`.md`), gunakan seperti ini:
+Contoh penggunaan di Markdown:
 
 ```md
 {{< img src="https://stdwanprod.blob.core.windows.net/dannyaguspublic/img/202505/20250502092521-petualanganHugo-tampilanSearchTagsCategories.png" alt="Tampilan search, tags, categories" width="500" caption="Gambar 2: Tampilan navigasi search, tags, categories pada Hugo PaperMod." >}}
 ```
 
-Hasilnya akan menampilkan gambar dan caption seperti pada bagian sebelumnya. Kamu juga bisa mengganti URL dengan gambar dari lokal (`/images/...`) jika tidak pakai Azure Storage.
+<span id="penutup"></span>
 
----
+### Penutup: Apa yang Saya Pelajari
 
-## Penutup
+Awalnya saya cuma ingin blog yang ringan dan nggak ribet. Tapi perjalanan ini justru membuka banyak hal:
 
-Petualangan ini baru dimulai. Next:
+- Belajar Hugo
+- CI/CD dengan GitHub Actions
+- Hosting gambar di Azure Blob
+- Menyusun sistem dokumentasi yang modular
 
-- Memastikan semua fitur saat ini baik baik saja, terutama search.
-- Menambahkan fitur multilingual
-- Eksperimen dengan halaman khusus proyek & dokumentasi
-- Berfikir mengenai deployment, apakah sesuai harganya?
+Semua dimulai dari file `.md`. Kini saya punya blog yang aman, ringan, dan sepenuhnya dalam kendali saya.
 
-> Semua ini dimulai dari `.md` sederhana. Tapi hasilnya? Sebuah blog modern, ringan, dan powerful.
+Selanjutnya? Saya ingin coba fitur multilingual, halaman khusus proyek, dan mungkin analisis biaya untuk jangka panjang.

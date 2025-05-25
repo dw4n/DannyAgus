@@ -6,6 +6,18 @@ categories: ["Menulis"]
 draft: false
 ---
 
+---
+> #### Outline Artikel
+> 1. [Pendahuluan: Satu Topik, Banyak Pendekatan](#pendahuluan)
+> 2. [1. Expository — Runtut, Terstruktur, dan Netral](#expository)
+> 3. [2. Listicle — Ringkas, Praktis, dan Populer](#listicle)
+> 4. [3. Reflective + Informative — Cerita yang Mengandung Pembelajaran](#reflective)
+> 5. [Tabel Perbandingan Pendekatan](#tabel-perbandingan)
+> 6. [Menemukan Gaya Menulismu Sendiri](#menemukan-gaya)
+---
+
+<span id="pendahuluan"></span>
+
 Menulis tidak punya satu rumus yang baku. Satu topik bisa dikembangkan dalam banyak arah — tergantung pada **tujuan, audiens, dan gaya penyajian** yang dipilih. Untuk membuktikannya, saya mencoba menulis satu topik: *“framework menulis sebelum mulai membuat artikel atau esai”*, dalam tiga pendekatan berbeda:
 
 1. **Expository** – menjelaskan secara sistematis  
@@ -16,7 +28,9 @@ Catatan: Yang dibahas di sini adalah **pendekatan penyajian**, bukan jenis tulis
 
 Artikel ini akan membandingkan ketiga pendekatan tersebut — melihat karakteristiknya, kelebihan masing-masing, serta situasi terbaik untuk menggunakannya. Jika kamu sedang mencari gaya menulis yang cocok dengan dirimu, panduan ini bisa jadi titik awal yang berguna.
 
-## 1. Expository — Runtut, Terstruktur, dan Netral
+<span id="expository"></span>
+
+### 1. Expository — Runtut, Terstruktur, dan Netral
 
 Pendekatan ini menyajikan gagasan secara sistematis dan bertahap. Fokusnya adalah memberi pemahaman utuh kepada pembaca.
 
@@ -27,7 +41,9 @@ Versi ini ditulis dengan gaya informatif, disertai subjudul yang membagi proses 
 
 Gaya ini cocok digunakan ketika kamu menulis artikel edukatif, tutorial, atau materi pembelajaran yang membutuhkan penjelasan mendalam. Nada tulisannya cenderung netral dan objektif — tidak emosional, tapi tetap komunikatif.
 
-## 2. Listicle — Ringkas, Praktis, dan Populer
+<span id="listicle"></span>
+
+### 2. Listicle — Ringkas, Praktis, dan Populer
 
 Dalam versi ini, isi disajikan dalam bentuk daftar bernomor. Format ini sangat umum di blog, newsletter, dan media sosial — karena pembaca bisa langsung menangkap inti tanpa harus membaca panjang.
 
@@ -38,7 +54,9 @@ Listicle menawarkan efisiensi. Gaya bahasanya ringan, langsung ke poin, dan enak
 
 Sangat cocok digunakan untuk audiens yang menginginkan jawaban langsung atau ringkasan praktis yang bisa diaplikasikan segera.
 
-## 3. Reflective + Informative — Cerita yang Mengandung Pembelajaran
+<span id="reflective"></span>
+
+### 3. Reflective + Informative — Cerita yang Mengandung Pembelajaran
 
 Pendekatan ini membuka tulisan dengan kisah pribadi — lalu bertransisi ke pembelajaran yang bisa dipetik. Ini bukan sekadar curhat, tapi cara menyampaikan pengalaman sebagai jembatan menuju insight.
 
@@ -49,7 +67,9 @@ Nada tulisan ini lebih personal, terkadang rentan, tapi justru di situlah kekuat
 
 Gaya ini cocok untuk blog pribadi, artikel reflektif, atau storytelling edukatif yang bertujuan mengajak pembaca ikut merenung.
 
-## Tabel Perbandingan
+<span id="tabel-perbandingan"></span>
+
+### Tabel Perbandingan Pendekatan
 
 | Aspek               | Expository                           | Listicle                          | Reflective + Informative                |
 |---------------------|---------------------------------------|-----------------------------------|-----------------------------------------|
@@ -60,7 +80,9 @@ Gaya ini cocok untuk blog pribadi, artikel reflektif, atau storytelling edukatif
 | **Kapan digunakan** | Edukasi, tutorial, artikel panjang    | Blog ringan, media sosial, email  | Blog pribadi, storytelling reflektif    |
 | **Waktu baca**      | Sedang–lama                           | Singkat                           | Sedang–lama                             |
 
-## Menemukan Gaya Menulismu Sendiri
+<span id="menemukan-gaya"></span>
+
+### Menemukan Gaya Menulismu Sendiri
 
 Tiga pendekatan di atas membuktikan bahwa menulis adalah proses yang fleksibel. Kamu bisa menyampaikan ide yang sama dengan cara yang sangat berbeda — tergantung pada:
 

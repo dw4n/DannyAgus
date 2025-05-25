@@ -6,8 +6,43 @@
     <description>Recent content in Categories on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Sat, 17 May 2025 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 25 May 2025 22:40:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thinking Framework</title>
+      <link>http://localhost:1313/categories/thinking-framework/</link>
+      <pubDate>Sun, 25 May 2025 22:40:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/thinking-framework/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Manajemen Proyek</title>
+      <link>http://localhost:1313/categories/manajemen-proyek/</link>
+      <pubDate>Sun, 25 May 2025 22:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/manajemen-proyek/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deep Learning</title>
+      <link>http://localhost:1313/categories/deep-learning/</link>
+      <pubDate>Sun, 25 May 2025 16:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/deep-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Machine Learning</title>
+      <link>http://localhost:1313/categories/machine-learning/</link>
+      <pubDate>Sun, 25 May 2025 16:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Konsep Pemrograman</title>
+      <link>http://localhost:1313/categories/konsep-pemrograman/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/categories/konsep-pemrograman/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Menulis</title>
       <link>http://localhost:1313/categories/menulis/</link>
@@ -16,17 +51,10 @@
       <description></description>
     </item>
     <item>
-      <title>Teknologi</title>
-      <link>http://localhost:1313/categories/teknologi/</link>
+      <title>Blog</title>
+      <link>http://localhost:1313/categories/blog/</link>
       <pubDate>Fri, 02 May 2025 14:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/categories/teknologi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Umum</title>
-      <link>http://localhost:1313/categories/umum/</link>
-      <pubDate>Thu, 01 May 2025 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/categories/umum/</guid>
+      <guid>http://localhost:1313/categories/blog/</guid>
       <description></description>
     </item>
   </channel>

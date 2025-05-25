@@ -6,16 +6,48 @@
     <description>Recent content in Azure on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Fri, 02 May 2025 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 23 May 2025 00:00:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Memahami Azure Eventing &amp; Messaging: Service Bus, Event Hub, dan Event Grid</title>
+      <link>http://localhost:1313/posts/10_memahami_azure_eventing_messaging_service_bus_event_hub_dan_event_grid/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/10_memahami_azure_eventing_messaging_service_bus_event_hub_dan_event_grid/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#pengantar&#34;&gt;Pengantar: Azure dan Arsitektur Event-Driven&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#service-bus&#34;&gt;Apa Itu Azure Service Bus?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#event-hub&#34;&gt;Apa Itu Azure Event Hub?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#event-grid&#34;&gt;Apa Itu Azure Event Grid?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabel-perbandingan&#34;&gt;Tabel Perbandingan Fitur Utama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kapan-menggunakan&#34;&gt;Kapan Menggunakan Masing-Masing?&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;pengantar&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Dalam arsitektur modern berbasis cloud, komunikasi antar sistem dan layanan menjadi komponen inti. Di platform Azure, Microsoft menyediakan beberapa layanan yang dirancang khusus untuk menangani berbagai jenis komunikasi dan event: &lt;strong&gt;Azure Service Bus&lt;/strong&gt;, &lt;strong&gt;Event Hub&lt;/strong&gt;, dan &lt;strong&gt;Event Grid&lt;/strong&gt;. Meskipun semuanya terkesan “mirip” karena berurusan dengan data dan peristiwa, masing-masing memiliki tujuan spesifik dan cara kerja berbeda.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Pertimbangan Teknis dan Biaya Pembentukan Blog Ini</title>
       <link>http://localhost:1313/posts/3-deployment-strategy-hugo/</link>
       <pubDate>Fri, 02 May 2025 14:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/3-deployment-strategy-hugo/</guid>
-      <description>&lt;p&gt;Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai &lt;strong&gt;deployment&lt;/strong&gt; dan &lt;strong&gt;biaya operasional&lt;/strong&gt; jangka panjang. Blog ini dibangun menggunakan &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; dan tema &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt;, yang ringan dan fleksibel.&lt;/p&gt;
-&lt;p&gt;Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.&lt;/p&gt;
-&lt;h2 id=&#34;arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/h2&gt;
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#evaluasi&#34;&gt;Evaluasi Kebutuhan dan Potensi Masalah&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#strategi&#34;&gt;Strategi yang Saya Ambil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#biaya&#34;&gt;Simulasi Biaya&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#alternatif-hosting&#34;&gt;Perbandingan Alternatif Hosting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#upgrade&#34;&gt;Kapan Sebaiknya Upgrade?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kesimpulan&#34;&gt;Kesimpulan&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;arsitektur-awal&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/h3&gt;
 &lt;p&gt;Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Komponen utama:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -27,12 +59,27 @@
 &lt;p&gt;&lt;strong&gt;Estimasi awal kebutuhan:&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web</title>
+      <title>Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama</title>
       <link>http://localhost:1313/posts/2-petualangan-hugo/</link>
       <pubDate>Thu, 01 May 2025 11:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/2-petualangan-hugo/</guid>
-      <description>&lt;p&gt;Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-&lt;em&gt;upload&lt;/em&gt;. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.&lt;/p&gt;
-&lt;p&gt;Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress + PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, setiap 6 bulan sekali kena virus, dan saya harus restore ke previous backup. Proses restore pun agak menyebalkan, karena harus proses delete dan reupload ftp.&lt;/p&gt;</description>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#pendahuluan&#34;&gt;Pendahuluan: Masalah dengan WordPress&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-1&#34;&gt;Tahap 1: Menentukan Arah dan Stack Teknologi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-2&#34;&gt;Tahap 2: Setup Hugo Lokal Tanpa Install&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-3&#34;&gt;Tahap 3: Menambahkan Tema PaperMod&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-4&#34;&gt;Tahap 4: Menulis dan Menampilkan Postingan Pertama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-5&#34;&gt;Tahap 5: Otomatisasi Deploy dengan GitHub Actions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-6&#34;&gt;Tahap 6: Menambah Fitur Search, Tag, dan Kategori&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tahap-7&#34;&gt;Tahap 7: Menyisipkan Gambar dengan Caption&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#penutup&#34;&gt;Penutup: Apa yang Saya Pelajari&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;pendahuluan&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: &lt;em&gt;apa nggak ada solusi yang lebih simpel, murah, dan aman?&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

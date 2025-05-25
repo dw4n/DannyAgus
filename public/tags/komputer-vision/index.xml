@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Komputer Vision on Danny Agus</title>
+    <link>http://localhost:1313/tags/komputer-vision/</link>
+    <description>Recent content in Komputer Vision on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Sun, 25 May 2025 11:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/komputer-vision/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mengenal CNN: Cara Mesin Belajar Melihat Gambar</title>
+      <link>http://localhost:1313/posts/13_mengenal_cnn_cara_mesin_belajar_melihat_gambar/</link>
+      <pubDate>Sun, 25 May 2025 11:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/13_mengenal_cnn_cara_mesin_belajar_melihat_gambar/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-cnn&#34;&gt;Apa Itu CNN dan Mengapa Penting?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#melihat-seperti-manusia&#34;&gt;CNN Membantu Mesin Melihat Seperti Manusia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cara-kerja-cnn&#34;&gt;Cara Kerja CNN: Dari Fitur Sederhana ke Kompleks&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#penggunaan-cnn&#34;&gt;Contoh Penggunaan CNN dalam Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#dampak-cnn&#34;&gt;Kenapa CNN Mengubah Cara Mesin Memahami Dunia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cnn-visual-mesin&#34;&gt;CNN sebagai Tonggak Kecerdasan Visual Mesin&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-cnn&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Convolutional Neural Network atau CNN adalah salah satu teknologi paling penting dalam dunia machine learning, terutama dalam pengolahan gambar.&lt;/strong&gt; Dalam artikel ini, kita akan membahas lima hal utama yang perlu diketahui untuk memahami CNN dengan cara yang sederhana: apa itu CNN secara umum, bagaimana ia bekerja seperti &amp;ldquo;mata&amp;rdquo; mesin, bagaimana CNN mengenali pola-pola visual, contoh penggunaan CNN dalam kehidupan sehari-hari, dan kenapa teknologi ini sangat penting untuk masa depan kecerdasan buatan.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

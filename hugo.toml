@@ -2,6 +2,14 @@ baseURL = "https://dannyagus.com/"
 languageCode = "id"
 title = "Danny Agus"
 theme = "PaperMod"
+pagination.pagerSize = 5
+ShowToc = true
+TocOpen = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [taxonomies]
   tag = "tags"
@@ -12,10 +20,11 @@ theme = "PaperMod"
   ShowSearch = true
   ShowArchive = true
   showDate = true
+  ShowPostNavLinks = true
 
 [params.homeInfoParams]
   Title = "Selamat datang 👋"
-  Content = "Ini blog markdown saya. Kumpulan tulisan, tips, dan dokumentasi pribadi."
+  Content = "Ini blog markdown saya. Kumpulan tulisan, tips, dan dokumentasi pribadi. Hubungi saya di danny@dwan.co.id!"
 
 [[menu.main]]
   name = "Home"
@@ -30,17 +39,14 @@ theme = "PaperMod"
 [[menu.main]]
   name = "Archive"
   url = "archives/"
-  weight = 3
+  weight = 4
 
 [[menu.main]]
   name = "Tags"
   url = "tags/"
-  weight = 4
-
-[[menu.main]]
-  name = "Categories"
-  url = "categories/"
   weight = 5
+
+
 
 [outputs]
   home = ["HTML", "JSON"]

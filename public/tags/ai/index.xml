@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ai on Danny Agus</title>
+    <link>http://localhost:1313/tags/ai/</link>
+    <description>Recent content in Ai on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Sun, 25 May 2025 16:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning vs Deep Learning: Apa Bedanya dan Kapan Digunakan?</title>
+      <link>http://localhost:1313/posts/21_machine_learning_vs_deep_learning/</link>
+      <pubDate>Sun, 25 May 2025 16:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/21_machine_learning_vs_deep_learning/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#perbedaan-umum&#34;&gt;Perbedaan ML dan DL secara Umum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-ml&#34;&gt;Apa Itu Machine Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-dl&#34;&gt;Apa Itu Deep Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kapan-menggunakan&#34;&gt;Kapan Menggunakan ML vs DL?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#contoh-aplikasi&#34;&gt;Contoh Aplikasi di Dunia Nyata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabel-perbandingan&#34;&gt;Tabel Perbandingan ML vs DL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kesimpulan&#34;&gt;Kesimpulan dan Pemilihan Pendekatan&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;perbedaan-umum&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning dan deep learning sering disebut bersamaan, tapi sebenarnya keduanya memiliki perbedaan penting dalam pendekatan, struktur, dan kebutuhan datanya.&lt;/strong&gt; Artikel ini akan menjelaskan perbedaan mendasar antara keduanya dengan bahasa yang mudah dipahami. Kita akan melihat bagaimana mereka bekerja, apa kekuatannya masing-masing, kapan sebaiknya digunakan, dan apa saja contoh nyata dalam kehidupan sehari-hari.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Machine Learning 101: Cara Mesin Belajar dari Data</title>
+      <link>http://localhost:1313/posts/19_machine_learning_101_cara_mesin_belajar_dari_data/</link>
+      <pubDate>Sun, 25 May 2025 15:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/19_machine_learning_101_cara_mesin_belajar_dari_data/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-ml&#34;&gt;Apa Itu Machine Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#beda-dengan-tradisional&#34;&gt;Perbedaan dengan Pemrograman Tradisional&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#jenis-ml&#34;&gt;Jenis Pendekatan Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aplikasi-ml&#34;&gt;Aplikasi Machine Learning di Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#fondasi-ai&#34;&gt;Machine Learning sebagai Fondasi AI Lanjutan&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-ml&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning adalah cara agar mesin bisa belajar dari data dan membuat keputusan tanpa harus diprogram aturan satu per satu.&lt;/strong&gt; Dalam artikel ini, kita akan membahas apa itu machine learning, mengapa konsep ini penting dalam dunia teknologi modern, jenis-jenis pendekatan yang digunakan, dan contoh nyata dalam kehidupan sehari-hari. Kita juga akan melihat bagaimana machine learning menjadi dasar dari cabang yang lebih canggih seperti deep learning.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Apa Itu Deep Learning? Cara Mesin Mengenali Gambar, Suara, dan Bahasa</title>
+      <link>http://localhost:1313/posts/22_apa_itu_deep_learning/</link>
+      <pubDate>Sun, 25 May 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/22_apa_itu_deep_learning/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-deep-learning&#34;&gt;Apa Itu Deep Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#perbedaan-dl-ml&#34;&gt;Perbedaan Deep Learning dan Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kapan-dl-digunakan&#34;&gt;Kapan Deep Learning Cocok Digunakan?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aplikasi-dl&#34;&gt;Aplikasi Deep Learning dalam Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kekuatan-keterbatasan&#34;&gt;Kekuatan dan Keterbatasan Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#jenis-model-dl&#34;&gt;Beragam Model dalam Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-deep-learning&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Deep learning adalah cabang dari machine learning yang membuat mesin mampu mengenali pola rumit dari data besar dan tidak terstruktur seperti gambar, suara, dan bahasa.&lt;/strong&gt; Artikel ini akan membahas apa itu deep learning, bagaimana cara kerjanya, mengapa ia disebut “deep”, dan kapan pendekatan ini digunakan. Kita juga akan melihat berbagai contoh aplikasinya yang semakin dekat dengan kehidupan kita, serta bagaimana deep learning menjadi fondasi dari teknologi AI modern seperti pengenalan wajah dan chatbot cerdas.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

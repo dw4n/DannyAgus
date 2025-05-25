@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa | Danny Agus</title>
+<meta name="keywords" content="machine learning, rnn, neural network, nlp, kecerdasan buatan, pemula">
+<meta name="description" content="
+
+Outline Artikel
+
+Apa Itu RNN dan Mengapa Penting?
+Bagaimana RNN Memahami Urutan
+Contoh Penggunaan RNN di Kehidupan Nyata
+Keterbatasan RNN dan Solusinya
+Kenapa Memahami RNN Itu Relevan
+
+
+
+Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa">
+  <meta property="og:description" content=" Outline Artikel Apa Itu RNN dan Mengapa Penting? Bagaimana RNN Memahami Urutan Contoh Penggunaan RNN di Kehidupan Nyata Keterbatasan RNN dan Solusinya Kenapa Memahami RNN Itu Relevan Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-25T12:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-25T12:00:00+08:00">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Rnn">
+    <meta property="article:tag" content="Neural Network">
+    <meta property="article:tag" content="Nlp">
+    <meta property="article:tag" content="Kecerdasan Buatan">
+    <meta property="article:tag" content="Pemula">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa">
+<meta name="twitter:description" content="
+
+Outline Artikel
+
+Apa Itu RNN dan Mengapa Penting?
+Bagaimana RNN Memahami Urutan
+Contoh Penggunaan RNN di Kehidupan Nyata
+Keterbatasan RNN dan Solusinya
+Kenapa Memahami RNN Itu Relevan
+
+
+
+Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa",
+      "item": "http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa",
+  "name": "Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa",
+  "description": " Outline Artikel Apa Itu RNN dan Mengapa Penting? Bagaimana RNN Memahami Urutan Contoh Penggunaan RNN di Kehidupan Nyata Keterbatasan RNN dan Solusinya Kenapa Memahami RNN Itu Relevan Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.\n",
+  "keywords": [
+    "machine learning", "rnn", "neural network", "nlp", "kecerdasan buatan", "pemula"
+  ],
+  "articleBody": " Outline Artikel Apa Itu RNN dan Mengapa Penting? Bagaimana RNN Memahami Urutan Contoh Penggunaan RNN di Kehidupan Nyata Keterbatasan RNN dan Solusinya Kenapa Memahami RNN Itu Relevan Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.\nRNN dirancang untuk memproses informasi yang bersifat berurutan, seperti kata-kata dalam kalimat atau nada dalam musik. Berbeda dari jaringan saraf biasa yang melihat data secara terpisah, RNN “mengingat” informasi sebelumnya saat memproses data yang baru. Hal ini membuat RNN sangat cocok digunakan untuk tugas-tugas seperti mengenali ucapan atau memahami struktur kalimat, karena makna sering kali bergantung pada urutan kata atau konteks sebelumnya. Mekanisme ini menyerupai cara kita membaca: satu kata bisa bermakna berbeda tergantung kata-kata yang datang sebelum atau sesudahnya.\nContoh penggunaan RNN sudah ada di banyak aplikasi yang mungkin kita gunakan setiap hari, meskipun tidak selalu terlihat secara langsung. Saat kamu mengetik pesan di ponsel dan muncul saran kata berikutnya, atau saat menggunakan Google Translate, RNN bekerja di balik layar untuk memahami pola dalam bahasa dan konteks. Dalam dunia bisnis, RNN juga digunakan untuk menganalisis sentimen pelanggan dari ulasan, atau memprediksi tren berdasarkan data waktu. Ia belajar dari data sebelumnya untuk menebak kemungkinan yang akan datang, seperti halnya kita menebak akhir cerita dari bab-bab sebelumnya.\nMeski sangat berguna, RNN memiliki keterbatasan, terutama dalam mengingat informasi yang terlalu jauh ke belakang. Karena strukturnya bergantung pada informasi sebelumnya yang terus diperbarui, informasi yang muncul di awal urutan bisa perlahan ‘terlupakan’ ketika data semakin panjang. Untuk mengatasi ini, dikembangkanlah variasi dari RNN seperti LSTM (Long Short-Term Memory) dan GRU (Gated Recurrent Unit), yang mampu menyimpan informasi penting lebih lama dan memutuskan mana yang harus diingat atau dilupakan. Inovasi ini membuat RNN lebih handal dalam menangani tugas-tugas yang kompleks dan panjang seperti dialog atau teks artikel.\nDengan mengenal cara kerja RNN, kita bisa melihat bagaimana mesin semakin mampu memahami komunikasi manusia secara lebih alami. Kemampuan untuk “mengingat” dan mengolah urutan menjadikan RNN bagian penting dalam perkembangan kecerdasan buatan yang lebih manusiawi. Meski tantangannya masih banyak, teknologi ini membuka jalan bagi aplikasi-aplikasi yang semakin cerdas, dari asisten virtual hingga sistem penerjemah multibahasa. Bagi kita sebagai pengguna, memahami RNN tidak hanya memperkaya wawasan, tapi juga membantu kita menggunakan teknologi dengan lebih sadar dan kritis.\n",
+  "wordCount" : "438",
+  "inLanguage": "en",
+  "datePublished": "2025-05-25T12:00:00+08:00",
+  "dateModified": "2025-05-25T12:00:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa
+    </h1>
+    <div class="post-meta"><span title='2025-05-25 12:00:00 +0800 +08'>May 25, 2025 Jam 12</span>
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#apa-itu-rnn">Apa Itu RNN dan Mengapa Penting?</a></li>
+<li><a href="#cara-kerja-rnn">Bagaimana RNN Memahami Urutan</a></li>
+<li><a href="#contoh-penggunaan">Contoh Penggunaan RNN di Kehidupan Nyata</a></li>
+<li><a href="#keterbatasan">Keterbatasan RNN dan Solusinya</a></li>
+<li><a href="#relevansi-rnn">Kenapa Memahami RNN Itu Relevan</a></li>
+</ol></blockquote>
+<hr>
+<p><span id="apa-itu-rnn"></span></p>
+<p><strong>Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN.</strong> Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.</p>
+<p><span id="cara-kerja-rnn"></span></p>
+<p><strong>RNN dirancang untuk memproses informasi yang bersifat berurutan, seperti kata-kata dalam kalimat atau nada dalam musik.</strong> Berbeda dari jaringan saraf biasa yang melihat data secara terpisah, RNN “mengingat” informasi sebelumnya saat memproses data yang baru. Hal ini membuat RNN sangat cocok digunakan untuk tugas-tugas seperti mengenali ucapan atau memahami struktur kalimat, karena makna sering kali bergantung pada urutan kata atau konteks sebelumnya. Mekanisme ini menyerupai cara kita membaca: satu kata bisa bermakna berbeda tergantung kata-kata yang datang sebelum atau sesudahnya.</p>
+<p><span id="contoh-penggunaan"></span></p>
+<p><strong>Contoh penggunaan RNN sudah ada di banyak aplikasi yang mungkin kita gunakan setiap hari, meskipun tidak selalu terlihat secara langsung.</strong> Saat kamu mengetik pesan di ponsel dan muncul saran kata berikutnya, atau saat menggunakan Google Translate, RNN bekerja di balik layar untuk memahami pola dalam bahasa dan konteks. Dalam dunia bisnis, RNN juga digunakan untuk menganalisis sentimen pelanggan dari ulasan, atau memprediksi tren berdasarkan data waktu. Ia belajar dari data sebelumnya untuk menebak kemungkinan yang akan datang, seperti halnya kita menebak akhir cerita dari bab-bab sebelumnya.</p>
+<p><span id="keterbatasan"></span></p>
+<p><strong>Meski sangat berguna, RNN memiliki keterbatasan, terutama dalam mengingat informasi yang terlalu jauh ke belakang.</strong> Karena strukturnya bergantung pada informasi sebelumnya yang terus diperbarui, informasi yang muncul di awal urutan bisa perlahan ‘terlupakan’ ketika data semakin panjang. Untuk mengatasi ini, dikembangkanlah variasi dari RNN seperti LSTM (Long Short-Term Memory) dan GRU (Gated Recurrent Unit), yang mampu menyimpan informasi penting lebih lama dan memutuskan mana yang harus diingat atau dilupakan. Inovasi ini membuat RNN lebih handal dalam menangani tugas-tugas yang kompleks dan panjang seperti dialog atau teks artikel.</p>
+<p><span id="relevansi-rnn"></span></p>
+<p><strong>Dengan mengenal cara kerja RNN, kita bisa melihat bagaimana mesin semakin mampu memahami komunikasi manusia secara lebih alami.</strong> Kemampuan untuk “mengingat” dan mengolah urutan menjadikan RNN bagian penting dalam perkembangan kecerdasan buatan yang lebih manusiawi. Meski tantangannya masih banyak, teknologi ini membuka jalan bagi aplikasi-aplikasi yang semakin cerdas, dari asisten virtual hingga sistem penerjemah multibahasa. Bagi kita sebagai pengguna, memahami RNN tidak hanya memperkaya wawasan, tapi juga membantu kita menggunakan teknologi dengan lebih sadar dan kritis.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/machine-learning/">Machine Learning</a></li>
+      <li><a href="http://localhost:1313/tags/rnn/">Rnn</a></li>
+      <li><a href="http://localhost:1313/tags/neural-network/">Neural Network</a></li>
+      <li><a href="http://localhost:1313/tags/nlp/">Nlp</a></li>
+      <li><a href="http://localhost:1313/tags/kecerdasan-buatan/">Kecerdasan Buatan</a></li>
+      <li><a href="http://localhost:1313/tags/pemula/">Pemula</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>CNN dan RNN dalam Bahasa Sederhana</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/13_mengenal_cnn_cara_mesin_belajar_melihat_gambar/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Mengenal CNN: Cara Mesin Belajar Melihat Gambar</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

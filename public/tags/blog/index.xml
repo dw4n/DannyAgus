@@ -13,9 +13,21 @@
       <link>http://localhost:1313/posts/3-deployment-strategy-hugo/</link>
       <pubDate>Fri, 02 May 2025 14:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/3-deployment-strategy-hugo/</guid>
-      <description>&lt;p&gt;Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai &lt;strong&gt;deployment&lt;/strong&gt; dan &lt;strong&gt;biaya operasional&lt;/strong&gt; jangka panjang. Blog ini dibangun menggunakan &lt;a href=&#34;https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; dan tema &lt;a href=&#34;https://github.com/adityatelange/hugo-PaperMod&#34;&gt;PaperMod&lt;/a&gt;, yang ringan dan fleksibel.&lt;/p&gt;
-&lt;p&gt;Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.&lt;/p&gt;
-&lt;h2 id=&#34;arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/h2&gt;
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#evaluasi&#34;&gt;Evaluasi Kebutuhan dan Potensi Masalah&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#strategi&#34;&gt;Strategi yang Saya Ambil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#biaya&#34;&gt;Simulasi Biaya&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#alternatif-hosting&#34;&gt;Perbandingan Alternatif Hosting&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#upgrade&#34;&gt;Kapan Sebaiknya Upgrade?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kesimpulan&#34;&gt;Kesimpulan&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;arsitektur-awal&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/h3&gt;
 &lt;p&gt;Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Komponen utama:&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Deep Learning on Danny Agus</title>
+    <link>http://localhost:1313/tags/deep-learning/</link>
+    <description>Recent content in Deep Learning on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Sun, 25 May 2025 16:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning vs Deep Learning: Apa Bedanya dan Kapan Digunakan?</title>
+      <link>http://localhost:1313/posts/21_machine_learning_vs_deep_learning/</link>
+      <pubDate>Sun, 25 May 2025 16:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/21_machine_learning_vs_deep_learning/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#perbedaan-umum&#34;&gt;Perbedaan ML dan DL secara Umum&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-ml&#34;&gt;Apa Itu Machine Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-dl&#34;&gt;Apa Itu Deep Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kapan-menggunakan&#34;&gt;Kapan Menggunakan ML vs DL?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#contoh-aplikasi&#34;&gt;Contoh Aplikasi di Dunia Nyata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabel-perbandingan&#34;&gt;Tabel Perbandingan ML vs DL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kesimpulan&#34;&gt;Kesimpulan dan Pemilihan Pendekatan&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;perbedaan-umum&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning dan deep learning sering disebut bersamaan, tapi sebenarnya keduanya memiliki perbedaan penting dalam pendekatan, struktur, dan kebutuhan datanya.&lt;/strong&gt; Artikel ini akan menjelaskan perbedaan mendasar antara keduanya dengan bahasa yang mudah dipahami. Kita akan melihat bagaimana mereka bekerja, apa kekuatannya masing-masing, kapan sebaiknya digunakan, dan apa saja contoh nyata dalam kehidupan sehari-hari.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin</title>
+      <link>http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/</link>
+      <pubDate>Sun, 25 May 2025 14:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-transformer&#34;&gt;Apa Itu Transformer?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#keterbatasan-model-lama&#34;&gt;Keterbatasan Model Sebelumnya (RNN, LSTM, GRU)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#self-attention&#34;&gt;Self-Attention: Inti dari Transformer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aplikasi-transformer&#34;&gt;Aplikasi Transformer dalam NLP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tantangan-transformer&#34;&gt;Tantangan dan Kelemahan Transformer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#menuju-gpt&#34;&gt;Awal Mula Generasi Model seperti GPT&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-transformer&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami.&lt;/strong&gt; Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana</title>
+      <link>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</link>
+      <pubDate>Sun, 25 May 2025 13:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#neural-network-dasar&#34;&gt;Neural Network: Fondasi Otak Mesin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-ann&#34;&gt;Apa Itu ANN (Artificial Neural Network)?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cnn&#34;&gt;CNN: Mesin yang Bisa Melihat&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#rnn&#34;&gt;RNN: Mesin yang Mengerti Urutan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#evolusi-network&#34;&gt;Evolusi Neural Network: LSTM, GRU, GAN, Transformer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kapan-menggunakan&#34;&gt;Kapan Menggunakan Jenis yang Mana?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabel-perbandingan&#34;&gt;Tabel Perbandingan Jenis Neural Network&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;neural-network-dasar&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia.&lt;/strong&gt; Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern</title>
+      <link>http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/</link>
+      <pubDate>Sun, 25 May 2025 11:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-ann&#34;&gt;Apa Itu ANN dan Mengapa Penting?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#cara-kerja&#34;&gt;Cara Kerja ANN: Meniru Otak Manusia&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#proses-belajar&#34;&gt;Bagaimana ANN Belajar dari Kesalahan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#penerapan-ann&#34;&gt;Contoh Penerapan ANN dalam Kehidupan Nyata&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#ann-sebagai-dasar&#34;&gt;ANN sebagai Dasar dari Jaringan Lain&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-ann&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini.&lt;/strong&gt; Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Apa Itu Deep Learning? Cara Mesin Mengenali Gambar, Suara, dan Bahasa</title>
+      <link>http://localhost:1313/posts/22_apa_itu_deep_learning/</link>
+      <pubDate>Sun, 25 May 2025 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/22_apa_itu_deep_learning/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-deep-learning&#34;&gt;Apa Itu Deep Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#perbedaan-dl-ml&#34;&gt;Perbedaan Deep Learning dan Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kapan-dl-digunakan&#34;&gt;Kapan Deep Learning Cocok Digunakan?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aplikasi-dl&#34;&gt;Aplikasi Deep Learning dalam Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#kekuatan-keterbatasan&#34;&gt;Kekuatan dan Keterbatasan Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#jenis-model-dl&#34;&gt;Beragam Model dalam Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-deep-learning&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Deep learning adalah cabang dari machine learning yang membuat mesin mampu mengenali pola rumit dari data besar dan tidak terstruktur seperti gambar, suara, dan bahasa.&lt;/strong&gt; Artikel ini akan membahas apa itu deep learning, bagaimana cara kerjanya, mengapa ia disebut “deep”, dan kapan pendekatan ini digunakan. Kita juga akan melihat berbagai contoh aplikasinya yang semakin dekat dengan kehidupan kita, serta bagaimana deep learning menjadi fondasi dari teknologi AI modern seperti pengenalan wajah dan chatbot cerdas.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

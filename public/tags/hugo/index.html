@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/tags/hugo/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.f49d66caae9ea0fd43f21f29e71a8d3e284517ed770f2aa86fa012953ad3c9ef.css" integrity="sha256-9J1myq6eoP1D8h8p5xqNPihFF&#43;13Dyqob6ASlTrTye8=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -127,11 +127,6 @@
                     <span>Tags</span>
                 </a>
             </li>
-            <li>
-                <a href="http://localhost:1313/categories/" title="Categories">
-                    <span>Categories</span>
-                </a>
-            </li>
         </ul>
     </nav>
 </header>
@@ -148,29 +143,26 @@
     </h2>
   </header>
   <div class="entry-content">
-    <p>Dalam proses membangun blog ini, saya tidak hanya membahas soal tampilan dan fitur, tapi juga melakukan perencanaan matang mengenai deployment dan biaya operasional jangka panjang. Blog ini dibangun menggunakan Hugo dan tema PaperMod, yang ringan dan fleksibel.
-Berikut ini adalah rangkuman pertimbangan dan strategi yang saya ambil, lengkap dengan simulasi biaya dan alternatif hosting.
-Arsitektur Awal Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.
+    <p> Outline Artikel Arsitektur Awal Evaluasi Kebutuhan dan Potensi Masalah Strategi yang Saya Ambil Simulasi Biaya Perbandingan Alternatif Hosting Kapan Sebaiknya Upgrade? Kesimpulan Arsitektur Awal Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.
 Komponen utama:
 Konten ditulis dalam Markdown (.md) dan dikonversi ke HTML menggunakan Hugo. Menggunakan tema PaperMod. Dihosting di Azure Static Web Apps (paket gratis). Gambar disimpan langsung di dalam folder Hugo (static/images/). Estimasi awal kebutuhan:
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-05-02 14:00:00 +0800 +08'>May 2, 2025 14:00</span></footer>
+  <footer class="entry-footer"><span title='2025-05-02 14:00:00 +0800 +08'>May 2, 2025 Jam 14</span></footer>
   <a class="entry-link" aria-label="post link to Pertimbangan Teknis dan Biaya Pembentukan Blog Ini" href="http://localhost:1313/posts/3-deployment-strategy-hugo/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web
+    <h2 class="entry-hint-parent">Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama
     </h2>
   </header>
   <div class="entry-content">
-    <p>Semuanya bermula dari keinginan sederhana: bikin blog pribadi yang ringan, bisa ditulis pakai Markdown, dan gampang di-upload. Tapi siapa sangka, dari situ berkembang jadi sebuah mini-proyek dengan CI/CD, search engine, tagging, dan tampil kece berkat PaperMod.
-Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan Wordpress &#43; PHP server dari azure. Saya cuma pakai 3 plugin, jet something itu untuk SEO, security, dan ada satu untuk moderator comment. Template pun template bawaan. Karena saya jarang update, setiap 6 bulan sekali kena virus, dan saya harus restore ke previous backup. Proses restore pun agak menyebalkan, karena harus proses delete dan reupload ftp.
+    <p> Outline Artikel Pendahuluan: Masalah dengan WordPress Tahap 1: Menentukan Arah dan Stack Teknologi Tahap 2: Setup Hugo Lokal Tanpa Install Tahap 3: Menambahkan Tema PaperMod Tahap 4: Menulis dan Menampilkan Postingan Pertama Tahap 5: Otomatisasi Deploy dengan GitHub Actions Tahap 6: Menambah Fitur Search, Tag, dan Kategori Tahap 7: Menyisipkan Gambar dengan Caption Penutup: Apa yang Saya Pelajari Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: apa nggak ada solusi yang lebih simpel, murah, dan aman?
 ...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-05-01 11:00:00 +0800 +08'>May 1, 2025 11:00</span></footer>
-  <a class="entry-link" aria-label="post link to Petualangan Membuat Blog dengan Hugo &#43; Azure Static Web" href="http://localhost:1313/posts/2-petualangan-hugo/"></a>
+  <footer class="entry-footer"><span title='2025-05-01 11:00:00 +0800 +08'>May 1, 2025 Jam 11</span></footer>
+  <a class="entry-link" aria-label="post link to Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama" href="http://localhost:1313/posts/2-petualangan-hugo/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -182,7 +174,7 @@ Sebagai konteks, sebelumnya saya punya blog yang jarang di update. Menggunakan W
     <p>Halo! Ini postingan pertama saya di blog Hugo &#43; PaperMod 🎉
 </p>
   </div>
-  <footer class="entry-footer"><span title='2025-05-01 10:00:00 +0800 +08'>May 1, 2025 10:00</span></footer>
+  <footer class="entry-footer"><span title='2025-05-01 10:00:00 +0800 +08'>May 1, 2025 Jam 10</span></footer>
   <a class="entry-link" aria-label="post link to Halo Dunia" href="http://localhost:1313/posts/1-halo-dunia/"></a>
 </article>
     </main>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message | Danny Agus</title>
+<meta name="keywords" content="pemrograman, event-driven, reactive, event, message, konsep">
+<meta name="description" content="
+
+Outline Artikel
+
+Pendahuluan: Paradigma Responsif
+Apa Itu Event-Driven Programming?
+Apa Itu Reactive Programming?
+Perbedaan antara Event dan Message
+Kapan Menggunakan Event-Driven vs Reactive
+
+
+
+Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada &ldquo;respon terhadap sesuatu&rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message">
+  <meta property="og:description" content=" Outline Artikel Pendahuluan: Paradigma Responsif Apa Itu Event-Driven Programming? Apa Itu Reactive Programming? Perbedaan antara Event dan Message Kapan Menggunakan Event-Driven vs Reactive Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada “respon terhadap sesuatu”, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-23T00:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-23T00:00:00+08:00">
+    <meta property="article:tag" content="Pemrograman">
+    <meta property="article:tag" content="Event-Driven">
+    <meta property="article:tag" content="Reactive">
+    <meta property="article:tag" content="Event">
+    <meta property="article:tag" content="Message">
+    <meta property="article:tag" content="Konsep">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message">
+<meta name="twitter:description" content="
+
+Outline Artikel
+
+Pendahuluan: Paradigma Responsif
+Apa Itu Event-Driven Programming?
+Apa Itu Reactive Programming?
+Perbedaan antara Event dan Message
+Kapan Menggunakan Event-Driven vs Reactive
+
+
+
+Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada &ldquo;respon terhadap sesuatu&rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message",
+      "item": "http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message",
+  "name": "Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message",
+  "description": " Outline Artikel Pendahuluan: Paradigma Responsif Apa Itu Event-Driven Programming? Apa Itu Reactive Programming? Perbedaan antara Event dan Message Kapan Menggunakan Event-Driven vs Reactive Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada \u0026ldquo;respon terhadap sesuatu\u0026rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.\n",
+  "keywords": [
+    "pemrograman", "event-driven", "reactive", "event", "message", "konsep"
+  ],
+  "articleBody": " Outline Artikel Pendahuluan: Paradigma Responsif Apa Itu Event-Driven Programming? Apa Itu Reactive Programming? Perbedaan antara Event dan Message Kapan Menggunakan Event-Driven vs Reactive Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada “respon terhadap sesuatu”, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.\nEvent-Driven Programming adalah paradigma di mana eksekusi kode bergantung pada event yang terjadi. Dalam pendekatan ini, kita biasanya menetapkan listener (pendengar) yang siap menjalankan fungsi tertentu saat sebuah event dipicu. Misalnya, ketika user mengklik tombol, event “onClick” dipicu, lalu handler dijalankan. Program secara pasif menunggu event daripada aktif berjalan terus-menerus.\nfunction onButtonClick() { showAlert(\"Tombol diklik!\"); } button.listen(\"click\", onButtonClick); Reactive Programming mengasumsikan bahwa aliran data (stream) akan terus berubah, dan sistem akan secara otomatis bereaksi terhadap perubahan itu. Dalam paradigma ini, data bersifat dinamis dan bisa di-observe. Ketika nilai data berubah, semua proses yang dependen terhadap data itu akan diperbarui secara otomatis, tanpa kita perlu memicu secara manual.\ntemperatureStream = observeSensor(\"room_temperature\") temperatureStream.onChange(temp =\u003e { if (temp \u003e 30) { fan.turnOn() } }); Event adalah notifikasi satu arah bahwa sesuatu telah terjadi. Event biasanya tidak membawa instruksi eksplisit atau harapan balasan. Sementara message adalah komunikasi eksplisit, biasanya berisi data atau perintah, dan sering kali mengharapkan balasan.\n// Event eventBus.emit(\"userLoggedIn\") // Message sendMessage(to: \"UserService\", message: { action: \"getUser\", id: 42 }) Event-driven menunggu interaksi lalu bereaksi, sementara reactive terus mengamati aliran data dan bertindak otomatis saat ada perubahan. Keduanya valid dan kuat, tergantung kebutuhan aplikasi. Sementara itu, memahami perbedaan antara event dan message membantu kita mendesain sistem yang lebih bersih dan efektif, terutama dalam arsitektur mikroservis.\n",
+  "wordCount" : "303",
+  "inLanguage": "en",
+  "datePublished": "2025-05-23T00:00:00+08:00",
+  "dateModified": "2025-05-23T00:00:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message
+    </h1>
+    <div class="post-meta"><span title='2025-05-23 00:00:00 +0800 +08'>May 23, 2025 Jam 00</span>
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#pendahuluan">Pendahuluan: Paradigma Responsif</a></li>
+<li><a href="#event-driven">Apa Itu Event-Driven Programming?</a></li>
+<li><a href="#reactive">Apa Itu Reactive Programming?</a></li>
+<li><a href="#event-vs-message">Perbedaan antara Event dan Message</a></li>
+<li><a href="#penggunaan-paradigma">Kapan Menggunakan Event-Driven vs Reactive</a></li>
+</ol></blockquote>
+<hr>
+<p><span id="pendahuluan"></span></p>
+<p>Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah <strong>Event-Driven Programming</strong> dan <strong>Reactive Programming</strong>. Meskipun keduanya berfokus pada &ldquo;respon terhadap sesuatu&rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara <em>event</em> dan <em>message</em> melalui penjelasan dan pseudocode.</p>
+<p><span id="event-driven"></span></p>
+<p><strong>Event-Driven Programming</strong> adalah paradigma di mana eksekusi kode bergantung pada event yang terjadi. Dalam pendekatan ini, kita biasanya menetapkan listener (pendengar) yang siap menjalankan fungsi tertentu saat sebuah event dipicu. Misalnya, ketika user mengklik tombol, event “onClick” dipicu, lalu handler dijalankan. Program secara pasif menunggu event daripada aktif berjalan terus-menerus.</p>
+<pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">function onButtonClick() {
+  showAlert(&#34;Tombol diklik!&#34;);
+}
+
+button.listen(&#34;click&#34;, onButtonClick);
+</code></pre><p><span id="reactive"></span></p>
+<p><strong>Reactive Programming</strong> mengasumsikan bahwa aliran data (stream) akan terus berubah, dan sistem akan secara otomatis bereaksi terhadap perubahan itu. Dalam paradigma ini, data bersifat dinamis dan bisa di-<em>observe</em>. Ketika nilai data berubah, semua proses yang <em>dependen</em> terhadap data itu akan diperbarui secara otomatis, tanpa kita perlu memicu secara manual.</p>
+<pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">temperatureStream = observeSensor(&#34;room_temperature&#34;)
+
+temperatureStream.onChange(temp =&gt; {
+  if (temp &gt; 30) {
+    fan.turnOn()
+  }
+});
+</code></pre><p><span id="event-vs-message"></span></p>
+<p><strong>Event</strong> adalah <strong>notifikasi satu arah</strong> bahwa sesuatu telah terjadi. Event biasanya tidak membawa instruksi eksplisit atau harapan balasan. Sementara <em>message</em> adalah <strong>komunikasi eksplisit</strong>, biasanya berisi data atau perintah, dan sering kali mengharapkan balasan.</p>
+<pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">// Event
+eventBus.emit(&#34;userLoggedIn&#34;)
+
+// Message
+sendMessage(to: &#34;UserService&#34;, message: { action: &#34;getUser&#34;, id: 42 })
+</code></pre><p><span id="penggunaan-paradigma"></span></p>
+<p>Event-driven menunggu interaksi lalu bereaksi, sementara reactive terus mengamati aliran data dan bertindak otomatis saat ada perubahan. Keduanya valid dan kuat, tergantung kebutuhan aplikasi. Sementara itu, memahami perbedaan antara <em>event</em> dan <em>message</em> membantu kita mendesain sistem yang lebih bersih dan efektif, terutama dalam arsitektur mikroservis.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/pemrograman/">Pemrograman</a></li>
+      <li><a href="http://localhost:1313/tags/event-driven/">Event-Driven</a></li>
+      <li><a href="http://localhost:1313/tags/reactive/">Reactive</a></li>
+      <li><a href="http://localhost:1313/tags/event/">Event</a></li>
+      <li><a href="http://localhost:1313/tags/message/">Message</a></li>
+      <li><a href="http://localhost:1313/tags/konsep/">Konsep</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/10_memahami_azure_eventing_messaging_service_bus_event_hub_dan_event_grid/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Memahami Azure Eventing &amp; Messaging: Service Bus, Event Hub, dan Event Grid</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/7-framework-dasar-menulis-artikel-dan-esai/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Framework Dasar Menulis Artikel dan Esai</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

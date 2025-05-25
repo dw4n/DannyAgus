@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern | Danny Agus</title>
+<meta name="keywords" content="machine learning, artificial neural network, pemula, deep learning, neural network">
+<meta name="description" content="
+
+Outline Artikel
+
+Apa Itu ANN dan Mengapa Penting?
+Cara Kerja ANN: Meniru Otak Manusia
+Bagaimana ANN Belajar dari Kesalahan
+Contoh Penerapan ANN dalam Kehidupan Nyata
+ANN sebagai Dasar dari Jaringan Lain
+
+
+
+Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini. Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern">
+  <meta property="og:description" content=" Outline Artikel Apa Itu ANN dan Mengapa Penting? Cara Kerja ANN: Meniru Otak Manusia Bagaimana ANN Belajar dari Kesalahan Contoh Penerapan ANN dalam Kehidupan Nyata ANN sebagai Dasar dari Jaringan Lain Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini. Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-25T11:00:00+08:00">
+    <meta property="article:modified_time" content="2025-05-25T11:00:00+08:00">
+    <meta property="article:tag" content="Machine Learning">
+    <meta property="article:tag" content="Artificial Neural Network">
+    <meta property="article:tag" content="Pemula">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="Neural Network">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern">
+<meta name="twitter:description" content="
+
+Outline Artikel
+
+Apa Itu ANN dan Mengapa Penting?
+Cara Kerja ANN: Meniru Otak Manusia
+Bagaimana ANN Belajar dari Kesalahan
+Contoh Penerapan ANN dalam Kehidupan Nyata
+ANN sebagai Dasar dari Jaringan Lain
+
+
+
+Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini. Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern",
+      "item": "http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern",
+  "name": "Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern",
+  "description": " Outline Artikel Apa Itu ANN dan Mengapa Penting? Cara Kerja ANN: Meniru Otak Manusia Bagaimana ANN Belajar dari Kesalahan Contoh Penerapan ANN dalam Kehidupan Nyata ANN sebagai Dasar dari Jaringan Lain Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini. Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.\n",
+  "keywords": [
+    "machine learning", "artificial neural network", "pemula", "deep learning", "neural network"
+  ],
+  "articleBody": " Outline Artikel Apa Itu ANN dan Mengapa Penting? Cara Kerja ANN: Meniru Otak Manusia Bagaimana ANN Belajar dari Kesalahan Contoh Penerapan ANN dalam Kehidupan Nyata ANN sebagai Dasar dari Jaringan Lain Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini. Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.\nANN bekerja dengan meniru cara otak manusia memproses informasi melalui jaringan neuron yang saling terhubung. Sama seperti otak menggunakan sel-sel saraf untuk menerima, mengolah, dan mengirimkan informasi, ANN menggunakan node atau “neuron” buatan yang terhubung satu sama lain melalui jalur bernama “bobot”. Informasi mengalir dari input, diproses dalam satu atau beberapa lapisan tersembunyi (hidden layer), lalu menghasilkan output akhir yang diinterpretasikan sebagai hasil. Setiap neuron melakukan tugas sederhana: menerima angka, mengalikannya dengan bobot, menjumlahkan, lalu meneruskan hasilnya melalui fungsi aktivasi.\nProses belajar dalam ANN terjadi melalui penyesuaian bobot antar neuron berdasarkan kesalahan yang dibuat. Ketika ANN diberikan data pelatihan, ia menebak output dan membandingkannya dengan jawaban yang benar. Dari perbedaan itu, sistem menghitung kesalahan dan menyebarkannya kembali ke jaringan untuk memperbaiki bobot melalui proses yang disebut backpropagation. Semakin sering proses ini dilakukan, semakin akurat jaringan dalam mengenali pola. Konsep ini mirip seperti belajar dari kesalahan: semakin sering kita mencoba dan mengetahui mana yang salah, semakin baik kita ke depannya.\nPenerapan ANN sudah sangat luas dan mungkin kamu gunakan setiap hari tanpa menyadarinya. Mulai dari filter spam di email, rekomendasi produk di e-commerce, hingga deteksi penipuan di kartu kredit—semuanya menggunakan model ANN dasar atau turunannya. Bahkan dalam bidang kesehatan, ANN membantu menganalisis hasil tes laboratorium atau prediksi risiko penyakit berdasarkan data pasien. Dengan kata lain, ANN telah menjadi motor penggerak dari berbagai sistem cerdas yang kita andalkan di era digital.\nMemahami ANN sangat penting karena ia adalah pondasi dari model-model neural network yang lebih canggih. CNN, RNN, dan jenis jaringan lainnya dibangun dengan prinsip yang sama: neuron, bobot, dan pembelajaran dari data. Tanpa pemahaman terhadap cara kerja ANN, kita akan kesulitan memahami versi-versi lanjutannya. Lebih dari sekadar istilah teknis, ANN adalah pintu masuk untuk memahami bagaimana mesin bisa “berpikir”, dan karenanya, menjadi langkah awal yang penting bagi siapa pun yang tertarik dengan dunia kecerdasan buatan.\n",
+  "wordCount" : "411",
+  "inLanguage": "en",
+  "datePublished": "2025-05-25T11:00:00+08:00",
+  "dateModified": "2025-05-25T11:00:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/12_memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern
+    </h1>
+    <div class="post-meta"><span title='2025-05-25 11:00:00 +0800 +08'>May 25, 2025 Jam 11</span>
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#apa-itu-ann">Apa Itu ANN dan Mengapa Penting?</a></li>
+<li><a href="#cara-kerja">Cara Kerja ANN: Meniru Otak Manusia</a></li>
+<li><a href="#proses-belajar">Bagaimana ANN Belajar dari Kesalahan</a></li>
+<li><a href="#penerapan-ann">Contoh Penerapan ANN dalam Kehidupan Nyata</a></li>
+<li><a href="#ann-sebagai-dasar">ANN sebagai Dasar dari Jaringan Lain</a></li>
+</ol></blockquote>
+<hr>
+<p><span id="apa-itu-ann"></span></p>
+<p><strong>Artificial Neural Network atau ANN adalah dasar dari hampir semua kemajuan kecerdasan buatan yang kita kenal hari ini.</strong> Dalam artikel ini, kita akan melihat bagaimana ANN bekerja sebagai fondasi utama machine learning modern. Kita akan membahas cara kerja dasarnya yang meniru otak manusia, struktur lapisan-lapisan neuron buatan, bagaimana proses belajar terjadi dalam jaringan ini, contoh penerapannya dalam kehidupan sehari-hari, dan alasan mengapa memahami ANN penting sebelum masuk ke jaringan yang lebih kompleks seperti CNN atau RNN.</p>
+<p><span id="cara-kerja"></span></p>
+<p><strong>ANN bekerja dengan meniru cara otak manusia memproses informasi melalui jaringan neuron yang saling terhubung.</strong> Sama seperti otak menggunakan sel-sel saraf untuk menerima, mengolah, dan mengirimkan informasi, ANN menggunakan node atau &ldquo;neuron&rdquo; buatan yang terhubung satu sama lain melalui jalur bernama &ldquo;bobot&rdquo;. Informasi mengalir dari input, diproses dalam satu atau beberapa lapisan tersembunyi (hidden layer), lalu menghasilkan output akhir yang diinterpretasikan sebagai hasil. Setiap neuron melakukan tugas sederhana: menerima angka, mengalikannya dengan bobot, menjumlahkan, lalu meneruskan hasilnya melalui fungsi aktivasi.</p>
+<p><span id="proses-belajar"></span></p>
+<p><strong>Proses belajar dalam ANN terjadi melalui penyesuaian bobot antar neuron berdasarkan kesalahan yang dibuat.</strong> Ketika ANN diberikan data pelatihan, ia menebak output dan membandingkannya dengan jawaban yang benar. Dari perbedaan itu, sistem menghitung kesalahan dan menyebarkannya kembali ke jaringan untuk memperbaiki bobot melalui proses yang disebut backpropagation. Semakin sering proses ini dilakukan, semakin akurat jaringan dalam mengenali pola. Konsep ini mirip seperti belajar dari kesalahan: semakin sering kita mencoba dan mengetahui mana yang salah, semakin baik kita ke depannya.</p>
+<p><span id="penerapan-ann"></span></p>
+<p><strong>Penerapan ANN sudah sangat luas dan mungkin kamu gunakan setiap hari tanpa menyadarinya.</strong> Mulai dari filter spam di email, rekomendasi produk di e-commerce, hingga deteksi penipuan di kartu kredit—semuanya menggunakan model ANN dasar atau turunannya. Bahkan dalam bidang kesehatan, ANN membantu menganalisis hasil tes laboratorium atau prediksi risiko penyakit berdasarkan data pasien. Dengan kata lain, ANN telah menjadi motor penggerak dari berbagai sistem cerdas yang kita andalkan di era digital.</p>
+<p><span id="ann-sebagai-dasar"></span></p>
+<p><strong>Memahami ANN sangat penting karena ia adalah pondasi dari model-model neural network yang lebih canggih.</strong> CNN, RNN, dan jenis jaringan lainnya dibangun dengan prinsip yang sama: neuron, bobot, dan pembelajaran dari data. Tanpa pemahaman terhadap cara kerja ANN, kita akan kesulitan memahami versi-versi lanjutannya. Lebih dari sekadar istilah teknis, ANN adalah pintu masuk untuk memahami bagaimana mesin bisa “berpikir”, dan karenanya, menjadi langkah awal yang penting bagi siapa pun yang tertarik dengan dunia kecerdasan buatan.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/machine-learning/">Machine Learning</a></li>
+      <li><a href="http://localhost:1313/tags/artificial-neural-network/">Artificial Neural Network</a></li>
+      <li><a href="http://localhost:1313/tags/pemula/">Pemula</a></li>
+      <li><a href="http://localhost:1313/tags/deep-learning/">Deep Learning</a></li>
+      <li><a href="http://localhost:1313/tags/neural-network/">Neural Network</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/13_mengenal_cnn_cara_mesin_belajar_melihat_gambar/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Mengenal CNN: Cara Mesin Belajar Melihat Gambar</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/22_apa_itu_deep_learning/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Apa Itu Deep Learning? Cara Mesin Mengenali Gambar, Suara, dan Bahasa</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

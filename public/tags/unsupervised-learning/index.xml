@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Unsupervised Learning on Danny Agus</title>
+    <link>http://localhost:1313/tags/unsupervised-learning/</link>
+    <description>Recent content in Unsupervised Learning on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Sun, 25 May 2025 15:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/unsupervised-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenis-Jenis Machine Learning: Bagaimana Mesin Belajar dari Data</title>
+      <link>http://localhost:1313/posts/20_jenis_jenis_machine_learning/</link>
+      <pubDate>Sun, 25 May 2025 15:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/20_jenis_jenis_machine_learning/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#pendahuluan&#34;&gt;Pendahuluan: Empat Jenis Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#supervised&#34;&gt;Supervised Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#unsupervised&#34;&gt;Unsupervised Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#semi-supervised&#34;&gt;Semi-supervised Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reinforcement&#34;&gt;Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabel-jenis&#34;&gt;Tabel Ringkasan Jenis ML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pemilihan-pendekatan&#34;&gt;Memilih Pendekatan yang Sesuai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pengantar-dl&#34;&gt;Pengantar ke Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;pendahuluan&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning terbagi ke dalam beberapa pendekatan utama, tergantung dari bagaimana mesin diberi data dan apa yang diminta untuk dipelajari.&lt;/strong&gt; Dalam artikel ini, kita akan membahas empat jenis utama machine learning: supervised learning, unsupervised learning, semi-supervised learning, dan reinforcement learning. Setiap pendekatan ini memiliki metode, tantangan, dan contoh penerapan yang berbeda, namun semuanya memiliki tujuan sama: membuat mesin belajar dari data.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Machine Learning 101: Cara Mesin Belajar dari Data</title>
+      <link>http://localhost:1313/posts/19_machine_learning_101_cara_mesin_belajar_dari_data/</link>
+      <pubDate>Sun, 25 May 2025 15:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/19_machine_learning_101_cara_mesin_belajar_dari_data/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#apa-itu-ml&#34;&gt;Apa Itu Machine Learning?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#beda-dengan-tradisional&#34;&gt;Perbedaan dengan Pemrograman Tradisional&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#jenis-ml&#34;&gt;Jenis Pendekatan Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#aplikasi-ml&#34;&gt;Aplikasi Machine Learning di Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#fondasi-ai&#34;&gt;Machine Learning sebagai Fondasi AI Lanjutan&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;apa-itu-ml&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning adalah cara agar mesin bisa belajar dari data dan membuat keputusan tanpa harus diprogram aturan satu per satu.&lt;/strong&gt; Dalam artikel ini, kita akan membahas apa itu machine learning, mengapa konsep ini penting dalam dunia teknologi modern, jenis-jenis pendekatan yang digunakan, dan contoh nyata dalam kehidupan sehari-hari. Kita juga akan melihat bagaimana machine learning menjadi dasar dari cabang yang lebih canggih seperti deep learning.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

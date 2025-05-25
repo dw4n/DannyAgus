@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Reinforcement Learning on Danny Agus</title>
+    <link>http://localhost:1313/tags/reinforcement-learning/</link>
+    <description>Recent content in Reinforcement Learning on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Sun, 25 May 2025 15:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/reinforcement-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jenis-Jenis Machine Learning: Bagaimana Mesin Belajar dari Data</title>
+      <link>http://localhost:1313/posts/20_jenis_jenis_machine_learning/</link>
+      <pubDate>Sun, 25 May 2025 15:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/20_jenis_jenis_machine_learning/</guid>
+      <description>&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#pendahuluan&#34;&gt;Pendahuluan: Empat Jenis Machine Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#supervised&#34;&gt;Supervised Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#unsupervised&#34;&gt;Unsupervised Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#semi-supervised&#34;&gt;Semi-supervised Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#reinforcement&#34;&gt;Reinforcement Learning&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#tabel-jenis&#34;&gt;Tabel Ringkasan Jenis ML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pemilihan-pendekatan&#34;&gt;Memilih Pendekatan yang Sesuai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pengantar-dl&#34;&gt;Pengantar ke Deep Learning&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;span id=&#34;pendahuluan&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Machine learning terbagi ke dalam beberapa pendekatan utama, tergantung dari bagaimana mesin diberi data dan apa yang diminta untuk dipelajari.&lt;/strong&gt; Dalam artikel ini, kita akan membahas empat jenis utama machine learning: supervised learning, unsupervised learning, semi-supervised learning, dan reinforcement learning. Setiap pendekatan ini memiliki metode, tantangan, dan contoh penerapan yang berbeda, namun semuanya memiliki tujuan sama: membuat mesin belajar dari data.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

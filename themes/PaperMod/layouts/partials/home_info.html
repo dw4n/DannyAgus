@@ -6,6 +6,23 @@
     <div class="entry-content">
         {{ .Content | markdownify }}
     </div>
+
+    {{ if site.Taxonomies.categories }}
+    <ul class="terms-tags" style="text-align: center;">
+        {{ $categories := site.Taxonomies.categories }}
+        {{ $sorted := slice }}
+        {{ range $k, $v := $categories }}
+            {{ $sorted = $sorted | append (dict "name" $k "count" (len $v)) }}
+        {{ end }}
+        {{ range sort $sorted "name" }}
+        <li><a class="term-tag" href="{{ "/categories/" | relLangURL }}{{ .name | urlize }}/">
+            {{ .name }}<sup> {{ .count }}</sup>
+            </a>
+        </li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
     <footer class="entry-footer">
         {{ partial "social_icons.html" (dict "align" site.Params.homeInfoParams.AlignSocialIconsTo) }}
     </footer>
