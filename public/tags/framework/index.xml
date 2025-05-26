@@ -6,8 +6,15 @@
     <description>Recent content in Framework on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Sat, 17 May 2025 20:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 May 2025 23:19:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/framework/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Thinking Frameworks Case Study: Mengurai Masalah Data Hilang di Sistem Microservices</title>
+      <link>http://localhost:1313/posts/28_thinking_frameworks_case_study_data_hilang/</link>
+      <pubDate>Mon, 26 May 2025 23:19:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/28_thinking_frameworks_case_study_data_hilang/</guid>
+      <description>Studi kasus nyata penggunaan kerangka berpikir sistemik untuk menyelidiki dan mengelola masalah kehilangan data dalam sistem mikroservis cloud pendidikan.</description>
+    </item>
     <item>
       <title>Framework Dasar Menulis Artikel dan Esai</title>
       <link>http://localhost:1313/posts/7-framework-dasar-menulis-artikel-dan-esai/</link>

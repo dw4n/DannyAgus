@@ -19,13 +19,13 @@ draft: false
 
 <span id="pendahuluan"></span>
 
-Menulis tidak punya satu rumus yang baku. Satu topik bisa dikembangkan dalam banyak arah — tergantung pada **tujuan, audiens, dan gaya penyajian** yang dipilih. Untuk membuktikannya, saya mencoba menulis satu topik: *“framework menulis sebelum mulai membuat artikel atau esai”*, dalam tiga pendekatan berbeda:
+Menulis tidak punya satu rumus yang baku. Satu topik bisa dikembangkan dalam banyak arah — tergantung pada ***tujuan, audiens, dan gaya penyajian*** yang dipilih. Untuk membuktikannya, saya mencoba menulis satu topik: *“framework menulis sebelum mulai membuat artikel atau esai”*, dalam tiga pendekatan berbeda:
 
-1. **Expository** – menjelaskan secara sistematis  
-2. **Listicle** – menyajikan poin-poin praktis  
-3. **Reflective + Informative** – memadukan cerita pribadi dan pembelajaran
+1. ***Expository*** – menjelaskan secara sistematis  
+2. ***Listicle*** – menyajikan poin-poin praktis  
+3. ***Reflective + Informative*** – memadukan cerita pribadi dan pembelajaran
 
-Catatan: Yang dibahas di sini adalah **pendekatan penyajian**, bukan jenis tulisan (seperti naratif atau argumentatif), dan bukan pula struktur teknis seperti *5 Paragraph Essay* atau *IMRaD*.
+Catatan: Yang dibahas di sini adalah ***pendekatan penyajian***, bukan jenis tulisan (seperti naratif atau argumentatif), dan bukan pula struktur teknis seperti *5 Paragraph Essay* atau *IMRaD*.
 
 Artikel ini akan membandingkan ketiga pendekatan tersebut — melihat karakteristiknya, kelebihan masing-masing, serta situasi terbaik untuk menggunakannya. Jika kamu sedang mencari gaya menulis yang cocok dengan dirimu, panduan ini bisa jadi titik awal yang berguna.
 
@@ -74,12 +74,12 @@ Gaya ini cocok untuk blog pribadi, artikel reflektif, atau storytelling edukatif
 
 | Aspek               | Expository                           | Listicle                          | Reflective + Informative                |
 |---------------------|---------------------------------------|-----------------------------------|-----------------------------------------|
-| **Tujuan**          | Menjelaskan secara menyeluruh         | Menyampaikan poin-poin praktis    | Membagikan pengalaman & insight         |
-| **Gaya Bahasa**     | Netral, formal ringan                 | Ringan, langsung ke inti          | Personal, reflektif                     |
-| **Struktur**        | Paragraf runtut dengan subjudul       | Poin-poin bernomor                | Narasi → insight → simpulan             |
-| **Kelebihan**       | Komprehensif, mendalam                | Cepat dibaca, mudah diakses       | Emosional, relatable                    |
-| **Kapan digunakan** | Edukasi, tutorial, artikel panjang    | Blog ringan, media sosial, email  | Blog pribadi, storytelling reflektif    |
-| **Waktu baca**      | Sedang–lama                           | Singkat                           | Sedang–lama                             |
+| ***Tujuan***          | Menjelaskan secara menyeluruh         | Menyampaikan poin-poin praktis    | Membagikan pengalaman & insight         |
+| ***Gaya Bahasa***     | Netral, formal ringan                 | Ringan, langsung ke inti          | Personal, reflektif                     |
+| ***Struktur***        | Paragraf runtut dengan subjudul       | Poin-poin bernomor                | Narasi → insight → simpulan             |
+| ***Kelebihan***       | Komprehensif, mendalam                | Cepat dibaca, mudah diakses       | Emosional, relatable                    |
+| ***Kapan digunakan*** | Edukasi, tutorial, artikel panjang    | Blog ringan, media sosial, email  | Blog pribadi, storytelling reflektif    |
+| ***Waktu baca***      | Sedang–lama                           | Singkat                           | Sedang–lama                             |
 
 <span id="menemukan-gaya"></span>
 
@@ -93,6 +93,6 @@ Tiga pendekatan di atas membuktikan bahwa menulis adalah proses yang fleksibel. 
 
 Kalau kamu masih mencari gaya menulis yang cocok, cobalah menulis satu topik dalam beberapa format. Proses ini bukan hanya latihan teknis, tapi juga cara untuk mengenal gaya dan suara menulismu sendiri.
 
-Pendekatan seperti expository, listicle, dan reflektif hanyalah sebagian dari berbagai kemungkinan yang ada. Bila kamu menggabungkan pilihan gaya ini dengan kerangka berpikir seperti **5W+1H** — mulai dari tujuan tulisan (why), jenis tulisan (what), struktur (how), penyajian (where & how to present), audiens (who), hingga waktu dan kesiapanmu sendiri (when) — maka kamu sudah memegang fondasi menulis yang solid.
+Pendekatan seperti expository, listicle, dan reflektif hanyalah sebagian dari berbagai kemungkinan yang ada. Bila kamu menggabungkan pilihan gaya ini dengan kerangka berpikir seperti ***5W+1H*** — mulai dari tujuan tulisan (why), jenis tulisan (what), struktur (how), penyajian (where & how to present), audiens (who), hingga waktu dan kesiapanmu sendiri (when) — maka kamu sudah memegang fondasi menulis yang solid.
 
 Tidak ada satu cara terbaik. Yang penting adalah kamu tahu kenapa kamu memilih satu cara tertentu. Dari sanalah, gaya menulismu akan tumbuh dan berkembang.

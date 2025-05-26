@@ -214,19 +214,19 @@
 </ol></blockquote>
 <hr>
 <p><span id="pengantar"></span></p>
-<p>Dalam arsitektur modern berbasis cloud, komunikasi antar sistem dan layanan menjadi komponen inti. Di platform Azure, Microsoft menyediakan beberapa layanan yang dirancang khusus untuk menangani berbagai jenis komunikasi dan event: <strong>Azure Service Bus</strong>, <strong>Event Hub</strong>, dan <strong>Event Grid</strong>. Meskipun semuanya terkesan “mirip” karena berurusan dengan data dan peristiwa, masing-masing memiliki tujuan spesifik dan cara kerja berbeda.</p>
+<p>Dalam arsitektur modern berbasis cloud, komunikasi antar sistem dan layanan menjadi komponen inti. Di platform Azure, Microsoft menyediakan beberapa layanan yang dirancang khusus untuk menangani berbagai jenis komunikasi dan event: <em><strong>Azure Service Bus</strong></em>, <em><strong>Event Hub</strong></em>, dan <em><strong>Event Grid</strong></em>. Meskipun semuanya terkesan “mirip” karena berurusan dengan data dan peristiwa, masing-masing memiliki tujuan spesifik dan cara kerja berbeda.</p>
 <p><span id="service-bus"></span></p>
-<p><strong>Azure Service Bus</strong> adalah layanan messaging enterprise-grade yang dirancang untuk <strong>komunikasi andal antar aplikasi atau layanan</strong>. Ia mendukung konsep <strong>message queue</strong> dan <strong>publish-subscribe</strong> model. Ideal untuk komunikasi antar microservices backend atau sistem transaksi.</p>
+<p><em><strong>Azure Service Bus</strong></em> adalah layanan messaging enterprise-grade yang dirancang untuk <em><strong>komunikasi andal antar aplikasi atau layanan</strong></em>. Ia mendukung konsep <em><strong>message queue</strong></em> dan <em><strong>publish-subscribe</strong></em> model. Ideal untuk komunikasi antar microservices backend atau sistem transaksi.</p>
 <pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">queueClient.send(&#34;OrderQueue&#34;, message: { orderId: 123, item: &#34;Laptop&#34; })
 
 while message = queueClient.receive(&#34;OrderQueue&#34;):
   processOrder(message)
 </code></pre><p><span id="event-hub"></span></p>
-<p><strong>Azure Event Hub</strong> adalah layanan untuk mengelola <strong>aliran data berdurasi tinggi</strong>, cocok untuk <strong>telemetri, log, atau data streaming</strong> dari banyak sumber.</p>
+<p><em><strong>Azure Event Hub</strong></em> adalah layanan untuk mengelola <em><strong>aliran data berdurasi tinggi</strong></em>, cocok untuk <em><strong>telemetri, log, atau data streaming</strong></em> dari banyak sumber.</p>
 <pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">for each second:
   eventHub.send(&#34;TemperatureSensor&#34;, { deviceId: &#34;sensor1&#34;, value: 28.4 })
 </code></pre><p><span id="event-grid"></span></p>
-<p><strong>Azure Event Grid</strong> berfungsi sebagai <strong>event router</strong>. Ia menerima <strong>event dari berbagai sumber</strong> (Blob, Resource Group, dll) dan menyampaikannya ke handler yang sesuai (Function, Webhook, Logic App).</p>
+<p><em><strong>Azure Event Grid</strong></em> berfungsi sebagai <em><strong>event router</strong></em>. Ia menerima <em><strong>event dari berbagai sumber</strong></em> (Blob, Resource Group, dll) dan menyampaikannya ke handler yang sesuai (Function, Webhook, Logic App).</p>
 <pre tabindex="0"><code class="language-pseudo" data-lang="pseudo">on BlobCreated in &#34;MyContainer&#34;:
   send event to Function(&#34;GenerateThumbnail&#34;)
 </code></pre><p><span id="tabel-perbandingan"></span></p>
@@ -267,7 +267,7 @@ while message = queueClient.receive(&#34;OrderQueue&#34;):
   </tbody>
 </table>
 <p><span id="kapan-menggunakan"></span></p>
-<p><strong>Service Bus</strong> cocok untuk sistem backend transactional, <strong>Event Hub</strong> untuk streaming skala besar, dan <strong>Event Grid</strong> untuk event-driven ringan. Ketiganya bisa dikombinasikan dalam arsitektur eventing yang kompleks dan scalable di Azure.</p>
+<p><em><strong>Service Bus</strong></em> cocok untuk sistem backend transactional, <em><strong>Event Hub</strong></em> untuk streaming skala besar, dan <em><strong>Event Grid</strong></em> untuk event-driven ringan. Ketiganya bisa dikombinasikan dalam arsitektur eventing yang kompleks dan scalable di Azure.</p>
 
 
   </div>

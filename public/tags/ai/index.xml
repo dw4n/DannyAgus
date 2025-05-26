@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Ai on Danny Agus</title>
+    <title>AI on Danny Agus</title>
     <link>http://localhost:1313/tags/ai/</link>
-    <description>Recent content in Ai on Danny Agus</description>
+    <description>Recent content in AI on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Sun, 25 May 2025 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 May 2025 20:25:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kenapa README.md Tidak Muncul di NuGet? Refleksi dari Sebuah Paket Internal</title>
+      <link>http://localhost:1313/posts/26_readme_nuget_internal_refleksi/</link>
+      <pubDate>Mon, 26 May 2025 20:25:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/26_readme_nuget_internal_refleksi/</guid>
+      <description>Pengalaman langsung mengeksplorasi penyebab README.md tidak muncul di tampilan NuGet, yang ternyata bukan berasal dari kesalahan teknis, melainkan keterbatasan feed internal Azure DevOps.</description>
+    </item>
     <item>
       <title>Machine Learning vs Deep Learning: Apa Bedanya dan Kapan Digunakan?</title>
       <link>http://localhost:1313/posts/21_machine_learning_vs_deep_learning/</link>

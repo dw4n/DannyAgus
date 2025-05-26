@@ -19,11 +19,11 @@ draft: false
 
 <span id="pendahuluan"></span>
 
-Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah **Event-Driven Programming** dan **Reactive Programming**. Meskipun keduanya berfokus pada "respon terhadap sesuatu", cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara *event* dan *message* melalui penjelasan dan pseudocode.
+Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah ***Event-Driven Programming*** dan ***Reactive Programming***. Meskipun keduanya berfokus pada "respon terhadap sesuatu", cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara *event* dan *message* melalui penjelasan dan pseudocode.
 
 <span id="event-driven"></span>
 
-**Event-Driven Programming** adalah paradigma di mana eksekusi kode bergantung pada event yang terjadi. Dalam pendekatan ini, kita biasanya menetapkan listener (pendengar) yang siap menjalankan fungsi tertentu saat sebuah event dipicu. Misalnya, ketika user mengklik tombol, event “onClick” dipicu, lalu handler dijalankan. Program secara pasif menunggu event daripada aktif berjalan terus-menerus.
+***Event-Driven Programming*** adalah paradigma di mana eksekusi kode bergantung pada event yang terjadi. Dalam pendekatan ini, kita biasanya menetapkan listener (pendengar) yang siap menjalankan fungsi tertentu saat sebuah event dipicu. Misalnya, ketika user mengklik tombol, event “onClick” dipicu, lalu handler dijalankan. Program secara pasif menunggu event daripada aktif berjalan terus-menerus.
 
 ```pseudo
 function onButtonClick() {
@@ -35,7 +35,7 @@ button.listen("click", onButtonClick);
 
 <span id="reactive"></span>
 
-**Reactive Programming** mengasumsikan bahwa aliran data (stream) akan terus berubah, dan sistem akan secara otomatis bereaksi terhadap perubahan itu. Dalam paradigma ini, data bersifat dinamis dan bisa di-*observe*. Ketika nilai data berubah, semua proses yang *dependen* terhadap data itu akan diperbarui secara otomatis, tanpa kita perlu memicu secara manual.
+***Reactive Programming*** mengasumsikan bahwa aliran data (stream) akan terus berubah, dan sistem akan secara otomatis bereaksi terhadap perubahan itu. Dalam paradigma ini, data bersifat dinamis dan bisa di-*observe*. Ketika nilai data berubah, semua proses yang *dependen* terhadap data itu akan diperbarui secara otomatis, tanpa kita perlu memicu secara manual.
 
 ```pseudo
 temperatureStream = observeSensor("room_temperature")
@@ -49,7 +49,7 @@ temperatureStream.onChange(temp => {
 
 <span id="event-vs-message"></span>
 
-**Event** adalah **notifikasi satu arah** bahwa sesuatu telah terjadi. Event biasanya tidak membawa instruksi eksplisit atau harapan balasan. Sementara *message* adalah **komunikasi eksplisit**, biasanya berisi data atau perintah, dan sering kali mengharapkan balasan.
+***Event*** adalah ***notifikasi satu arah*** bahwa sesuatu telah terjadi. Event biasanya tidak membawa instruksi eksplisit atau harapan balasan. Sementara *message* adalah ***komunikasi eksplisit***, biasanya berisi data atau perintah, dan sering kali mengharapkan balasan.
 
 ```pseudo
 // Event

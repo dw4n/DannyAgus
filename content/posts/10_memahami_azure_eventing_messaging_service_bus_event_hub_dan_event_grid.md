@@ -20,11 +20,11 @@ draft: false
 
 <span id="pengantar"></span>
 
-Dalam arsitektur modern berbasis cloud, komunikasi antar sistem dan layanan menjadi komponen inti. Di platform Azure, Microsoft menyediakan beberapa layanan yang dirancang khusus untuk menangani berbagai jenis komunikasi dan event: **Azure Service Bus**, **Event Hub**, dan **Event Grid**. Meskipun semuanya terkesan “mirip” karena berurusan dengan data dan peristiwa, masing-masing memiliki tujuan spesifik dan cara kerja berbeda.
+Dalam arsitektur modern berbasis cloud, komunikasi antar sistem dan layanan menjadi komponen inti. Di platform Azure, Microsoft menyediakan beberapa layanan yang dirancang khusus untuk menangani berbagai jenis komunikasi dan event: ***Azure Service Bus***, ***Event Hub***, dan ***Event Grid***. Meskipun semuanya terkesan “mirip” karena berurusan dengan data dan peristiwa, masing-masing memiliki tujuan spesifik dan cara kerja berbeda.
 
 <span id="service-bus"></span>
 
-**Azure Service Bus** adalah layanan messaging enterprise-grade yang dirancang untuk **komunikasi andal antar aplikasi atau layanan**. Ia mendukung konsep **message queue** dan **publish-subscribe** model. Ideal untuk komunikasi antar microservices backend atau sistem transaksi.
+***Azure Service Bus*** adalah layanan messaging enterprise-grade yang dirancang untuk ***komunikasi andal antar aplikasi atau layanan***. Ia mendukung konsep ***message queue*** dan ***publish-subscribe*** model. Ideal untuk komunikasi antar microservices backend atau sistem transaksi.
 
 ```pseudo
 queueClient.send("OrderQueue", message: { orderId: 123, item: "Laptop" })
@@ -35,7 +35,7 @@ while message = queueClient.receive("OrderQueue"):
 
 <span id="event-hub"></span>
 
-**Azure Event Hub** adalah layanan untuk mengelola **aliran data berdurasi tinggi**, cocok untuk **telemetri, log, atau data streaming** dari banyak sumber.
+***Azure Event Hub*** adalah layanan untuk mengelola ***aliran data berdurasi tinggi***, cocok untuk ***telemetri, log, atau data streaming*** dari banyak sumber.
 
 ```pseudo
 for each second:
@@ -44,7 +44,7 @@ for each second:
 
 <span id="event-grid"></span>
 
-**Azure Event Grid** berfungsi sebagai **event router**. Ia menerima **event dari berbagai sumber** (Blob, Resource Group, dll) dan menyampaikannya ke handler yang sesuai (Function, Webhook, Logic App).
+***Azure Event Grid*** berfungsi sebagai ***event router***. Ia menerima ***event dari berbagai sumber*** (Blob, Resource Group, dll) dan menyampaikannya ke handler yang sesuai (Function, Webhook, Logic App).
 
 ```pseudo
 on BlobCreated in "MyContainer":
@@ -62,5 +62,5 @@ on BlobCreated in "MyContainer":
 
 <span id="kapan-menggunakan"></span>
 
-**Service Bus** cocok untuk sistem backend transactional, **Event Hub** untuk streaming skala besar, dan **Event Grid** untuk event-driven ringan. Ketiganya bisa dikombinasikan dalam arsitektur eventing yang kompleks dan scalable di Azure.
+***Service Bus*** cocok untuk sistem backend transactional, ***Event Hub*** untuk streaming skala besar, dan ***Event Grid*** untuk event-driven ringan. Ketiganya bisa dikombinasikan dalam arsitektur eventing yang kompleks dan scalable di Azure.
 

@@ -24,22 +24,22 @@ draft: false
 Banyak orang merasa bingung saat hendak menulis.  
 *"Aku mau nulis, tapi mulai dari mana ya?"*
 
-Pertanyaan seperti ini sangat umum — bahkan penulis berpengalaman pun kadang mengalaminya. Salah satu penyebab kebuntuan adalah tidak adanya **kerangka berpikir** yang jelas sejak awal. Padahal, seperti membangun rumah, menulis juga memerlukan fondasi dan peta jalan. Kita butuh framework.
+Pertanyaan seperti ini sangat umum — bahkan penulis berpengalaman pun kadang mengalaminya. Salah satu penyebab kebuntuan adalah tidak adanya ***kerangka berpikir*** yang jelas sejak awal. Padahal, seperti membangun rumah, menulis juga memerlukan fondasi dan peta jalan. Kita butuh framework.
 
-Artikel ini akan membantumu mengenali **enam elemen penting** yang bisa dijadikan pegangan sebelum mulai menulis. Elemen-elemen ini merujuk pada prinsip berpikir klasik: **5W + 1H** — *Why, What, Who, Where, When, How*. Bukan aturan kaku, melainkan panduan untuk menulis dengan lebih terarah dan efisien.
+Artikel ini akan membantumu mengenali ***enam elemen penting*** yang bisa dijadikan pegangan sebelum mulai menulis. Elemen-elemen ini merujuk pada prinsip berpikir klasik: ***5W + 1H*** — *Why, What, Who, Where, When, How*. Bukan aturan kaku, melainkan panduan untuk menulis dengan lebih terarah dan efisien.
 
 <span id="tujuan"></span>
 
 ### 1. Tentukan Tujuan Tulisan (Why)
 
 Langkah pertama adalah menjawab pertanyaan:  
-**“Saya ingin pembaca tahu atau merasa apa setelah membaca tulisan ini?”**
+***“Saya ingin pembaca tahu atau merasa apa setelah membaca tulisan ini?”***
 
 Tujuan ini akan menentukan arah, nada, dan pendekatan tulisanmu. Misalnya:
 
-- Ingin membujuk? Gunakan pendekatan **argumentatif**.  
-- Ingin menjelaskan sesuatu? Coba gaya **expository**.  
-- Ingin berbagi pengalaman? Pendekatan **narrative** atau **reflective** mungkin lebih tepat.
+- Ingin membujuk? Gunakan pendekatan ***argumentatif***.  
+- Ingin menjelaskan sesuatu? Coba gaya ***expository***.  
+- Ingin berbagi pengalaman? Pendekatan ***narrative*** atau ***reflective*** mungkin lebih tepat.
 
 Tujuan yang jelas akan menjadi pondasi bagi setiap keputusan penulisan selanjutnya.
 
@@ -47,7 +47,7 @@ Tujuan yang jelas akan menjadi pondasi bagi setiap keputusan penulisan selanjutn
 
 ### 2. Pilih Jenis Tulisan (What)
 
-Jenis tulisan berkaitan dengan **apa** yang ingin kamu sampaikan dan bagaimana kamu ingin menyampaikannya. Menentukan ini akan membantumu memilih nada, struktur, dan isi yang tepat.
+Jenis tulisan berkaitan dengan ***apa*** yang ingin kamu sampaikan dan bagaimana kamu ingin menyampaikannya. Menentukan ini akan membantumu memilih nada, struktur, dan isi yang tepat.
 
 | Jenis         | Tujuan                           | Contoh                                       |
 |---------------|----------------------------------|----------------------------------------------|
@@ -75,7 +75,7 @@ Setelah tahu tujuan dan jenis tulisan, pikirkan bagaimana menyusun isi tulisan s
 | Chronological          | Mengikuti urutan waktu                    | Narasi, autobiografi, cerita              |
 | Inverted Pyramid       | Info penting dulu, detail menyusul        | Artikel berita atau rilis pers            |
 
-Sebagai contoh, struktur **5 Paragraph Essay** cocok untuk pemula karena formatnya sederhana dan efektif:  
+Sebagai contoh, struktur ***5 Paragraph Essay*** cocok untuk pemula karena formatnya sederhana dan efektif:  
 - Paragraf 1: Pendahuluan dan tesis  
 - Paragraf 2–4: Tiga ide utama  
 - Paragraf 5: Kesimpulan
@@ -84,7 +84,7 @@ Sebagai contoh, struktur **5 Paragraph Essay** cocok untuk pemula karena formatn
 
 ### 4. Sesuaikan Gaya Penyajian dengan Media (Where & How to Present)
 
-Gaya penyajian memengaruhi cara pembaca menerima informasi. Ini sangat bergantung pada **di mana** tulisanmu akan diterbitkan dan untuk siapa.
+Gaya penyajian memengaruhi cara pembaca menerima informasi. Ini sangat bergantung pada ***di mana*** tulisanmu akan diterbitkan dan untuk siapa.
 
 | Gaya Penyajian   | Ciri Khas                          | Cocok Untuk                         |
 |------------------|-------------------------------------|-------------------------------------|
@@ -114,7 +114,7 @@ Menulis untuk siswa sekolah tentu berbeda dengan menulis untuk profesional. Sema
 
 ### 6. Susun Kerangka Sebelum Menulis (When → Sekarang, Sebelum Mulai)
 
-Langkah ini sering dilewatkan, padahal menyusun kerangka atau **outline** bisa sangat menghemat waktu dan tenaga saat menulis.
+Langkah ini sering dilewatkan, padahal menyusun kerangka atau ***outline*** bisa sangat menghemat waktu dan tenaga saat menulis.
 
 Sebagai contoh:
 
@@ -131,15 +131,15 @@ Outline ini berfungsi seperti blueprint — memberi arah dan struktur yang jelas
 
 ### Penutup: Menulis dengan 5W+1H
 
-Menulis akan terasa lebih mudah ketika kamu tahu **apa yang ingin ditulis, untuk siapa, dan bagaimana cara menyampaikannya.** Framework ini tidak dimaksudkan sebagai aturan kaku, tetapi sebagai alat bantu yang bisa membuat proses menulis lebih lancar dan hasilnya lebih kuat.
+Menulis akan terasa lebih mudah ketika kamu tahu ***apa yang ingin ditulis, untuk siapa, dan bagaimana cara menyampaikannya.*** Framework ini tidak dimaksudkan sebagai aturan kaku, tetapi sebagai alat bantu yang bisa membuat proses menulis lebih lancar dan hasilnya lebih kuat.
 
 Sebelum mulai, pastikan kamu sudah menjawab:
 
-- **Why** – Apa tujuan tulisan ini?  
-- **What** – Jenis tulisan apa yang paling cocok?  
-- **How** – Format atau struktur apa yang akan digunakan?  
-- **Where & How to Present** – Akan dipublikasikan di mana, dan dengan gaya seperti apa?  
-- **Who** – Siapa yang akan membaca?  
-- **When** – Sudah siap outline sebelum menulis?
+- ***Why*** – Apa tujuan tulisan ini?  
+- ***What*** – Jenis tulisan apa yang paling cocok?  
+- ***How*** – Format atau struktur apa yang akan digunakan?  
+- ***Where & How to Present*** – Akan dipublikasikan di mana, dan dengan gaya seperti apa?  
+- ***Who*** – Siapa yang akan membaca?  
+- ***When*** – Sudah siap outline sebelum menulis?
 
 Dengan prinsip 5W+1H sebagai kompas, kamu bisa menulis dengan lebih percaya diri, lebih terarah, dan lebih efektif.

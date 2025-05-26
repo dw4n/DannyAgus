@@ -2,34 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/berpikir-kritis/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/data-integrity/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/framework/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/microservices/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/problem-solving/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/resilience-thinking/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/thinking-framework/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/28_thinking_frameworks_case_study_data_hilang/</loc>
+    <lastmod>2025-05-26T23:19:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/arsitektur-sistem/</loc>
+    <lastmod>2025-05-26T23:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kerangka-berpikir/</loc>
+    <lastmod>2025-05-26T23:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/konsultan-it/</loc>
+    <lastmod>2025-05-26T23:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pengambilan-keputusan/</loc>
+    <lastmod>2025-05-26T23:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/27_thinking_frameworks_102/</loc>
+    <lastmod>2025-05-26T23:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/azure-devops/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/blog/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dotnet/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/internal-feed/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/26_readme_nuget_internal_refleksi/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/nuget/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pipeline/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/readme.md/</loc>
+    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/berpikir-kritis/</loc>
     <lastmod>2025-05-25T22:40:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/edukasi/</loc>
     <lastmod>2025-05-25T22:40:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/kerangka-berpikir/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/pengambilan-keputusan/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/self-development/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-05-25T22:40:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/thinking-framework/</loc>
     <lastmod>2025-05-25T22:40:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/25_thinking_frameworks_101/</loc>
@@ -70,9 +124,6 @@
   </url><url>
     <loc>http://localhost:1313/posts/23_strategi_mengelola_permintaan_klien_di_luar_ruang_lingkup_proyek/</loc>
     <lastmod>2025-05-25T22:20:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
-    <lastmod>2025-05-25T16:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/data-science/</loc>
     <lastmod>2025-05-25T16:00:00+08:00</lastmod>
@@ -245,9 +296,6 @@
     <loc>http://localhost:1313/tags/esai/</loc>
     <lastmod>2025-05-17T20:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/framework/</loc>
-    <lastmod>2025-05-17T20:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/7-framework-dasar-menulis-artikel-dan-esai/</loc>
     <lastmod>2025-05-17T20:00:00+08:00</lastmod>
   </url><url>
@@ -303,9 +351,6 @@
     <lastmod>2025-05-17T10:10:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/biaya/</loc>
-    <lastmod>2025-05-02T14:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/blog/</loc>
     <lastmod>2025-05-02T14:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/blog/</loc>

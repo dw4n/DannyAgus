@@ -6,8 +6,15 @@
     <description>Recent content in Blog on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Fri, 02 May 2025 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 26 May 2025 20:25:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kenapa README.md Tidak Muncul di NuGet? Refleksi dari Sebuah Paket Internal</title>
+      <link>http://localhost:1313/posts/26_readme_nuget_internal_refleksi/</link>
+      <pubDate>Mon, 26 May 2025 20:25:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/26_readme_nuget_internal_refleksi/</guid>
+      <description>Pengalaman langsung mengeksplorasi penyebab README.md tidak muncul di tampilan NuGet, yang ternyata bukan berasal dari kesalahan teknis, melainkan keterbatasan feed internal Azure DevOps.</description>
+    </item>
     <item>
       <title>Pertimbangan Teknis dan Biaya Pembentukan Blog Ini</title>
       <link>http://localhost:1313/posts/3-deployment-strategy-hugo/</link>

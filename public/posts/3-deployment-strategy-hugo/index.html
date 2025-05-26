@@ -216,14 +216,14 @@
 <p><span id="arsitektur-awal"></span></p>
 <h3 id="arsitektur-awal">Arsitektur Awal<a hidden class="anchor" aria-hidden="true" href="#arsitektur-awal">#</a></h3>
 <p>Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.</p>
-<p><strong>Komponen utama:</strong></p>
+<p><em><strong>Komponen utama:</strong></em></p>
 <ul>
 <li>Konten ditulis dalam Markdown (<code>.md</code>) dan dikonversi ke HTML menggunakan Hugo.</li>
 <li>Menggunakan tema PaperMod.</li>
 <li>Dihosting di Azure Static Web Apps (paket gratis).</li>
 <li>Gambar disimpan langsung di dalam folder Hugo (<code>static/images/</code>).</li>
 </ul>
-<p><strong>Estimasi awal kebutuhan:</strong></p>
+<p><em><strong>Estimasi awal kebutuhan:</strong></em></p>
 <ul>
 <li>1 post = ±1 MB (Markdown + gambar)</li>
 <li>Jika ada 100 post = sekitar 100 MB total konten</li>
@@ -233,10 +233,10 @@
 <h3 id="evaluasi-kebutuhan-dan-potensi-masalah">Evaluasi Kebutuhan dan Potensi Masalah<a hidden class="anchor" aria-hidden="true" href="#evaluasi-kebutuhan-dan-potensi-masalah">#</a></h3>
 <p>Namun, seiring pertumbuhan konten, beberapa batasan mulai muncul:</p>
 <ul>
-<li><strong>GitHub Repository</strong> punya batasan ukuran file (100 MB per file) dan total repo.</li>
-<li><strong>Azure Static Web Apps Free Tier</strong> hanya mendukung maksimal <strong>250 MB</strong> konten.</li>
-<li><strong>Gambar</strong> bisa membengkak ukurannya, terutama jika ada post bergaya galeri.</li>
-<li><strong>GitHub Actions</strong> hanya gratis hingga 2000 menit/bulan — cukup, tapi bisa jadi hambatan saat build makin besar.</li>
+<li><em><strong>GitHub Repository</strong></em> punya batasan ukuran file (100 MB per file) dan total repo.</li>
+<li><em><strong>Azure Static Web Apps Free Tier</strong></em> hanya mendukung maksimal <em><strong>250 MB</strong></em> konten.</li>
+<li><em><strong>Gambar</strong></em> bisa membengkak ukurannya, terutama jika ada post bergaya galeri.</li>
+<li><em><strong>GitHub Actions</strong></em> hanya gratis hingga 2000 menit/bulan — cukup, tapi bisa jadi hambatan saat build makin besar.</li>
 </ul>
 <p>Dengan mempertimbangkan risiko-risiko ini, saya mulai memikirkan strategi yang lebih efisien untuk jangka panjang.</p>
 <p><span id="strategi"></span></p>
@@ -244,11 +244,11 @@
 <p>Solusinya: pisahkan konten dan aset berat.</p>
 <ol>
 <li>
-<p><strong>Markdown dan hasil build HTML tetap di Azure Static Web Apps</strong><br>
+<p><em><strong>Markdown dan hasil build HTML tetap di Azure Static Web Apps</strong></em><br>
 File ini kecil (5–10 KB per post), build-nya cepat, dan gratis dideploy melalui GitHub Actions.</p>
 </li>
 <li>
-<p><strong>Gambar dipindahkan ke Azure Blob Storage</strong><br>
+<p><em><strong>Gambar dipindahkan ke Azure Blob Storage</strong></em><br>
 Dengan cara ini, ukuran repo GitHub tetap kecil dan storage bisa tumbuh secara terpisah. Contoh link gambar:<br>
 <code>https://namastorage.blob.core.windows.net/images/post-a/foto1.jpg</code></p>
 </li>
@@ -312,31 +312,31 @@ Dengan cara ini, ukuran repo GitHub tetap kecil dan storage bisa tumbuh secara t
   </thead>
   <tbody>
       <tr>
-          <td><strong>Azure Static Web (Free)</strong></td>
+          <td><em><strong>Azure Static Web (Free)</strong></em></td>
           <td>Auto SSL, CI/CD, cepat dan ringan</td>
           <td>Batas 250MB total konten</td>
           <td>Gratis</td>
       </tr>
       <tr>
-          <td><strong>Azure Blob Static Site</strong></td>
+          <td><em><strong>Azure Blob Static Site</strong></em></td>
           <td>Bisa simpan ratusan GB aset</td>
           <td>Deploy manual atau setup CI sendiri</td>
           <td>±Rp1.000–2.000/GB/bulan</td>
       </tr>
       <tr>
-          <td><strong>Azure Static Web (Standard)</strong></td>
+          <td><em><strong>Azure Static Web (Standard)</strong></em></td>
           <td>SLA, staging slot, custom domain banyak</td>
           <td>Bayar tetap meski trafik kecil</td>
           <td>±Rp140.000/bulan</td>
       </tr>
       <tr>
-          <td><strong>GitHub Pages</strong></td>
+          <td><em><strong>GitHub Pages</strong></em></td>
           <td>Sangat cocok untuk markdown blog</td>
           <td>Tidak ideal untuk gambar besar</td>
           <td>Gratis</td>
       </tr>
       <tr>
-          <td><strong>VPS / WordPress</strong></td>
+          <td><em><strong>VPS / WordPress</strong></em></td>
           <td>Bebas kontrol, plugin, database</td>
           <td>Perlu urus patching, keamanan, dsb</td>
           <td>±Rp50.000–200.000/bulan</td>
@@ -356,9 +356,9 @@ Dengan cara ini, ukuran repo GitHub tetap kecil dan storage bisa tumbuh secara t
 <h3 id="kesimpulan">Kesimpulan<a hidden class="anchor" aria-hidden="true" href="#kesimpulan">#</a></h3>
 <p>Untuk saat ini, setup yang saya gunakan sangat efisien:</p>
 <ul>
-<li><strong>Markdown</strong> tetap ringan dan cepat di-deploy di Static Web App</li>
-<li><strong>Gambar</strong> ditangani terpisah via Blob Storage</li>
-<li><strong>Biaya</strong> bisa mendekati nol dan tumbuh secara bertahap tanpa migrasi platform besar-besaran</li>
+<li><em><strong>Markdown</strong></em> tetap ringan dan cepat di-deploy di Static Web App</li>
+<li><em><strong>Gambar</strong></em> ditangani terpisah via Blob Storage</li>
+<li><em><strong>Biaya</strong></em> bisa mendekati nol dan tumbuh secara bertahap tanpa migrasi platform besar-besaran</li>
 </ul>
 <p>Jika kamu sedang membangun blog pribadi atau proyek kecil, strategi ini layak dipertimbangkan sebelum langsung loncat ke solusi besar yang mahal.</p>
 <blockquote>
