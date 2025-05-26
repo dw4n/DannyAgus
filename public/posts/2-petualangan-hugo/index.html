@@ -7,23 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama | Danny Agus</title>
 <meta name="keywords" content="hugo, azure, static site, papermod">
-<meta name="description" content="
-
-Outline Artikel
-
-Pendahuluan: Masalah dengan WordPress
-Tahap 1: Menentukan Arah dan Stack Teknologi
-Tahap 2: Setup Hugo Lokal Tanpa Install
-Tahap 3: Menambahkan Tema PaperMod
-Tahap 4: Menulis dan Menampilkan Postingan Pertama
-Tahap 5: Otomatisasi Deploy dengan GitHub Actions
-Tahap 6: Menambah Fitur Search, Tag, dan Kategori
-Tahap 7: Menyisipkan Gambar dengan Caption
-Penutup: Apa yang Saya Pelajari
-
-
-
-Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: apa nggak ada solusi yang lebih simpel, murah, dan aman?">
+<meta name="description" content="Pengalaman migrasi dari WordPress ke Hugo untuk membangun blog yang lebih aman, murah, dan mudah dikelola. Artikel ini membahas langkah teknis, otomasi deploy, serta tips praktis membuat blog statis modern dengan Azure dan PaperMod.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/2-petualangan-hugo/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
@@ -74,7 +58,7 @@ Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru 
 </noscript><meta property="og:url" content="http://localhost:1313/posts/2-petualangan-hugo/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama">
-  <meta property="og:description" content=" Outline Artikel Pendahuluan: Masalah dengan WordPress Tahap 1: Menentukan Arah dan Stack Teknologi Tahap 2: Setup Hugo Lokal Tanpa Install Tahap 3: Menambahkan Tema PaperMod Tahap 4: Menulis dan Menampilkan Postingan Pertama Tahap 5: Otomatisasi Deploy dengan GitHub Actions Tahap 6: Menambah Fitur Search, Tag, dan Kategori Tahap 7: Menyisipkan Gambar dengan Caption Penutup: Apa yang Saya Pelajari Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: apa nggak ada solusi yang lebih simpel, murah, dan aman?">
+  <meta property="og:description" content="Pengalaman migrasi dari WordPress ke Hugo untuk membangun blog yang lebih aman, murah, dan mudah dikelola. Artikel ini membahas langkah teknis, otomasi deploy, serta tips praktis membuat blog statis modern dengan Azure dan PaperMod.">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,23 +70,7 @@ Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru 
     <meta property="article:tag" content="Papermod">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama">
-<meta name="twitter:description" content="
-
-Outline Artikel
-
-Pendahuluan: Masalah dengan WordPress
-Tahap 1: Menentukan Arah dan Stack Teknologi
-Tahap 2: Setup Hugo Lokal Tanpa Install
-Tahap 3: Menambahkan Tema PaperMod
-Tahap 4: Menulis dan Menampilkan Postingan Pertama
-Tahap 5: Otomatisasi Deploy dengan GitHub Actions
-Tahap 6: Menambah Fitur Search, Tag, dan Kategori
-Tahap 7: Menyisipkan Gambar dengan Caption
-Penutup: Apa yang Saya Pelajari
-
-
-
-Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: apa nggak ada solusi yang lebih simpel, murah, dan aman?">
+<meta name="twitter:description" content="Pengalaman migrasi dari WordPress ke Hugo untuk membangun blog yang lebih aman, murah, dan mudah dikelola. Artikel ini membahas langkah teknis, otomasi deploy, serta tips praktis membuat blog statis modern dengan Azure dan PaperMod.">
 
 
 <script type="application/ld+json">
@@ -131,7 +99,7 @@ Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru 
   "@type": "BlogPosting",
   "headline": "Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama",
   "name": "Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama",
-  "description": " Outline Artikel Pendahuluan: Masalah dengan WordPress Tahap 1: Menentukan Arah dan Stack Teknologi Tahap 2: Setup Hugo Lokal Tanpa Install Tahap 3: Menambahkan Tema PaperMod Tahap 4: Menulis dan Menampilkan Postingan Pertama Tahap 5: Otomatisasi Deploy dengan GitHub Actions Tahap 6: Menambah Fitur Search, Tag, dan Kategori Tahap 7: Menyisipkan Gambar dengan Caption Penutup: Apa yang Saya Pelajari Bikin blog itu harusnya sederhana. Tapi pengalaman saya dengan WordPress justru sebaliknya: plugin harus rutin di-update, PHP di Azure berubah versi tanpa peringatan (PHP 7 ke 8 pernah bikin WordPress saya rusak), dan hampir setiap 3 bulan sekali, situs saya kena hack. Padahal sudah pasang plugin security (yang versi gratis tentu saja). Biaya server pun tidak murah. Saya jadi berpikir: apa nggak ada solusi yang lebih simpel, murah, dan aman?\n",
+  "description": "Pengalaman migrasi dari WordPress ke Hugo untuk membangun blog yang lebih aman, murah, dan mudah dikelola. Artikel ini membahas langkah teknis, otomasi deploy, serta tips praktis membuat blog statis modern dengan Azure dan PaperMod.",
   "keywords": [
     "hugo", "azure", "static site", "papermod"
   ],

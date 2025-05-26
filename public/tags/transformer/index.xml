@@ -13,20 +13,7 @@
       <link>http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/</link>
       <pubDate>Sun, 25 May 2025 14:30:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-transformer&#34;&gt;Apa Itu Transformer?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#keterbatasan-model-lama&#34;&gt;Keterbatasan Model Sebelumnya (RNN, LSTM, GRU)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#self-attention&#34;&gt;Self-Attention: Inti dari Transformer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aplikasi-transformer&#34;&gt;Aplikasi Transformer dalam NLP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tantangan-transformer&#34;&gt;Tantangan dan Kelemahan Transformer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#menuju-gpt&#34;&gt;Awal Mula Generasi Model seperti GPT&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;apa-itu-transformer&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami.&lt;/strong&gt; Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.&lt;/p&gt;</description>
+      <description>Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.</description>
     </item>
   </channel>
 </rss>

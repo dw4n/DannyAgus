@@ -1,6 +1,7 @@
 ---
 title: "Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message"
 title_underscore: "paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message"
+summary: Penjelasan perbedaan mendasar antara event-driven dan reactive programming, serta konsep event dan message dalam arsitektur perangkat lunak. Panduan memilih paradigma yang sesuai untuk aplikasi interaktif dan sistem real-time.
 date: 2025-05-23T00:00:00+08:00
 tags: ["pemrograman", "event-driven", "reactive", "event", "message", "konsep"]
 categories: ["Konsep Pemrograman"]

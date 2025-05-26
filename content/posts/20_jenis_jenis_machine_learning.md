@@ -1,6 +1,7 @@
 ---
 title: "Jenis-Jenis Machine Learning: Bagaimana Mesin Belajar dari Data"
 title_underscore: "jenis_jenis_machine_learning"
+summary: Penjelasan empat pendekatan utama machine learning—supervised, unsupervised, semi-supervised, dan reinforcement learning—beserta contoh aplikasinya. Panduan memilih metode yang sesuai dengan kebutuhan data dan masalah.
 date: 2025-05-25T15:30:00+08:00
 tags: ["machine learning", "supervised learning", "unsupervised learning", "reinforcement learning", "pemula"]
 categories: ["Machine Learning"]

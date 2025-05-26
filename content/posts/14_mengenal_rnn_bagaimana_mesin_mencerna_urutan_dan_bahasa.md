@@ -1,6 +1,7 @@
 ---
 title: "Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa"
 title_underscore: "mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa"
+summary: RNN memungkinkan mesin memahami data berurutan seperti teks dan suara dengan mengingat konteks sebelumnya. Artikel ini membahas cara kerja, aplikasi nyata, serta tantangan dan solusi dalam pengembangan RNN.
 date: 2025-05-25T12:00:00+08:00
 tags: ["machine learning", "rnn", "neural network", "nlp", "kecerdasan buatan", "pemula"]
 categories: ["Deep Learning"]

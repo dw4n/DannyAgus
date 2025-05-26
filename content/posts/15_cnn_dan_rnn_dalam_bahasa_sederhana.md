@@ -1,6 +1,7 @@
 ---
 title: "CNN dan RNN dalam Bahasa Sederhana"
 title_underscore: "cnn_dan_rnn_dalam_bahasa_sederhana"
+summary: Penjelasan sederhana tentang cara kerja CNN untuk pengolahan gambar dan RNN untuk data berurutan seperti teks atau suara. Dilengkapi perbandingan peran keduanya dan relevansinya dalam aplikasi sehari-hari.
 date: 2025-05-25T13:00:00+08:00
 tags: ["machine learning", "cnn", "rnn", "kecerdasan buatan", "pemula", "neural network"]
 categories: ["Deep Learning"]

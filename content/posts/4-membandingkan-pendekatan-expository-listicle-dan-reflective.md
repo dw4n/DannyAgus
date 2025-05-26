@@ -1,5 +1,6 @@
 ---
 title: "Membandingkan Pendekatan Expository, Listicle, dan Reflective"
+summary: Perbandingan tiga pendekatan menulis—expository, listicle, dan reflective—untuk satu topik yang sama, lengkap dengan karakteristik, kelebihan, dan situasi penggunaannya. Panduan ini membantu penulis memilih gaya penyajian sesuai tujuan dan audiens.
 date: 2025-05-17T10:10:00+08:00
 tags: ["menulis", "expository", "listicle", "reflective", "perbandingan"]
 categories: ["Menulis"]

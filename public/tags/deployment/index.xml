@@ -13,30 +13,7 @@
       <link>http://localhost:1313/posts/3-deployment-strategy-hugo/</link>
       <pubDate>Fri, 02 May 2025 14:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/3-deployment-strategy-hugo/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#evaluasi&#34;&gt;Evaluasi Kebutuhan dan Potensi Masalah&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#strategi&#34;&gt;Strategi yang Saya Ambil&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#biaya&#34;&gt;Simulasi Biaya&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#alternatif-hosting&#34;&gt;Perbandingan Alternatif Hosting&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#upgrade&#34;&gt;Kapan Sebaiknya Upgrade?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kesimpulan&#34;&gt;Kesimpulan&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;arsitektur-awal&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;arsitektur-awal&#34;&gt;Arsitektur Awal&lt;/h3&gt;
-&lt;p&gt;Untuk versi awal, saya memilih arsitektur yang sederhana namun cukup scalable.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Komponen utama:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Konten ditulis dalam Markdown (&lt;code&gt;.md&lt;/code&gt;) dan dikonversi ke HTML menggunakan Hugo.&lt;/li&gt;
-&lt;li&gt;Menggunakan tema PaperMod.&lt;/li&gt;
-&lt;li&gt;Dihosting di Azure Static Web Apps (paket gratis).&lt;/li&gt;
-&lt;li&gt;Gambar disimpan langsung di dalam folder Hugo (&lt;code&gt;static/images/&lt;/code&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Estimasi awal kebutuhan:&lt;/strong&gt;&lt;/p&gt;</description>
+      <description>Penjelasan strategi teknis dan simulasi biaya membangun blog dengan Hugo di Azure, termasuk pemisahan konten dan aset untuk efisiensi jangka panjang. Panduan ini membandingkan opsi hosting dan memberikan tips upgrade sesuai kebutuhan pertumbuhan blog.</description>
     </item>
   </channel>
 </rss>

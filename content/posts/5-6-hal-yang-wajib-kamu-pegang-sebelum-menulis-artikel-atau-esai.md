@@ -1,5 +1,6 @@
 ---
 title: "6 Hal yang Wajib Kamu Pegang Sebelum Menulis Artikel atau Esai"
+summary: Enam prinsip praktis berbasis 5W+1H untuk membantu penulis pemula menyusun artikel atau esai secara terarah, mulai dari tujuan, jenis, struktur, hingga mengenali audiens dan membuat outline. Panduan ini memudahkan proses menulis agar lebih fokus dan efektif.
 date: 2025-05-17T11:20:00+08:00
 tags: ["menulis", "artikel", "esai", "tips menulis", "kerangka"]
 categories: ["Menulis"]

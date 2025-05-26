@@ -1,6 +1,7 @@
 ---
 title: "Memahami Artificial Neural Network: Fondasi Kecerdasan Buatan Modern"
 title_underscore: "memahami_artificial_neural_network_fondasi_kecerdasan_buatan_modern"
+summary: ANN meniru cara kerja otak manusia untuk memproses dan belajar dari data melalui jaringan neuron buatan. Artikel ini membahas prinsip kerja, proses belajar, serta penerapan ANN dalam berbagai aplikasi modern.
 date: 2025-05-25T11:00:00+08:00
 tags: ["machine learning", "artificial neural network", "pemula", "deep learning", "neural network"]
 categories: ["Deep Learning"]

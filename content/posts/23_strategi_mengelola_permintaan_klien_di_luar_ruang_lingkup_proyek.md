@@ -1,6 +1,7 @@
 ---
 title: "Strategi Mengelola Permintaan Klien di Luar Ruang Lingkup Proyek"
 title_underscore: "strategi_mengelola_permintaan_klien_di_luar_ruang_lingkup_proyek"
+summary: Permintaan klien yang berkembang perlu dikelola dengan komunikasi efektif dan struktur pengambilan keputusan yang jelas. Artikel ini membahas strategi menjaga ruang lingkup proyek tanpa mengorbankan profesionalisme dan fleksibilitas tim.
 date: 2025-05-25T22:20:00+08:00
 tags: ["klien", "manajemen proyek", "scope", "komunikasi", "stakeholder"]
 categories: ["Manajemen Proyek"]

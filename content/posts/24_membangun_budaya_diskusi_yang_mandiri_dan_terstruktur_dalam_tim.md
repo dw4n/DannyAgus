@@ -1,6 +1,7 @@
 ---
 title: "Membangun Budaya Diskusi yang Mandiri dan Terstruktur dalam Tim"
 title_underscore: "membangun_budaya_diskusi_yang_mandiri_dan_terstruktur_dalam_tim"
+summary: Pentingnya perumusan masalah, fasilitator, dan keragaman perspektif dalam diskusi tim, serta peran forum dalam memberdayakan anggota dan meningkatkan kualitas keputusan.
 date: 2025-05-25T22:30:00+08:00
 tags: ["kolaborasi", "meeting", "pengambilan keputusan", "tim", "manajemen pengetahuan"]
 categories: ["Manajemen Proyek"]

@@ -1,6 +1,7 @@
 ---
 title: "Mengenal LSTM dan GRU: Memori Panjang dalam Otak Mesin"
 title_underscore: "mengenal_lstm_dan_gru_memori_panjang_dalam_otak_mesin"
+summary: LSTM dan GRU memecahkan masalah memori jangka panjang pada RNN klasik dengan mekanisme gerbang cerdas. Artikel ini membahas keunggulan, aplikasi nyata, dan perbandingan efisiensi kedua arsitektur dalam pemrosesan data berurutan.
 date: 2025-05-25T14:00:00+08:00
 tags: ["machine learning", "lstm", "gru", "neural network", "rnn", "nlp", "pemula"]
 categories: ["Deep Learning"]

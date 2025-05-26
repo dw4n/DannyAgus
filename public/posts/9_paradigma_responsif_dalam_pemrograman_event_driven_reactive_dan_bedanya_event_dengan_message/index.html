@@ -7,19 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message | Danny Agus</title>
 <meta name="keywords" content="pemrograman, event-driven, reactive, event, message, konsep">
-<meta name="description" content="
-
-Outline Artikel
-
-Pendahuluan: Paradigma Responsif
-Apa Itu Event-Driven Programming?
-Apa Itu Reactive Programming?
-Perbedaan antara Event dan Message
-Kapan Menggunakan Event-Driven vs Reactive
-
-
-
-Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada &ldquo;respon terhadap sesuatu&rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.">
+<meta name="description" content="Penjelasan perbedaan mendasar antara event-driven dan reactive programming, serta konsep event dan message dalam arsitektur perangkat lunak. Panduan memilih paradigma yang sesuai untuk aplikasi interaktif dan sistem real-time.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
@@ -70,7 +58,7 @@ Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering
 </noscript><meta property="og:url" content="http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message">
-  <meta property="og:description" content=" Outline Artikel Pendahuluan: Paradigma Responsif Apa Itu Event-Driven Programming? Apa Itu Reactive Programming? Perbedaan antara Event dan Message Kapan Menggunakan Event-Driven vs Reactive Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada “respon terhadap sesuatu”, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.">
+  <meta property="og:description" content="Penjelasan perbedaan mendasar antara event-driven dan reactive programming, serta konsep event dan message dalam arsitektur perangkat lunak. Panduan memilih paradigma yang sesuai untuk aplikasi interaktif dan sistem real-time.">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -84,19 +72,7 @@ Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering
     <meta property="article:tag" content="Konsep">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message">
-<meta name="twitter:description" content="
-
-Outline Artikel
-
-Pendahuluan: Paradigma Responsif
-Apa Itu Event-Driven Programming?
-Apa Itu Reactive Programming?
-Perbedaan antara Event dan Message
-Kapan Menggunakan Event-Driven vs Reactive
-
-
-
-Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada &ldquo;respon terhadap sesuatu&rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.">
+<meta name="twitter:description" content="Penjelasan perbedaan mendasar antara event-driven dan reactive programming, serta konsep event dan message dalam arsitektur perangkat lunak. Panduan memilih paradigma yang sesuai untuk aplikasi interaktif dan sistem real-time.">
 
 
 <script type="application/ld+json">
@@ -125,7 +101,7 @@ Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering
   "@type": "BlogPosting",
   "headline": "Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message",
   "name": "Paradigma Responsif dalam Pemrograman: Event-Driven, Reactive, dan Bedanya Event dengan Message",
-  "description": " Outline Artikel Pendahuluan: Paradigma Responsif Apa Itu Event-Driven Programming? Apa Itu Reactive Programming? Perbedaan antara Event dan Message Kapan Menggunakan Event-Driven vs Reactive Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya berfokus pada \u0026ldquo;respon terhadap sesuatu\u0026rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara event dan message melalui penjelasan dan pseudocode.\n",
+  "description": "Penjelasan perbedaan mendasar antara event-driven dan reactive programming, serta konsep event dan message dalam arsitektur perangkat lunak. Panduan memilih paradigma yang sesuai untuk aplikasi interaktif dan sistem real-time.",
   "keywords": [
     "pemrograman", "event-driven", "reactive", "event", "message", "konsep"
   ],

@@ -1,6 +1,7 @@
 ---
 title: "Machine Learning 101: Cara Mesin Belajar dari Data"
 title_underscore: "machine_learning_101_cara_mesin_belajar_dari_data"
+summary: Penjelasan dasar tentang konsep, pendekatan, dan aplikasi machine learning dalam kehidupan sehari-hari. Dilengkapi perbandingan dengan pemrograman tradisional dan pengantar ke teknologi AI lanjutan.
 date: 2025-05-25T15:00:00+08:00
 tags: ["machine learning", "ai", "pemula", "data science", "supervised learning", "unsupervised learning"]
 categories: ["Machine Learning"]

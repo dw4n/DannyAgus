@@ -13,58 +13,21 @@
       <link>http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/</link>
       <pubDate>Sun, 25 May 2025 14:30:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-transformer&#34;&gt;Apa Itu Transformer?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#keterbatasan-model-lama&#34;&gt;Keterbatasan Model Sebelumnya (RNN, LSTM, GRU)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#self-attention&#34;&gt;Self-Attention: Inti dari Transformer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aplikasi-transformer&#34;&gt;Aplikasi Transformer dalam NLP&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tantangan-transformer&#34;&gt;Tantangan dan Kelemahan Transformer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#menuju-gpt&#34;&gt;Awal Mula Generasi Model seperti GPT&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;apa-itu-transformer&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami.&lt;/strong&gt; Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.&lt;/p&gt;</description>
+      <description>Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.</description>
     </item>
     <item>
       <title>Mengenal LSTM dan GRU: Memori Panjang dalam Otak Mesin</title>
       <link>http://localhost:1313/posts/17_mengenal_lstm_dan_gru_memori_panjang_dalam_otak_mesin/</link>
       <pubDate>Sun, 25 May 2025 14:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/17_mengenal_lstm_dan_gru_memori_panjang_dalam_otak_mesin/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-lstm-gru&#34;&gt;Apa Itu LSTM dan GRU?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#masalah-rnn&#34;&gt;Masalah Memori pada RNN Klasik&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#aplikasi-lstm&#34;&gt;Aplikasi LSTM di Dunia Nyata&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#gru-lebih-ringan&#34;&gt;GRU: Alternatif Lebih Ringan dari LSTM&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#pemilihan-lstm-gru&#34;&gt;Kapan Memilih LSTM vs GRU?&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;apa-itu-lstm-gru&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;LSTM dan GRU adalah dua arsitektur neural network yang dirancang untuk membantu mesin mengingat informasi lebih lama dan lebih stabil.&lt;/strong&gt; Dalam dunia machine learning, kita sering bekerja dengan data berurutan—entah itu kalimat, percakapan, atau urutan sensor dalam mesin. RNN memang cocok untuk menangani hal ini, namun ia memiliki keterbatasan dalam mengingat konteks jangka panjang. Di sinilah LSTM (Long Short-Term Memory) dan GRU (Gated Recurrent Unit) muncul sebagai solusi. Artikel ini akan membawa kamu mengenali bagaimana kedua jaringan ini bekerja, kenapa mereka dibutuhkan, dan bagaimana mereka diaplikasikan dalam berbagai bidang secara nyata.&lt;/p&gt;</description>
+      <description>LSTM dan GRU memecahkan masalah memori jangka panjang pada RNN klasik dengan mekanisme gerbang cerdas. Artikel ini membahas keunggulan, aplikasi nyata, dan perbandingan efisiensi kedua arsitektur dalam pemrosesan data berurutan.</description>
     </item>
     <item>
       <title>Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa</title>
       <link>http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/</link>
       <pubDate>Sun, 25 May 2025 12:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-rnn&#34;&gt;Apa Itu RNN dan Mengapa Penting?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cara-kerja-rnn&#34;&gt;Bagaimana RNN Memahami Urutan&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#contoh-penggunaan&#34;&gt;Contoh Penggunaan RNN di Kehidupan Nyata&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#keterbatasan&#34;&gt;Keterbatasan RNN dan Solusinya&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#relevansi-rnn&#34;&gt;Kenapa Memahami RNN Itu Relevan&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;apa-itu-rnn&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN.&lt;/strong&gt; Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.&lt;/p&gt;</description>
+      <description>RNN memungkinkan mesin memahami data berurutan seperti teks dan suara dengan mengingat konteks sebelumnya. Artikel ini membahas cara kerja, aplikasi nyata, serta tantangan dan solusi dalam pengembangan RNN.</description>
     </item>
   </channel>
 </rss>

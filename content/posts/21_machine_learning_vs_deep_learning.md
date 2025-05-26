@@ -1,6 +1,7 @@
 ---
 title: "Machine Learning vs Deep Learning: Apa Bedanya dan Kapan Digunakan?"
 title_underscore: "machine_learning_vs_deep_learning"
+summary: Penjelasan perbedaan mendasar antara machine learning dan deep learning dari sisi struktur, kebutuhan data, dan aplikasi. Panduan memilih pendekatan yang tepat sesuai jenis data dan kompleksitas masalah.
 date: 2025-05-25T16:00:00+08:00
 tags: ["machine learning", "deep learning", "ai", "pemula", "data science"]
 categories: ["Machine Learning","Deep Learning"]

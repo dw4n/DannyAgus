@@ -13,60 +13,21 @@
       <link>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</link>
       <pubDate>Sun, 25 May 2025 13:30:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#neural-network-dasar&#34;&gt;Neural Network: Fondasi Otak Mesin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-ann&#34;&gt;Apa Itu ANN (Artificial Neural Network)?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cnn&#34;&gt;CNN: Mesin yang Bisa Melihat&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#rnn&#34;&gt;RNN: Mesin yang Mengerti Urutan&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#evolusi-network&#34;&gt;Evolusi Neural Network: LSTM, GRU, GAN, Transformer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kapan-menggunakan&#34;&gt;Kapan Menggunakan Jenis yang Mana?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tabel-perbandingan&#34;&gt;Tabel Perbandingan Jenis Neural Network&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;neural-network-dasar&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia.&lt;/strong&gt; Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.&lt;/p&gt;</description>
+      <description>Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.</description>
     </item>
     <item>
       <title>CNN dan RNN dalam Bahasa Sederhana</title>
       <link>http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/</link>
       <pubDate>Sun, 25 May 2025 13:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/15_cnn_dan_rnn_dalam_bahasa_sederhana/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#pengantar&#34;&gt;Pengantar: Mesin yang Bisa Melihat dan Mendengar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cnn&#34;&gt;Bagaimana CNN Mengenali Gambar&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#rnn&#34;&gt;Bagaimana RNN Memahami Urutan&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#perbandingan-cnn-rnn&#34;&gt;CNN vs RNN: Dua Pendekatan yang Saling Melengkapi&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#relevansi&#34;&gt;Relevansi CNN dan RNN dalam Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;pengantar&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Dalam dunia teknologi modern, mesin tidak hanya bisa berhitung, tapi juga bisa melihat dan mendengar layaknya manusia.&lt;/strong&gt; Kemampuan ini dimungkinkan oleh machine learning, cabang kecerdasan buatan yang membuat mesin mampu belajar dari data. Dua teknologi inti yang banyak digunakan untuk tugas visual dan bahasa adalah CNN (Convolutional Neural Network) dan RNN (Recurrent Neural Network). Artikel ini akan menjelaskan bagaimana CNN membantu komputer mengenali gambar, bagaimana RNN memungkinkan mesin memahami urutan kata atau suara, lalu membandingkan peran keduanya, dan akhirnya mengajak kita melihat pentingnya pemahaman teknologi ini dalam kehidupan sehari-hari.&lt;/p&gt;</description>
+      <description>Penjelasan sederhana tentang cara kerja CNN untuk pengolahan gambar dan RNN untuk data berurutan seperti teks atau suara. Dilengkapi perbandingan peran keduanya dan relevansinya dalam aplikasi sehari-hari.</description>
     </item>
     <item>
       <title>Mengenal CNN: Cara Mesin Belajar Melihat Gambar</title>
       <link>http://localhost:1313/posts/13_mengenal_cnn_cara_mesin_belajar_melihat_gambar/</link>
       <pubDate>Sun, 25 May 2025 11:30:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/13_mengenal_cnn_cara_mesin_belajar_melihat_gambar/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-cnn&#34;&gt;Apa Itu CNN dan Mengapa Penting?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#melihat-seperti-manusia&#34;&gt;CNN Membantu Mesin Melihat Seperti Manusia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cara-kerja-cnn&#34;&gt;Cara Kerja CNN: Dari Fitur Sederhana ke Kompleks&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#penggunaan-cnn&#34;&gt;Contoh Penggunaan CNN dalam Kehidupan Sehari-hari&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#dampak-cnn&#34;&gt;Kenapa CNN Mengubah Cara Mesin Memahami Dunia&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cnn-visual-mesin&#34;&gt;CNN sebagai Tonggak Kecerdasan Visual Mesin&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;apa-itu-cnn&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Convolutional Neural Network atau CNN adalah salah satu teknologi paling penting dalam dunia machine learning, terutama dalam pengolahan gambar.&lt;/strong&gt; Dalam artikel ini, kita akan membahas lima hal utama yang perlu diketahui untuk memahami CNN dengan cara yang sederhana: apa itu CNN secara umum, bagaimana ia bekerja seperti &amp;ldquo;mata&amp;rdquo; mesin, bagaimana CNN mengenali pola-pola visual, contoh penggunaan CNN dalam kehidupan sehari-hari, dan kenapa teknologi ini sangat penting untuk masa depan kecerdasan buatan.&lt;/p&gt;</description>
+      <description>CNN memungkinkan mesin mengenali dan memahami gambar dengan memproses fitur visual secara bertahap. Artikel ini membahas prinsip kerja, aplikasi sehari-hari, dan dampak CNN dalam kecerdasan buatan modern.</description>
     </item>
   </channel>
 </rss>

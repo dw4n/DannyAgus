@@ -1,5 +1,6 @@
 ---
 title: "Dari Bahasa Mesin ke Bahasa Manusia: Bagaimana Saya Menemukan Cara Menulis yang Terstruktur"
+summary: Refleksi pengalaman programmer menemukan framework menulis terstruktur berbasis 5W+1H agar tulisan lebih logis dan mudah dipahami. Panduan ini membantu siapa pun membangun kebiasaan menulis yang sistematis dan efektif.
 date: 2025-05-17T12:00:00+08:00
 tags: ["menulis", "framework", "belajar menulis", "programmer", "writing process"]
 categories: ["Menulis"]

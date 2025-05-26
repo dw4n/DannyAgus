@@ -13,21 +13,7 @@
       <link>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</link>
       <pubDate>Sun, 25 May 2025 13:30:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#neural-network-dasar&#34;&gt;Neural Network: Fondasi Otak Mesin&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#apa-itu-ann&#34;&gt;Apa Itu ANN (Artificial Neural Network)?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cnn&#34;&gt;CNN: Mesin yang Bisa Melihat&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#rnn&#34;&gt;RNN: Mesin yang Mengerti Urutan&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#evolusi-network&#34;&gt;Evolusi Neural Network: LSTM, GRU, GAN, Transformer&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#kapan-menggunakan&#34;&gt;Kapan Menggunakan Jenis yang Mana?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#tabel-perbandingan&#34;&gt;Tabel Perbandingan Jenis Neural Network&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;neural-network-dasar&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia.&lt;/strong&gt; Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.&lt;/p&gt;</description>
+      <description>Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.</description>
     </item>
   </channel>
 </rss>

@@ -1,6 +1,7 @@
 ---
 title: "Praktik Menentukan Sizing dan Velocity dalam Proyek Teknologi"
 title_underscore: "praktik_menentukan_sizing_dan_velocity_dalam_proyek_teknologi"
+summary: Berbagai pendekatan praktis estimasi pekerjaan dan kecepatan tim dalam proyek teknologi, mulai dari pengalaman sebelumnya hingga model estimasi relatif. Dilengkapi strategi menghadapi tenggat, pengaruh stack teknologi, serta pentingnya asumsi dan batasan backlog.
 date: 2025-05-23T10:00:00+08:00
 tags: ["agile", "estimasi", "sizing", "velocity", "proyek teknologi", "scrum", "manajemen proyek"]
 categories: ["Manajemen Proyek"]

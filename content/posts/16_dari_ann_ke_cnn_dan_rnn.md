@@ -1,6 +1,7 @@
 ---
 title: "Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana"
 title_underscore: "dari_ann_ke_cnn_dan_rnn"
+summary: Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.
 date: 2025-05-25T13:30:00+08:00
 tags: ["machine learning", "neural network", "ann", "cnn", "rnn", "lstm", "deep learning", "pemula"]
 categories: ["Deep Learning"]

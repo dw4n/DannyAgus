@@ -1,6 +1,7 @@
 ---
 title: "Apa Itu Deep Learning? Cara Mesin Mengenali Gambar, Suara, dan Bahasa"
 title_underscore: "apa_itu_deep_learning"
+summary: Deep learning memanfaatkan jaringan saraf berlapis untuk mengenali pola kompleks dari data besar seperti gambar, suara, dan bahasa. Artikel ini mengulas perbedaan dengan machine learning, aplikasi sehari-hari, serta kekuatan dan keterbatasannya.
 date: 2025-05-25T10:00:00+08:00
 tags: ["deep learning", "neural network", "machine learning", "pemula", "ai"]
 categories: ["Deep Learning", "Machine Learning"]

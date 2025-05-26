@@ -1,5 +1,6 @@
 ---
 title: "Memahami Konsep Event, Reactive, dan Message dalam Pemrograman"
+summary: Penjelasan sederhana tentang event-driven dan reactive programming beserta perbedaan event dan message dalam sistem perangkat lunak. Dilengkapi analogi sehari-hari agar mudah dipahami pemula.
 date: 2025-05-17T20:00:00+08:00
 tags: ["pemrograman", "event-driven", "reactive", "message", "konsep", "penjelasan"]
 categories: ["Konsep Pemrograman"]

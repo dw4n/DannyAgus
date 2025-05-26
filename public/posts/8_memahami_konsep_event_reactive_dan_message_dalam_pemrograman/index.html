@@ -7,21 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Memahami Konsep Event, Reactive, dan Message dalam Pemrograman | Danny Agus</title>
 <meta name="keywords" content="pemrograman, event-driven, reactive, message, konsep, penjelasan">
-<meta name="description" content="
-
-Outline Artikel
-
-Pendahuluan: Sistem yang Responsif
-Apa Itu Event-Driven Programming?
-Contoh Sehari-hari Event-Driven
-Apa Itu Reactive Programming?
-Contoh Reactive di Kehidupan Nyata
-Perbedaan Event dan Message
-Kesimpulan: Kapan Menggunakan Apa?
-
-
-
-Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang terjadi di sekitarnya, mirip seperti manusia yang bereaksi terhadap kejadian sehari-hari. Dua pendekatan yang banyak digunakan untuk membuat sistem seperti itu adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya sering terdengar mirip, mereka memiliki cara kerja dan tujuan yang berbeda. Dengan contoh-contoh ringan seperti bel pintu, ember air, dan ajakan bermain, kita bisa memahami konsep-konsep ini tanpa harus mengerutkan dahi.">
+<meta name="description" content="Penjelasan sederhana tentang event-driven dan reactive programming beserta perbedaan event dan message dalam sistem perangkat lunak. Dilengkapi analogi sehari-hari agar mudah dipahami pemula.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/8_memahami_konsep_event_reactive_dan_message_dalam_pemrograman/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
@@ -72,7 +58,7 @@ Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang t
 </noscript><meta property="og:url" content="http://localhost:1313/posts/8_memahami_konsep_event_reactive_dan_message_dalam_pemrograman/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Memahami Konsep Event, Reactive, dan Message dalam Pemrograman">
-  <meta property="og:description" content=" Outline Artikel Pendahuluan: Sistem yang Responsif Apa Itu Event-Driven Programming? Contoh Sehari-hari Event-Driven Apa Itu Reactive Programming? Contoh Reactive di Kehidupan Nyata Perbedaan Event dan Message Kesimpulan: Kapan Menggunakan Apa? Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang terjadi di sekitarnya, mirip seperti manusia yang bereaksi terhadap kejadian sehari-hari. Dua pendekatan yang banyak digunakan untuk membuat sistem seperti itu adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya sering terdengar mirip, mereka memiliki cara kerja dan tujuan yang berbeda. Dengan contoh-contoh ringan seperti bel pintu, ember air, dan ajakan bermain, kita bisa memahami konsep-konsep ini tanpa harus mengerutkan dahi.">
+  <meta property="og:description" content="Penjelasan sederhana tentang event-driven dan reactive programming beserta perbedaan event dan message dalam sistem perangkat lunak. Dilengkapi analogi sehari-hari agar mudah dipahami pemula.">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,21 +72,7 @@ Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang t
     <meta property="article:tag" content="Penjelasan">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Memahami Konsep Event, Reactive, dan Message dalam Pemrograman">
-<meta name="twitter:description" content="
-
-Outline Artikel
-
-Pendahuluan: Sistem yang Responsif
-Apa Itu Event-Driven Programming?
-Contoh Sehari-hari Event-Driven
-Apa Itu Reactive Programming?
-Contoh Reactive di Kehidupan Nyata
-Perbedaan Event dan Message
-Kesimpulan: Kapan Menggunakan Apa?
-
-
-
-Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang terjadi di sekitarnya, mirip seperti manusia yang bereaksi terhadap kejadian sehari-hari. Dua pendekatan yang banyak digunakan untuk membuat sistem seperti itu adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya sering terdengar mirip, mereka memiliki cara kerja dan tujuan yang berbeda. Dengan contoh-contoh ringan seperti bel pintu, ember air, dan ajakan bermain, kita bisa memahami konsep-konsep ini tanpa harus mengerutkan dahi.">
+<meta name="twitter:description" content="Penjelasan sederhana tentang event-driven dan reactive programming beserta perbedaan event dan message dalam sistem perangkat lunak. Dilengkapi analogi sehari-hari agar mudah dipahami pemula.">
 
 
 <script type="application/ld+json">
@@ -129,7 +101,7 @@ Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang t
   "@type": "BlogPosting",
   "headline": "Memahami Konsep Event, Reactive, dan Message dalam Pemrograman",
   "name": "Memahami Konsep Event, Reactive, dan Message dalam Pemrograman",
-  "description": " Outline Artikel Pendahuluan: Sistem yang Responsif Apa Itu Event-Driven Programming? Contoh Sehari-hari Event-Driven Apa Itu Reactive Programming? Contoh Reactive di Kehidupan Nyata Perbedaan Event dan Message Kesimpulan: Kapan Menggunakan Apa? Dalam dunia pemrograman, banyak sistem dibuat agar bisa merespons sesuatu yang terjadi di sekitarnya, mirip seperti manusia yang bereaksi terhadap kejadian sehari-hari. Dua pendekatan yang banyak digunakan untuk membuat sistem seperti itu adalah Event-Driven Programming dan Reactive Programming. Meskipun keduanya sering terdengar mirip, mereka memiliki cara kerja dan tujuan yang berbeda. Dengan contoh-contoh ringan seperti bel pintu, ember air, dan ajakan bermain, kita bisa memahami konsep-konsep ini tanpa harus mengerutkan dahi.\n",
+  "description": "Penjelasan sederhana tentang event-driven dan reactive programming beserta perbedaan event dan message dalam sistem perangkat lunak. Dilengkapi analogi sehari-hari agar mudah dipahami pemula.",
   "keywords": [
     "pemrograman", "event-driven", "reactive", "message", "konsep", "penjelasan"
   ],

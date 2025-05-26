@@ -1,5 +1,6 @@
 ---
 title: "Dari WordPress ke Hugo: Petualangan Membangun Blog yang Aman, Murah, dan Tanpa Drama"
+summary: Pengalaman migrasi dari WordPress ke Hugo untuk membangun blog yang lebih aman, murah, dan mudah dikelola. Artikel ini membahas langkah teknis, otomasi deploy, serta tips praktis membuat blog statis modern dengan Azure dan PaperMod.
 date: 2025-05-01T11:00:00+08:00
 tags: ["hugo", "azure", "static site", "papermod"]
 categories: ["Blog"]

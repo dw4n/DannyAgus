@@ -1,5 +1,6 @@
 ---
 title: "Pertimbangan Teknis dan Biaya Pembentukan Blog Ini"
+summary: Penjelasan strategi teknis dan simulasi biaya membangun blog dengan Hugo di Azure, termasuk pemisahan konten dan aset untuk efisiensi jangka panjang. Panduan ini membandingkan opsi hosting dan memberikan tips upgrade sesuai kebutuhan pertumbuhan blog.
 date: 2025-05-02T14:00:00+08:00
 tags: ["hugo", "azure", "blog", "deployment", "biaya"]
 categories: ["Blog"]

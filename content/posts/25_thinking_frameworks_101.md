@@ -1,6 +1,7 @@
 ---
 title: "Thinking Frameworks 101: Memahami Kerangka Berpikir dan Kegunaannya dalam Kehidupan Modern"
 title_underscore: "thinking_frameworks_101"
+summary: Kerangka berpikir membantu individu memproses informasi dan mengambil keputusan secara sistematis. Berbagai framework populer dibahas beserta manfaat praktisnya dalam kehidupan modern.
 date: 2025-05-25T22:40:00+08:00
 tags: ["berpikir kritis", "kerangka berpikir", "pengambilan keputusan", "self-development", "edukasi"]
 categories: ["Thinking Framework"]

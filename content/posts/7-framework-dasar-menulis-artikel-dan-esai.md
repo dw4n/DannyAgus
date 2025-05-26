@@ -1,5 +1,6 @@
 ---
 title: "Framework Dasar Menulis Artikel dan Esai"
+summary: Panduan praktis menyusun artikel dan esai dengan framework 5W+1H, mulai dari tujuan, jenis, struktur, hingga mengenali audiens dan menyusun outline. Membantu penulis pemula agar proses menulis lebih terarah dan efektif.
 date: 2025-05-17T20:00:00+08:00
 tags: ["menulis", "framework", "struktur", "esai", "artikel", "kerangka"]
 categories: ["Menulis"]

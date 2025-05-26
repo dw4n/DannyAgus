@@ -1,6 +1,7 @@
 ---
 title: "Memahami Azure Eventing & Messaging: Service Bus, Event Hub, dan Event Grid"
 title_underscore: "memahami_azure_eventing_messaging_service_bus_event_hub_dan_event_grid_dalam_8_paragraf"
+summary: Penjelasan perbedaan dan fungsi utama Azure Service Bus, Event Hub, dan Event Grid dalam arsitektur event-driven cloud. Panduan memilih layanan yang tepat sesuai kebutuhan komunikasi, streaming, atau event notification.
 date: 2025-05-23T00:00:00+08:00
 tags: ["azure", "eventing", "messaging", "service bus", "event hub", "event grid", "cloud", "arsitektur"]
 categories: ["Konsep Pemrograman"]

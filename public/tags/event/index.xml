@@ -13,19 +13,7 @@
       <link>http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/9_paradigma_responsif_dalam_pemrograman_event_driven_reactive_dan_bedanya_event_dengan_message/</guid>
-      <description>&lt;hr&gt;
-&lt;blockquote&gt;
-&lt;h4 id=&#34;outline-artikel&#34;&gt;Outline Artikel&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;#pendahuluan&#34;&gt;Pendahuluan: Paradigma Responsif&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#event-driven&#34;&gt;Apa Itu Event-Driven Programming?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#reactive&#34;&gt;Apa Itu Reactive Programming?&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#event-vs-message&#34;&gt;Perbedaan antara Event dan Message&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#penggunaan-paradigma&#34;&gt;Kapan Menggunakan Event-Driven vs Reactive&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;span id=&#34;pendahuluan&#34;&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Dalam membangun aplikasi yang interaktif dan adaptif, dua pendekatan yang sering digunakan adalah &lt;strong&gt;Event-Driven Programming&lt;/strong&gt; dan &lt;strong&gt;Reactive Programming&lt;/strong&gt;. Meskipun keduanya berfokus pada &amp;ldquo;respon terhadap sesuatu&amp;rdquo;, cara kerjanya secara struktural sangat berbeda. Memahami perbedaan ini penting agar kita bisa memilih arsitektur yang tepat, terutama saat membangun aplikasi UI, sistem real-time, atau layanan mikro. Artikel ini akan membahas keduanya beserta perbedaan antara &lt;em&gt;event&lt;/em&gt; dan &lt;em&gt;message&lt;/em&gt; melalui penjelasan dan pseudocode.&lt;/p&gt;</description>
+      <description>Penjelasan perbedaan mendasar antara event-driven dan reactive programming, serta konsep event dan message dalam arsitektur perangkat lunak. Panduan memilih paradigma yang sesuai untuk aplikasi interaktif dan sistem real-time.</description>
     </item>
   </channel>
 </rss>

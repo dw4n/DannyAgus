@@ -7,20 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin | Danny Agus</title>
 <meta name="keywords" content="transformer, neural network, nlp, pemula, deep learning">
-<meta name="description" content="
-
-Outline Artikel
-
-Apa Itu Transformer?
-Keterbatasan Model Sebelumnya (RNN, LSTM, GRU)
-Self-Attention: Inti dari Transformer
-Aplikasi Transformer dalam NLP
-Tantangan dan Kelemahan Transformer
-Awal Mula Generasi Model seperti GPT
-
-
-
-Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami. Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.">
+<meta name="description" content="Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
@@ -71,7 +58,7 @@ Transformer adalah titik balik penting dalam perkembangan neural network, khusus
 </noscript><meta property="og:url" content="http://localhost:1313/posts/18_transformer_lompatan_besar_pemrosesan_bahasa/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin">
-  <meta property="og:description" content=" Outline Artikel Apa Itu Transformer? Keterbatasan Model Sebelumnya (RNN, LSTM, GRU) Self-Attention: Inti dari Transformer Aplikasi Transformer dalam NLP Tantangan dan Kelemahan Transformer Awal Mula Generasi Model seperti GPT Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami. Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.">
+  <meta property="og:description" content="Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -84,20 +71,7 @@ Transformer adalah titik balik penting dalam perkembangan neural network, khusus
     <meta property="article:tag" content="Deep Learning">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin">
-<meta name="twitter:description" content="
-
-Outline Artikel
-
-Apa Itu Transformer?
-Keterbatasan Model Sebelumnya (RNN, LSTM, GRU)
-Self-Attention: Inti dari Transformer
-Aplikasi Transformer dalam NLP
-Tantangan dan Kelemahan Transformer
-Awal Mula Generasi Model seperti GPT
-
-
-
-Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami. Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.">
+<meta name="twitter:description" content="Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.">
 
 
 <script type="application/ld+json">
@@ -126,7 +100,7 @@ Transformer adalah titik balik penting dalam perkembangan neural network, khusus
   "@type": "BlogPosting",
   "headline": "Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin",
   "name": "Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin",
-  "description": " Outline Artikel Apa Itu Transformer? Keterbatasan Model Sebelumnya (RNN, LSTM, GRU) Self-Attention: Inti dari Transformer Aplikasi Transformer dalam NLP Tantangan dan Kelemahan Transformer Awal Mula Generasi Model seperti GPT Transformer adalah titik balik penting dalam perkembangan neural network, khususnya dalam bidang pemrosesan bahasa alami. Sebelumnya, kita mengenal RNN, LSTM, dan GRU sebagai solusi untuk memahami urutan kata dalam kalimat, namun mereka masih memiliki kelemahan—khususnya dalam efisiensi dan pemahaman konteks panjang. Transformer hadir bukan hanya sebagai perbaikan, tapi sebagai cara berpikir baru yang mengubah total bagaimana mesin membaca dan memahami bahasa.\n",
+  "description": "Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.",
   "keywords": [
     "transformer", "neural network", "nlp", "pemula", "deep learning"
   ],

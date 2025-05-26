@@ -7,21 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana | Danny Agus</title>
 <meta name="keywords" content="machine learning, neural network, ann, cnn, rnn, lstm, deep learning, pemula">
-<meta name="description" content="
-
-Outline Artikel
-
-Neural Network: Fondasi Otak Mesin
-Apa Itu ANN (Artificial Neural Network)?
-CNN: Mesin yang Bisa Melihat
-RNN: Mesin yang Mengerti Urutan
-Evolusi Neural Network: LSTM, GRU, GAN, Transformer
-Kapan Menggunakan Jenis yang Mana?
-Tabel Perbandingan Jenis Neural Network
-
-
-
-Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia. Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.">
+<meta name="description" content="Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
@@ -72,7 +58,7 @@ Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu ga
 </noscript><meta property="og:url" content="http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana">
-  <meta property="og:description" content=" Outline Artikel Neural Network: Fondasi Otak Mesin Apa Itu ANN (Artificial Neural Network)? CNN: Mesin yang Bisa Melihat RNN: Mesin yang Mengerti Urutan Evolusi Neural Network: LSTM, GRU, GAN, Transformer Kapan Menggunakan Jenis yang Mana? Tabel Perbandingan Jenis Neural Network Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia. Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.">
+  <meta property="og:description" content="Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -86,21 +72,7 @@ Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu ga
     <meta property="article:tag" content="Lstm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana">
-<meta name="twitter:description" content="
-
-Outline Artikel
-
-Neural Network: Fondasi Otak Mesin
-Apa Itu ANN (Artificial Neural Network)?
-CNN: Mesin yang Bisa Melihat
-RNN: Mesin yang Mengerti Urutan
-Evolusi Neural Network: LSTM, GRU, GAN, Transformer
-Kapan Menggunakan Jenis yang Mana?
-Tabel Perbandingan Jenis Neural Network
-
-
-
-Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia. Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.">
+<meta name="twitter:description" content="Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.">
 
 
 <script type="application/ld+json">
@@ -129,7 +101,7 @@ Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu ga
   "@type": "BlogPosting",
   "headline": "Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana",
   "name": "Dari ANN ke CNN dan RNN: Memahami Dunia Neural Network dalam Bahasa Sederhana",
-  "description": " Outline Artikel Neural Network: Fondasi Otak Mesin Apa Itu ANN (Artificial Neural Network)? CNN: Mesin yang Bisa Melihat RNN: Mesin yang Mengerti Urutan Evolusi Neural Network: LSTM, GRU, GAN, Transformer Kapan Menggunakan Jenis yang Mana? Tabel Perbandingan Jenis Neural Network Semua kemajuan kecerdasan buatan yang hari ini kita nikmati bermula dari satu gagasan sederhana: mengajarkan mesin untuk belajar dari pengalaman seperti manusia. Salah satu cara utama untuk melakukan ini adalah dengan menggunakan neural network atau jaringan saraf buatan. Artikel ini akan membawa kita mengenal berbagai jenis neural network dari yang paling dasar yaitu Artificial Neural Network (ANN), lalu berkembang ke CNN yang unggul dalam pengolahan gambar, dan RNN yang memahami urutan data. Kita juga akan menyinggung beberapa turunan dan variasi populer lainnya, agar kamu mendapatkan gambaran besar tentang dunia jaringan saraf yang membentuk otak digital di balik banyak aplikasi modern.\n",
+  "description": "Penjelasan evolusi neural network dari ANN, CNN, hingga RNN beserta turunan dan aplikasinya di dunia nyata. Panduan memilih jenis jaringan saraf sesuai kebutuhan data dan tujuan pemrosesan.",
   "keywords": [
     "machine learning", "neural network", "ann", "cnn", "rnn", "lstm", "deep learning", "pemula"
   ],

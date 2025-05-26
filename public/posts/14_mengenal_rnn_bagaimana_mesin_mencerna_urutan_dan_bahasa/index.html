@@ -7,19 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa | Danny Agus</title>
 <meta name="keywords" content="machine learning, rnn, neural network, nlp, kecerdasan buatan, pemula">
-<meta name="description" content="
-
-Outline Artikel
-
-Apa Itu RNN dan Mengapa Penting?
-Bagaimana RNN Memahami Urutan
-Contoh Penggunaan RNN di Kehidupan Nyata
-Keterbatasan RNN dan Solusinya
-Kenapa Memahami RNN Itu Relevan
-
-
-
-Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.">
+<meta name="description" content="RNN memungkinkan mesin memahami data berurutan seperti teks dan suara dengan mengingat konteks sebelumnya. Artikel ini membahas cara kerja, aplikasi nyata, serta tantangan dan solusi dalam pengembangan RNN.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
@@ -70,7 +58,7 @@ Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau men
 </noscript><meta property="og:url" content="http://localhost:1313/posts/14_mengenal_rnn_bagaimana_mesin_mencerna_urutan_dan_bahasa/">
   <meta property="og:site_name" content="Danny Agus">
   <meta property="og:title" content="Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa">
-  <meta property="og:description" content=" Outline Artikel Apa Itu RNN dan Mengapa Penting? Bagaimana RNN Memahami Urutan Contoh Penggunaan RNN di Kehidupan Nyata Keterbatasan RNN dan Solusinya Kenapa Memahami RNN Itu Relevan Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.">
+  <meta property="og:description" content="RNN memungkinkan mesin memahami data berurutan seperti teks dan suara dengan mengingat konteks sebelumnya. Artikel ini membahas cara kerja, aplikasi nyata, serta tantangan dan solusi dalam pengembangan RNN.">
   <meta property="og:locale" content="id">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -84,19 +72,7 @@ Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau men
     <meta property="article:tag" content="Pemula">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa">
-<meta name="twitter:description" content="
-
-Outline Artikel
-
-Apa Itu RNN dan Mengapa Penting?
-Bagaimana RNN Memahami Urutan
-Contoh Penggunaan RNN di Kehidupan Nyata
-Keterbatasan RNN dan Solusinya
-Kenapa Memahami RNN Itu Relevan
-
-
-
-Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.">
+<meta name="twitter:description" content="RNN memungkinkan mesin memahami data berurutan seperti teks dan suara dengan mengingat konteks sebelumnya. Artikel ini membahas cara kerja, aplikasi nyata, serta tantangan dan solusi dalam pengembangan RNN.">
 
 
 <script type="application/ld+json">
@@ -125,7 +101,7 @@ Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau men
   "@type": "BlogPosting",
   "headline": "Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa",
   "name": "Mengenal RNN: Bagaimana Mesin Mencerna Urutan dan Bahasa",
-  "description": " Outline Artikel Apa Itu RNN dan Mengapa Penting? Bagaimana RNN Memahami Urutan Contoh Penggunaan RNN di Kehidupan Nyata Keterbatasan RNN dan Solusinya Kenapa Memahami RNN Itu Relevan Di balik kemampuan mesin untuk memprediksi teks, menerjemahkan kalimat, atau mengenali suara, ada teknologi yang disebut Recurrent Neural Network atau RNN. Artikel ini akan membawa kita memahami dasar-dasar RNN secara sederhana. Kita akan bahas bagaimana RNN berbeda dari jaringan saraf biasa, mengapa ia dirancang khusus untuk memahami urutan, bagaimana ia digunakan dalam kehidupan sehari-hari, tantangan yang dihadapi teknologi ini, dan apa potensi masa depannya. Meski terdengar teknis, sebenarnya konsep RNN bisa dijelaskan dengan analogi dan contoh nyata yang dekat dengan kehidupan kita.\n",
+  "description": "RNN memungkinkan mesin memahami data berurutan seperti teks dan suara dengan mengingat konteks sebelumnya. Artikel ini membahas cara kerja, aplikasi nyata, serta tantangan dan solusi dalam pengembangan RNN.",
   "keywords": [
     "machine learning", "rnn", "neural network", "nlp", "kecerdasan buatan", "pemula"
   ],

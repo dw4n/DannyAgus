@@ -1,6 +1,7 @@
 ---
 title: "Transformer: Lompatan Besar dalam Pemrosesan Bahasa Mesin"
 title_underscore: "transformer_lompatan_besar_pemrosesan_bahasa"
+summary: Transformer memperkenalkan mekanisme self-attention yang merevolusi pemrosesan bahasa alami dan mengatasi keterbatasan model RNN/LSTM. Artikel ini membahas keunggulan, tantangan, serta peran transformer dalam perkembangan model bahasa modern.
 date: 2025-05-25T14:30:00+08:00
 tags: ["transformer", "neural network", "nlp", "pemula", "deep learning"]
 categories: ["Deep Learning"]

@@ -1,6 +1,7 @@
 ---
 title: "Mengenal CNN: Cara Mesin Belajar Melihat Gambar"
 title_underscore: "mengenal_cnn_cara_mesin_belajar_melihat_gambar"
+summary: CNN memungkinkan mesin mengenali dan memahami gambar dengan memproses fitur visual secara bertahap. Artikel ini membahas prinsip kerja, aplikasi sehari-hari, dan dampak CNN dalam kecerdasan buatan modern.
 date: 2025-05-25T11:30:00+08:00
 tags: ["machine learning", "cnn", "neural network", "pemula", "kecerdasan buatan", "komputer vision"]
 categories: ["Deep Learning"]
