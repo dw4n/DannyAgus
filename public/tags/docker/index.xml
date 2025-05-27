@@ -20,7 +20,7 @@
       <link>http://localhost:1313/posts/29_menerapkan_deployment_aplikasi_net6_docker_azure/</link>
       <pubDate>Tue, 27 May 2025 10:10:00 +0800</pubDate>
       <guid>http://localhost:1313/posts/29_menerapkan_deployment_aplikasi_net6_docker_azure/</guid>
-      <description>Panduan terstruktur untuk membangun, mengemas, dan mendistribusikan aplikasi PDF Generator berbasis .NET 6 ke Azure melalui Docker.</description>
+      <description>Panduan alternatif untuk mendistribusikan image Docker dari aplikasi .NET 6 menggunakan Docker Hub dan mengintegrasikannya dengan Azure App Service.</description>
     </item>
   </channel>
 </rss>
