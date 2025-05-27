@@ -21,6 +21,7 @@ TocOpen = true
   ShowArchive = true
   showDate = true
   ShowPostNavLinks = true
+  googleAnalytics = "G-H233N3KGXJ"
 
 [params.homeInfoParams]
   Title = "Selamat datang 👋"
