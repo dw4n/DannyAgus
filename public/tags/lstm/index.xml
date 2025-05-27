@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Lstm on Danny Agus</title>
+    <title>LSTM on Danny Agus</title>
     <link>http://localhost:1313/tags/lstm/</link>
-    <description>Recent content in Lstm on Danny Agus</description>
+    <description>Recent content in LSTM on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Sun, 25 May 2025 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 21:00:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/lstm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analisis Metode Deep Learning Hibrida CNN-LSTM untuk Klasifikasi Aktivitas Manusia dan Potensinya pada Sinyal EEG</title>
+      <link>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</link>
+      <pubDate>Tue, 27 May 2025 21:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</guid>
+      <description>Artikel ini mengulas metodologi deep learning hibrida Convolutional Neural Network (CNN) dan Long Short-Term Memory (LSTM) yang digunakan untuk pengenalan aktivitas manusia berdasarkan data sensor smartphone, serta mengeksplorasi relevansi dan potensi aplikasinya untuk klasifikasi sinyal Electroencephalogram (EEG).</description>
+    </item>
     <item>
       <title>Mengenal LSTM dan GRU: Memori Panjang dalam Otak Mesin</title>
       <link>http://localhost:1313/posts/17_mengenal_lstm_dan_gru_memori_panjang_dalam_otak_mesin/</link>

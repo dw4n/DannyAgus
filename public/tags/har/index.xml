@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>HAR on Danny Agus</title>
+    <link>http://localhost:1313/tags/har/</link>
+    <description>Recent content in HAR on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Tue, 27 May 2025 21:00:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/har/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analisis Metode Deep Learning Hibrida CNN-LSTM untuk Klasifikasi Aktivitas Manusia dan Potensinya pada Sinyal EEG</title>
+      <link>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</link>
+      <pubDate>Tue, 27 May 2025 21:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</guid>
+      <description>Artikel ini mengulas metodologi deep learning hibrida Convolutional Neural Network (CNN) dan Long Short-Term Memory (LSTM) yang digunakan untuk pengenalan aktivitas manusia berdasarkan data sensor smartphone, serta mengeksplorasi relevansi dan potensi aplikasinya untuk klasifikasi sinyal Electroencephalogram (EEG).</description>
+    </item>
+  </channel>
+</rss>

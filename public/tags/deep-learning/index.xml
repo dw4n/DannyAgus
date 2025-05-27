@@ -6,8 +6,22 @@
     <description>Recent content in Deep Learning on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Sun, 25 May 2025 16:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 21:10:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi &amp; Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum</title>
+      <link>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</link>
+      <pubDate>Tue, 27 May 2025 21:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</guid>
+      <description>Artikel ini mengulas pendekatan CNN-RNN dengan attention mechanism dalam deteksi kejang EEG serta potensi adaptasinya untuk klasifikasi sinyal EEG lain.</description>
+    </item>
+    <item>
+      <title>Analisis Metode Deep Learning Hibrida CNN-LSTM untuk Klasifikasi Aktivitas Manusia dan Potensinya pada Sinyal EEG</title>
+      <link>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</link>
+      <pubDate>Tue, 27 May 2025 21:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</guid>
+      <description>Artikel ini mengulas metodologi deep learning hibrida Convolutional Neural Network (CNN) dan Long Short-Term Memory (LSTM) yang digunakan untuk pengenalan aktivitas manusia berdasarkan data sensor smartphone, serta mengeksplorasi relevansi dan potensi aplikasinya untuk klasifikasi sinyal Electroencephalogram (EEG).</description>
+    </item>
     <item>
       <title>Machine Learning vs Deep Learning: Apa Bedanya dan Kapan Digunakan?</title>
       <link>http://localhost:1313/posts/21_machine_learning_vs_deep_learning/</link>

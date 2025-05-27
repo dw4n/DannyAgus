@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi &amp; Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum | Danny Agus</title>
+<meta name="keywords" content="EEG, deep learning, CNN-RNN, wavelet, attention">
+<meta name="description" content="Artikel ini mengulas pendekatan CNN-RNN dengan attention mechanism dalam deteksi kejang EEG serta potensi adaptasinya untuk klasifikasi sinyal EEG lain.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/">
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral', 
+         themeVariables: {
+          fontSize: "16px",
+          fontFamily: "inherit",
+          primaryColor: "#f3f4f6",           
+          primaryBorderColor: "#d1d5db",     
+          primaryTextColor: "#111827",       
+          lineColor: "#9ca3af",              
+          edgeLabelBackground: "#ffffff",
+          clusterBkg: "#f9fafb",
+          clusterBorder: "#e5e7eb"
+        }
+      });
+    }
+  });
+</script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H233N3KGXJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H233N3KGXJ');
+</script>
+<meta property="og:url" content="http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi & Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum">
+  <meta property="og:description" content="Artikel ini mengulas pendekatan CNN-RNN dengan attention mechanism dalam deteksi kejang EEG serta potensi adaptasinya untuk klasifikasi sinyal EEG lain.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-27T21:10:00+08:00">
+    <meta property="article:modified_time" content="2025-05-27T21:10:00+08:00">
+    <meta property="article:tag" content="EEG">
+    <meta property="article:tag" content="Deep Learning">
+    <meta property="article:tag" content="CNN-RNN">
+    <meta property="article:tag" content="Wavelet">
+    <meta property="article:tag" content="Attention">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi &amp; Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum">
+<meta name="twitter:description" content="Artikel ini mengulas pendekatan CNN-RNN dengan attention mechanism dalam deteksi kejang EEG serta potensi adaptasinya untuk klasifikasi sinyal EEG lain.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi \u0026 Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum",
+      "item": "http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi \u0026 Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum",
+  "name": "Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi \u0026 Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum",
+  "description": "Artikel ini mengulas pendekatan CNN-RNN dengan attention mechanism dalam deteksi kejang EEG serta potensi adaptasinya untuk klasifikasi sinyal EEG lain.",
+  "keywords": [
+    "EEG", "deep learning", "CNN-RNN", "wavelet", "attention"
+  ],
+  "articleBody": " Outline Artikel Pendahuluan Metodologi dan Tahapan Prapemrosesan Arsitektur Model Hibrida CNN-RNN dengan Atensi Kinerja dan Relevansi untuk Tugas Klasifikasi EEG Umum Kesimpulan dan Implikasi Penelitian Lanjutan Penelitian Jothi \u0026 Jayaraj (2024) menawarkan pendekatan terintegrasi dalam mendeteksi kejang epilepsi melalui pemrosesan sinyal EEG dengan kombinasi model CNN-RNN dan attention mechanism. Artikel tersebut mengembangkan model yang memadukan Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN)—termasuk LSTM dan GRU—serta attention mechanism, dengan dukungan teknik Explainable AI (XAI). Tujuan utama pendekatan ini adalah mengoptimalkan deteksi kejang dengan meningkatkan akurasi, sensitivitas, dan spesifisitas. Kajian ini bertujuan untuk mengevaluasi pendekatan tersebut secara kritis, menyoroti fondasi metodologinya, serta mengeksplorasi potensi penerapannya dalam konteks klasifikasi EEG yang lebih luas di luar deteksi kejang.\nLandasan metodologis dari studi ini bertumpu pada tahapan prapemrosesan EEG yang cermat, yang dirancang untuk memaksimalkan kualitas sinyal sebelum dianalisis oleh model pembelajaran mendalam. Penelitian ini menggunakan dataset Bonn yang populer dalam studi EEG, dan menerapkan teknik prapemrosesan penting seperti noise reduction—kemungkinan dengan bandpass filters—dan segmentasi sinyal menjadi epoch. Normalisasi data dengan metode seperti z-score juga digunakan untuk menyamakan skala antar segmen. Yang paling menonjol adalah penggunaan Wavelet Transform, yang memungkinkan dekomposisi sinyal ke dalam berbagai pita frekuensi dengan tetap mempertahankan dimensi waktu. Ini memungkinkan ekstraksi fitur multi-skala yang penting dalam menangkap variasi sinyal EEG pada resolusi berbeda.\nKontribusi utama penelitian ini terletak pada arsitektur model hibrida yang memanfaatkan kekuatan CNN, RNN, dan attention mechanism secara sinergis, serta transparansi model melalui XAI. CNN digunakan untuk mengekstrak fitur spasial dari sinyal EEG yang mencerminkan pola aktivitas otak, sedangkan RNN, terutama dalam bentuk BiLSTM dan GRU, digunakan untuk menangkap hubungan temporal dalam sekuens EEG. attention mechanism, termasuk self-attention, diintegrasikan untuk menyoroti bagian sinyal yang paling relevan bagi klasifikasi. Untuk meningkatkan interpretabilitas model, teknik XAI seperti SHAP, LIME, dan saliency maps digunakan agar proses pengambilan keputusan model dapat dipahami. Proses akhir melibatkan fusi fitur dari berbagai sumber sebelum masuk ke tahap klasifikasi.\nModel hibrida ini menunjukkan performa tinggi dalam deteksi kejang dan menyajikan kerangka kerja yang relevan untuk tugas klasifikasi EEG lainnya, termasuk yang bersifat non-patologis. Dalam uji coba, model mencapai akurasi 95.2%, sensitivitas 94.1%, dan spesifisitas 96.5%. Meskipun studi ini lebih berfokus pada kejang epilepsi, arsitekturnya cukup fleksibel untuk diterapkan pada klasifikasi kondisi otak seperti mata terbuka atau tertutup. Untuk kasus tersebut, alternatif seperti Independent Component Analysis (ICA) mungkin lebih efektif untuk mengatasi artefak spesifik seperti kedipan mata. Wavelet Transform tetap relevan sebagai alat ekstraksi fitur, tetapi kombinasi teknik prapemrosesan dapat disesuaikan dengan karakteristik sinyal dan jenis klasifikasi. Perbedaan tujuan klasifikasi juga akan memengaruhi fitur yang dianggap penting dan attention mechanism yang digunakan.\ngraph TD\rA[Raw EEG Signals] --\u003e B(Preprocessing \u0026 Noise Reduction e.g., Filters, ICA, Wavelet Transform);\rB --\u003e C{Feature Extraction};\rC -- Spatial Features --\u003e D[CNN];\rC -- Temporal Dynamics --\u003e E[RNN e.g., LSTM/GRU];\rD --\u003e F[Feature Fusion];\rE --\u003e F;\rF --\u003e G[Classification];\rG --\u003e H[Output e.g., Seizure Detection, Brain State Classification];\rMeskipun difokuskan pada deteksi kejang, studi ini membuka jalur baru bagi penerapan metodologi CNN-RNN dengan atensi dalam berbagai tugas klasifikasi EEG melalui pendekatan yang adaptif dan modular. Efektivitas model hibrida CNN-RNN yang ditunjukkan oleh Jothi dan Jayaraj memberikan dasar kuat untuk mengeksplorasi arsitektur serupa dalam konteks yang lebih luas. Pendekatan ini tidak hanya mampu mengenali pola abnormal seperti kejang, tetapi juga memiliki potensi untuk mendeteksi kondisi otak yang lebih subtil dan stabil. Penerapan prapemrosesan yang solid, termasuk kemungkinan kombinasi ICA dan Wavelet Transform, menjadi aspek krusial yang menentukan keberhasilan klasifikasi sinyal.\nManfaat teknik multi-skala dan attention mechanism tidak hanya meningkatkan performa, tetapi juga memungkinkan model lebih selektif dalam memproses informasi yang relevan. Dalam konteks klasifikasi EEG, kebutuhan akan interpretabilitas menjadi semakin penting, terutama ketika model digunakan dalam pengambilan keputusan klinis. Oleh karena itu, integrasi Explainable AI (XAI) bukan sekadar tambahan teknis, melainkan komponen esensial dalam desain sistem berbasis pembelajaran mendalam yang dapat dipercaya.\nStudi ini juga menggarisbawahi pentingnya validasi lebih lanjut pada dataset dan domain aplikasi yang lebih beragam. Keberhasilan model dalam satu domain, seperti deteksi kejang, belum tentu langsung tertransfer ke domain lain tanpa penyesuaian metodologis. Ini membuka ruang eksplorasi bagi peneliti untuk menguji ulang pendekatan serupa dalam klasifikasi seperti beban kognitif, status kesadaran, atau respon terhadap stimulus eksternal menggunakan sinyal EEG. Pendekatan serial atau paralel dalam penggabungan CNN dan RNN, serta posisi relatif dari modul prapemrosesan, menjadi aspek teknis penting yang layak diinvestigasi lebih lanjut.\nDengan demikian, penelitian ini memberikan kontribusi yang bukan hanya teknis, tetapi juga konseptual terhadap pengembangan sistem klasifikasi EEG berbasis pembelajaran mendalam yang lebih efektif dan dapat diandalkan. Peneliti selanjutnya disarankan untuk membangun di atas fondasi ini, dengan memperluas cakupan aplikasi, menguji variasi arsitektur, serta mengevaluasi berbagai konfigurasi prapemrosesan dan teknik interpretabilitas untuk menjawab kebutuhan nyata dalam dunia klinis maupun eksperimental.\nSumber: Jothi, B., \u0026 Jayaraj, D. (2024). The Role of CNN-RNN Hybrid Models and Attention Mechanisms in EEG Signal Recognition for Correct Seizure Detection. SEEJPH, XXV. ISSN: 2197-5248.\n",
+  "wordCount" : "803",
+  "inLanguage": "en",
+  "datePublished": "2025-05-27T21:10:00+08:00",
+  "dateModified": "2025-05-27T21:10:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi &amp; Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum
+    </h1>
+    <div class="post-meta"><span title='2025-05-27 21:10:00 +0800 +08'>May 27, 2025 Jam 21</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#pendahuluan">Pendahuluan</a></li>
+<li><a href="#metodologi-dan-prapemrosesan">Metodologi dan Tahapan Prapemrosesan</a></li>
+<li><a href="#arsitektur-model-hibrida">Arsitektur Model Hibrida CNN-RNN dengan Atensi</a></li>
+<li><a href="#relevansi-dan-adaptasi">Kinerja dan Relevansi untuk Tugas Klasifikasi EEG Umum</a></li>
+<li><a href="#kesimpulan">Kesimpulan dan Implikasi Penelitian Lanjutan</a></li>
+</ol></blockquote>
+<p><a id="pendahuluan"></a></p>
+<p><strong>Penelitian Jothi &amp; Jayaraj (2024) menawarkan pendekatan terintegrasi dalam mendeteksi kejang epilepsi melalui pemrosesan sinyal EEG dengan kombinasi model CNN-RNN dan attention mechanism.</strong> Artikel tersebut mengembangkan model yang memadukan Convolutional Neural Networks (CNN), Recurrent Neural Networks (RNN)—termasuk LSTM dan GRU—serta attention mechanism, dengan dukungan teknik Explainable AI (XAI). Tujuan utama pendekatan ini adalah mengoptimalkan deteksi kejang dengan meningkatkan akurasi, sensitivitas, dan spesifisitas. Kajian ini bertujuan untuk mengevaluasi pendekatan tersebut secara kritis, menyoroti fondasi metodologinya, serta mengeksplorasi potensi penerapannya dalam konteks klasifikasi EEG yang lebih luas di luar deteksi kejang.</p>
+<p><a id="metodologi-dan-prapemrosesan"></a></p>
+<p><strong>Landasan metodologis dari studi ini bertumpu pada tahapan prapemrosesan EEG yang cermat, yang dirancang untuk memaksimalkan kualitas sinyal sebelum dianalisis oleh model pembelajaran mendalam.</strong> Penelitian ini menggunakan dataset Bonn yang populer dalam studi EEG, dan menerapkan teknik prapemrosesan penting seperti noise reduction—kemungkinan dengan bandpass filters—dan segmentasi sinyal menjadi <em>epoch</em>. Normalisasi data dengan metode seperti z-score juga digunakan untuk menyamakan skala antar segmen. Yang paling menonjol adalah penggunaan Wavelet Transform, yang memungkinkan dekomposisi sinyal ke dalam berbagai pita frekuensi dengan tetap mempertahankan dimensi waktu. Ini memungkinkan ekstraksi fitur multi-skala yang penting dalam menangkap variasi sinyal EEG pada resolusi berbeda.</p>
+<p><a id="arsitektur-model-hibrida"></a></p>
+<p><strong>Kontribusi utama penelitian ini terletak pada arsitektur model hibrida yang memanfaatkan kekuatan CNN, RNN, dan attention mechanism secara sinergis, serta transparansi model melalui XAI.</strong> CNN digunakan untuk mengekstrak fitur spasial dari sinyal EEG yang mencerminkan pola aktivitas otak, sedangkan RNN, terutama dalam bentuk BiLSTM dan GRU, digunakan untuk menangkap hubungan temporal dalam sekuens EEG. attention mechanism, termasuk self-attention, diintegrasikan untuk menyoroti bagian sinyal yang paling relevan bagi klasifikasi. Untuk meningkatkan interpretabilitas model, teknik XAI seperti SHAP, LIME, dan saliency maps digunakan agar proses pengambilan keputusan model dapat dipahami. Proses akhir melibatkan fusi fitur dari berbagai sumber sebelum masuk ke tahap klasifikasi.</p>
+<p><a id="relevansi-dan-adaptasi"></a></p>
+<p><strong>Model hibrida ini menunjukkan performa tinggi dalam deteksi kejang dan menyajikan kerangka kerja yang relevan untuk tugas klasifikasi EEG lainnya, termasuk yang bersifat non-patologis.</strong> Dalam uji coba, model mencapai akurasi 95.2%, sensitivitas 94.1%, dan spesifisitas 96.5%. Meskipun studi ini lebih berfokus pada kejang epilepsi, arsitekturnya cukup fleksibel untuk diterapkan pada klasifikasi kondisi otak seperti mata terbuka atau tertutup. Untuk kasus tersebut, alternatif seperti Independent Component Analysis (ICA) mungkin lebih efektif untuk mengatasi artefak spesifik seperti kedipan mata. Wavelet Transform tetap relevan sebagai alat ekstraksi fitur, tetapi kombinasi teknik prapemrosesan dapat disesuaikan dengan karakteristik sinyal dan jenis klasifikasi. Perbedaan tujuan klasifikasi juga akan memengaruhi fitur yang dianggap penting dan attention mechanism yang digunakan.</p>
+<div class="mermaid">
+
+graph TD
+    A[Raw EEG Signals] --> B(Preprocessing & Noise Reduction <br> e.g., Filters, ICA, Wavelet Transform);
+    B --> C{Feature Extraction};
+    C -- Spatial Features --> D[CNN];
+    C -- Temporal Dynamics --> E[RNN <br> e.g., LSTM/GRU];
+    D --> F[Feature Fusion];
+    E --> F;
+    F --> G[Classification];
+    G --> H[Output <br> e.g., Seizure Detection, Brain State Classification];
+
+</div>
+<p><a id="kesimpulan"></a></p>
+<p><strong>Meskipun difokuskan pada deteksi kejang, studi ini membuka jalur baru bagi penerapan metodologi CNN-RNN dengan atensi dalam berbagai tugas klasifikasi EEG melalui pendekatan yang adaptif dan modular.</strong> Efektivitas model hibrida CNN-RNN yang ditunjukkan oleh Jothi dan Jayaraj memberikan dasar kuat untuk mengeksplorasi arsitektur serupa dalam konteks yang lebih luas. Pendekatan ini tidak hanya mampu mengenali pola abnormal seperti kejang, tetapi juga memiliki potensi untuk mendeteksi kondisi otak yang lebih subtil dan stabil. Penerapan prapemrosesan yang solid, termasuk kemungkinan kombinasi ICA dan Wavelet Transform, menjadi aspek krusial yang menentukan keberhasilan klasifikasi sinyal.</p>
+<p><strong>Manfaat teknik multi-skala dan attention mechanism tidak hanya meningkatkan performa, tetapi juga memungkinkan model lebih selektif dalam memproses informasi yang relevan.</strong> Dalam konteks klasifikasi EEG, kebutuhan akan interpretabilitas menjadi semakin penting, terutama ketika model digunakan dalam pengambilan keputusan klinis. Oleh karena itu, integrasi Explainable AI (XAI) bukan sekadar tambahan teknis, melainkan komponen esensial dalam desain sistem berbasis pembelajaran mendalam yang dapat dipercaya.</p>
+<p><strong>Studi ini juga menggarisbawahi pentingnya validasi lebih lanjut pada dataset dan domain aplikasi yang lebih beragam.</strong> Keberhasilan model dalam satu domain, seperti deteksi kejang, belum tentu langsung tertransfer ke domain lain tanpa penyesuaian metodologis. Ini membuka ruang eksplorasi bagi peneliti untuk menguji ulang pendekatan serupa dalam klasifikasi seperti beban kognitif, status kesadaran, atau respon terhadap stimulus eksternal menggunakan sinyal EEG. Pendekatan serial atau paralel dalam penggabungan CNN dan RNN, serta posisi relatif dari modul prapemrosesan, menjadi aspek teknis penting yang layak diinvestigasi lebih lanjut.</p>
+<p><strong>Dengan demikian, penelitian ini memberikan kontribusi yang bukan hanya teknis, tetapi juga konseptual terhadap pengembangan sistem klasifikasi EEG berbasis pembelajaran mendalam yang lebih efektif dan dapat diandalkan.</strong> Peneliti selanjutnya disarankan untuk membangun di atas fondasi ini, dengan memperluas cakupan aplikasi, menguji variasi arsitektur, serta mengevaluasi berbagai konfigurasi prapemrosesan dan teknik interpretabilitas untuk menjawab kebutuhan nyata dalam dunia klinis maupun eksperimental.</p>
+<blockquote>
+<p>Sumber: Jothi, B., &amp; Jayaraj, D. (2024). <em>The Role of CNN-RNN Hybrid Models and Attention Mechanisms in EEG Signal Recognition for Correct Seizure Detection.</em> SEEJPH, XXV. ISSN: 2197-5248.</p></blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/eeg/">EEG</a></li>
+      <li><a href="http://localhost:1313/tags/deep-learning/">Deep Learning</a></li>
+      <li><a href="http://localhost:1313/tags/cnn-rnn/">CNN-RNN</a></li>
+      <li><a href="http://localhost:1313/tags/wavelet/">Wavelet</a></li>
+      <li><a href="http://localhost:1313/tags/attention/">Attention</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Analisis Metode Deep Learning Hibrida CNN-LSTM untuk Klasifikasi Aktivitas Manusia dan Potensinya pada Sinyal EEG</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+        .
+    </span>
+    <span>
+        Contact me <a href="mailto:danny@dwan.co.id">danny@dwan.co.id</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

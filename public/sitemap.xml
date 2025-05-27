@@ -2,6 +2,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/attention/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cnn-rnn/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/deep-learning/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/eeg/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/paper/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/wavelet/</loc>
+    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</loc>
+    <lastmod>2025-05-27T21:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cnn/</loc>
+    <lastmod>2025-05-27T21:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/har/</loc>
+    <lastmod>2025-05-27T21:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/klasifikasi-sinyal/</loc>
+    <lastmod>2025-05-27T21:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/lstm/</loc>
+    <lastmod>2025-05-27T21:00:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/acr/</loc>
     <lastmod>2025-05-27T10:20:00+08:00</lastmod>
   </url><url>
@@ -14,12 +62,6 @@
     <loc>http://localhost:1313/categories/blog/</loc>
     <lastmod>2025-05-27T10:20:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-05-27T10:20:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-27T10:20:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/deployment/</loc>
     <lastmod>2025-05-27T10:20:00+08:00</lastmod>
   </url><url>
@@ -27,12 +69,6 @@
     <lastmod>2025-05-27T10:20:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/</loc>
-    <lastmod>2025-05-27T10:20:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-05-27T10:20:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-05-27T10:20:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/aspnetcore/</loc>
@@ -158,9 +194,6 @@
     <loc>http://localhost:1313/categories/deep-learning/</loc>
     <lastmod>2025-05-25T16:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/deep-learning/</loc>
-    <lastmod>2025-05-25T16:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/categories/machine-learning/</loc>
     <lastmod>2025-05-25T16:00:00+08:00</lastmod>
   </url><url>
@@ -203,9 +236,6 @@
     <loc>http://localhost:1313/tags/gru/</loc>
     <lastmod>2025-05-25T14:00:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lstm/</loc>
-    <lastmod>2025-05-25T14:00:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/17_mengenal_lstm_dan_gru_memori_panjang_dalam_otak_mesin/</loc>
     <lastmod>2025-05-25T14:00:00+08:00</lastmod>
   </url><url>
@@ -213,9 +243,6 @@
     <lastmod>2025-05-25T14:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/ann/</loc>
-    <lastmod>2025-05-25T13:30:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cnn/</loc>
     <lastmod>2025-05-25T13:30:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/16_dari_ann_ke_cnn_dan_rnn/</loc>

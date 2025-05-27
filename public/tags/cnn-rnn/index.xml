@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>CNN-RNN on Danny Agus</title>
+    <link>http://localhost:1313/tags/cnn-rnn/</link>
+    <description>Recent content in CNN-RNN on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Tue, 27 May 2025 21:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cnn-rnn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi &amp; Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum</title>
+      <link>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</link>
+      <pubDate>Tue, 27 May 2025 21:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</guid>
+      <description>Artikel ini mengulas pendekatan CNN-RNN dengan attention mechanism dalam deteksi kejang EEG serta potensi adaptasinya untuk klasifikasi sinyal EEG lain.</description>
+    </item>
+  </channel>
+</rss>
