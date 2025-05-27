@@ -6,8 +6,22 @@
     <description>Recent content in Azure on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Fri, 23 May 2025 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 10:20:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service</title>
+      <link>http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/</link>
+      <pubDate>Tue, 27 May 2025 10:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/</guid>
+      <description>Panduan alternatif untuk mendistribusikan image Docker dari aplikasi .NET 6 menggunakan Azure Container Registry dan mengintegrasikannya dengan Azure App Service.</description>
+    </item>
+    <item>
+      <title>Menerapkan Deployment Aplikasi .NET 6 Menggunakan DockerHub ke Azure App Service</title>
+      <link>http://localhost:1313/posts/29_menerapkan_deployment_aplikasi_net6_docker_azure/</link>
+      <pubDate>Tue, 27 May 2025 10:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/29_menerapkan_deployment_aplikasi_net6_docker_azure/</guid>
+      <description>Panduan terstruktur untuk membangun, mengemas, dan mendistribusikan aplikasi PDF Generator berbasis .NET 6 ke Azure melalui Docker.</description>
+    </item>
     <item>
       <title>Memahami Azure Eventing &amp; Messaging: Service Bus, Event Hub, dan Event Grid</title>
       <link>http://localhost:1313/posts/10_memahami_azure_eventing_messaging_service_bus_event_hub_dan_event_grid/</link>

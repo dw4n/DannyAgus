@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service | Danny Agus</title>
+<meta name="keywords" content="azure, acr, docker, deployment, appservice">
+<meta name="description" content="Panduan alternatif untuk mendistribusikan image Docker dari aplikasi .NET 6 menggunakan Azure Container Registry dan mengintegrasikannya dengan Azure App Service.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:url" content="http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service">
+  <meta property="og:description" content="Panduan alternatif untuk mendistribusikan image Docker dari aplikasi .NET 6 menggunakan Azure Container Registry dan mengintegrasikannya dengan Azure App Service.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-27T10:20:00+08:00">
+    <meta property="article:modified_time" content="2025-05-27T10:20:00+08:00">
+    <meta property="article:tag" content="Azure">
+    <meta property="article:tag" content="Acr">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="Deployment">
+    <meta property="article:tag" content="Appservice">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service">
+<meta name="twitter:description" content="Panduan alternatif untuk mendistribusikan image Docker dari aplikasi .NET 6 menggunakan Azure Container Registry dan mengintegrasikannya dengan Azure App Service.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service",
+      "item": "http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service",
+  "name": "Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service",
+  "description": "Panduan alternatif untuk mendistribusikan image Docker dari aplikasi .NET 6 menggunakan Azure Container Registry dan mengintegrasikannya dengan Azure App Service.",
+  "keywords": [
+    "azure", "acr", "docker", "deployment", "appservice"
+  ],
+  "articleBody": " Outline Artikel Pendahuluan Memahami Azure Container Registry (ACR) Membuat Azure Container Registry Build dan Push Image dengan Docker Desktop Menghubungkan ACR dengan Azure App Service Refleksi dan Penutup 1. Pendahuluan Azure Container Registry (ACR) adalah solusi registry private dari Microsoft Azure untuk menyimpan dan mengelola image Docker secara aman dan terintegrasi. Dalam praktik DevOps modern, menggunakan registry private seperti ACR memberi kontrol lebih terhadap distribusi image dan mendukung integrasi yang lebih ketat dengan layanan Azure lainnya. Artikel ini menyajikan alternatif dari penggunaan Docker Hub, dengan memanfaatkan ACR untuk menyimpan image dan mendistribusikannya ke Azure App Service.\n2. Memahami Azure Container Registry (ACR) ACR memberikan keamanan, fleksibilitas, dan integrasi mendalam dengan ekosistem Azure yang tidak dimiliki oleh registry publik seperti Docker Hub. Karena ACR merupakan layanan native Azure, ia mendukung autentikasi berbasis Azure Active Directory, peran berbasis akses (RBAC), enkripsi data, dan geo-replikasi. Keunggulan ini sangat penting dalam skenario enterprise, di mana kontrol terhadap siapa yang bisa menarik atau mendorong image sangat krusial. ACR juga mempermudah integrasi pipeline CI/CD berbasis Azure.\n3. Membuat Azure Container Registry Langkah pertama dalam menggunakan ACR adalah membuat instance registry baru melalui Azure CLI. Gunakan perintah berikut dengan mengganti youracrname, yourresourcegroup, dan yourlocation sesuai dengan kebutuhan:\naz acr create --name youracrname --resource-group yourresourcegroup --sku Basic --location yourlocation --admin-enabled true Setelah itu, login ke akun Azure dan ke ACR untuk mengizinkan Docker mendorong image:\naz login az acr login --name youracrname 4. Build dan Push Image dengan Docker Desktop Image aplikasi dibangun secara lokal menggunakan Docker Desktop, kemudian ditag dan didorong ke ACR. Proses ini identik dengan penggunaan Docker Hub, hanya berbeda pada tujuan push-nya. Pertama, bangun image menggunakan Docker:\ndocker build -t yourappimage . Lalu dapatkan login server dari ACR:\naz acr show --name youracrname --query loginServer --output tsv Tag image sesuai format ACR:\ndocker tag yourappimage:latest youracrname.azurecr.io/yourappimage:latest Dan dorong ke registry Azure:\ndocker push youracrname.azurecr.io/yourappimage:latest Pastikan perintah docker push dijalankan setelah login ACR berhasil agar akses tidak ditolak.\n5. Menghubungkan ACR dengan Azure App Service Azure App Service dapat langsung menarik image dari ACR jika sudah terhubung dan memiliki hak akses. Gunakan perintah berikut untuk mengatur App Service agar menggunakan image dari ACR:\naz webapp config container set --name yourappname --resource-group yourresourcegroup --docker-custom-image-name youracrname.azurecr.io/yourappimage:latest Jika ACR menggunakan kredensial admin, kamu juga bisa menyertakan username dan password:\naz webapp config container set --name yourappname --resource-group yourresourcegroup --docker-custom-image-name youracrname.azurecr.io/yourappimage:latest --docker-registry-server-url https://youracrname.azurecr.io --docker-registry-server-user youracrusername --docker-registry-server-password youracrpassword 6. Refleksi dan Penutup Menggunakan Azure Container Registry sebagai alternatif Docker Hub memberikan fleksibilitas dan keamanan tambahan dalam pengelolaan image. ACR terintegrasi langsung dengan Azure Active Directory dan layanan Azure lainnya, sehingga memudahkan pengelolaan akses, pemantauan, dan otomatisasi. Dengan pendekatan ini, tim DevOps dapat menjaga kontrol penuh atas image yang digunakan dalam produksi, sekaligus mempercepat integrasi ke dalam pipeline CI/CD yang aman dan efisien.\n",
+  "wordCount" : "462",
+  "inLanguage": "en",
+  "datePublished": "2025-05-27T10:20:00+08:00",
+  "dateModified": "2025-05-27T10:20:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/30_menerapkan_deployment_aplikasi_net6_acr_azure/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Menerapkan Deployment Aplikasi .NET 6 Menggunakan Azure Container Registry (ACR) ke Azure App Service
+    </h1>
+    <div class="post-meta"><span title='2025-05-27 10:20:00 +0800 +08'>May 27, 2025 Jam 10</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#pendahuluan">Pendahuluan</a></li>
+<li><a href="#memahami-acr">Memahami Azure Container Registry (ACR)</a></li>
+<li><a href="#membuat-azure-container-registry">Membuat Azure Container Registry</a></li>
+<li><a href="#build-dan-push-image-dengan-docker-desktop">Build dan Push Image dengan Docker Desktop</a></li>
+<li><a href="#menghubungkan-acr-dengan-azure-app-service">Menghubungkan ACR dengan Azure App Service</a></li>
+<li><a href="#refleksi-dan-penutup">Refleksi dan Penutup</a></li>
+</ol></blockquote>
+<p><a id="pendahuluan"></a></p>
+<h3 id="1-pendahuluan">1. Pendahuluan<a hidden class="anchor" aria-hidden="true" href="#1-pendahuluan">#</a></h3>
+<p><strong>Azure Container Registry (ACR) adalah solusi registry private dari Microsoft Azure untuk menyimpan dan mengelola image Docker secara aman dan terintegrasi.</strong> Dalam praktik DevOps modern, menggunakan registry private seperti ACR memberi kontrol lebih terhadap distribusi image dan mendukung integrasi yang lebih ketat dengan layanan Azure lainnya. Artikel ini menyajikan alternatif dari penggunaan Docker Hub, dengan memanfaatkan ACR untuk menyimpan image dan mendistribusikannya ke Azure App Service.</p>
+<p><a id="memahami-acr"></a></p>
+<h3 id="2-memahami-azure-container-registry-acr">2. Memahami Azure Container Registry (ACR)<a hidden class="anchor" aria-hidden="true" href="#2-memahami-azure-container-registry-acr">#</a></h3>
+<p><strong>ACR memberikan keamanan, fleksibilitas, dan integrasi mendalam dengan ekosistem Azure yang tidak dimiliki oleh registry publik seperti Docker Hub.</strong> Karena ACR merupakan layanan native Azure, ia mendukung autentikasi berbasis Azure Active Directory, peran berbasis akses (RBAC), enkripsi data, dan geo-replikasi. Keunggulan ini sangat penting dalam skenario enterprise, di mana kontrol terhadap siapa yang bisa menarik atau mendorong image sangat krusial. ACR juga mempermudah integrasi pipeline CI/CD berbasis Azure.</p>
+<p><a id="membuat-azure-container-registry"></a></p>
+<h3 id="3-membuat-azure-container-registry">3. Membuat Azure Container Registry<a hidden class="anchor" aria-hidden="true" href="#3-membuat-azure-container-registry">#</a></h3>
+<p><strong>Langkah pertama dalam menggunakan ACR adalah membuat instance registry baru melalui Azure CLI.</strong> Gunakan perintah berikut dengan mengganti <code>youracrname</code>, <code>yourresourcegroup</code>, dan <code>yourlocation</code> sesuai dengan kebutuhan:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az acr create   --name youracrname   --resource-group yourresourcegroup   --sku Basic   --location yourlocation   --admin-enabled true
+</span></span></code></pre></div><p>Setelah itu, login ke akun Azure dan ke ACR untuk mengizinkan Docker mendorong image:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az login
+</span></span><span style="display:flex;"><span>az acr login --name youracrname
+</span></span></code></pre></div><p><a id="build-dan-push-image-dengan-docker-desktop"></a></p>
+<h3 id="4-build-dan-push-image-dengan-docker-desktop">4. Build dan Push Image dengan Docker Desktop<a hidden class="anchor" aria-hidden="true" href="#4-build-dan-push-image-dengan-docker-desktop">#</a></h3>
+<p><strong>Image aplikasi dibangun secara lokal menggunakan Docker Desktop, kemudian ditag dan didorong ke ACR.</strong> Proses ini identik dengan penggunaan Docker Hub, hanya berbeda pada tujuan push-nya. Pertama, bangun image menggunakan Docker:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker build -t yourappimage .
+</span></span></code></pre></div><p>Lalu dapatkan login server dari ACR:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az acr show --name youracrname --query loginServer --output tsv
+</span></span></code></pre></div><p>Tag image sesuai format ACR:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker tag yourappimage:latest youracrname.azurecr.io/yourappimage:latest
+</span></span></code></pre></div><p>Dan dorong ke registry Azure:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker push youracrname.azurecr.io/yourappimage:latest
+</span></span></code></pre></div><p>Pastikan perintah <code>docker push</code> dijalankan setelah login ACR berhasil agar akses tidak ditolak.</p>
+<p><a id="menghubungkan-acr-dengan-azure-app-service"></a></p>
+<h3 id="5-menghubungkan-acr-dengan-azure-app-service">5. Menghubungkan ACR dengan Azure App Service<a hidden class="anchor" aria-hidden="true" href="#5-menghubungkan-acr-dengan-azure-app-service">#</a></h3>
+<p><strong>Azure App Service dapat langsung menarik image dari ACR jika sudah terhubung dan memiliki hak akses.</strong> Gunakan perintah berikut untuk mengatur App Service agar menggunakan image dari ACR:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az webapp config container set   --name yourappname   --resource-group yourresourcegroup   --docker-custom-image-name youracrname.azurecr.io/yourappimage:latest
+</span></span></code></pre></div><p>Jika ACR menggunakan kredensial admin, kamu juga bisa menyertakan username dan password:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>az webapp config container set   --name yourappname   --resource-group yourresourcegroup   --docker-custom-image-name youracrname.azurecr.io/yourappimage:latest   --docker-registry-server-url https://youracrname.azurecr.io   --docker-registry-server-user youracrusername   --docker-registry-server-password youracrpassword
+</span></span></code></pre></div><p><a id="refleksi-dan-penutup"></a></p>
+<h3 id="6-refleksi-dan-penutup">6. Refleksi dan Penutup<a hidden class="anchor" aria-hidden="true" href="#6-refleksi-dan-penutup">#</a></h3>
+<p><strong>Menggunakan Azure Container Registry sebagai alternatif Docker Hub memberikan fleksibilitas dan keamanan tambahan dalam pengelolaan image.</strong> ACR terintegrasi langsung dengan Azure Active Directory dan layanan Azure lainnya, sehingga memudahkan pengelolaan akses, pemantauan, dan otomatisasi. Dengan pendekatan ini, tim DevOps dapat menjaga kontrol penuh atas image yang digunakan dalam produksi, sekaligus mempercepat integrasi ke dalam pipeline CI/CD yang aman dan efisien.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/azure/">Azure</a></li>
+      <li><a href="http://localhost:1313/tags/acr/">Acr</a></li>
+      <li><a href="http://localhost:1313/tags/docker/">Docker</a></li>
+      <li><a href="http://localhost:1313/tags/deployment/">Deployment</a></li>
+      <li><a href="http://localhost:1313/tags/appservice/">Appservice</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="http://localhost:1313/posts/29_menerapkan_deployment_aplikasi_net6_docker_azure/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Menerapkan Deployment Aplikasi .NET 6 Menggunakan DockerHub ke Azure App Service</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

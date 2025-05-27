@@ -6,8 +6,57 @@
     <description>Recent content in Tags on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Mon, 26 May 2025 23:19:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 May 2025 10:20:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Acr</title>
+      <link>http://localhost:1313/tags/acr/</link>
+      <pubDate>Tue, 27 May 2025 10:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/acr/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Appservice</title>
+      <link>http://localhost:1313/tags/appservice/</link>
+      <pubDate>Tue, 27 May 2025 10:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/appservice/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure</title>
+      <link>http://localhost:1313/tags/azure/</link>
+      <pubDate>Tue, 27 May 2025 10:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>http://localhost:1313/tags/deployment/</link>
+      <pubDate>Tue, 27 May 2025 10:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/deployment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Tue, 27 May 2025 10:20:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aspnetcore</title>
+      <link>http://localhost:1313/tags/aspnetcore/</link>
+      <pubDate>Tue, 27 May 2025 10:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/aspnetcore/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Devops</title>
+      <link>http://localhost:1313/tags/devops/</link>
+      <pubDate>Tue, 27 May 2025 10:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/devops/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Data Integrity</title>
       <link>http://localhost:1313/tags/data-integrity/</link>
@@ -380,13 +429,6 @@
       <description></description>
     </item>
     <item>
-      <title>Azure</title>
-      <link>http://localhost:1313/tags/azure/</link>
-      <pubDate>Fri, 23 May 2025 00:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/tags/azure/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Cloud</title>
       <link>http://localhost:1313/tags/cloud/</link>
       <pubDate>Fri, 23 May 2025 00:00:00 +0800</pubDate>
@@ -580,13 +622,6 @@
       <link>http://localhost:1313/tags/blog/</link>
       <pubDate>Fri, 02 May 2025 14:00:00 +0800</pubDate>
       <guid>http://localhost:1313/tags/blog/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Deployment</title>
-      <link>http://localhost:1313/tags/deployment/</link>
-      <pubDate>Fri, 02 May 2025 14:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/tags/deployment/</guid>
       <description></description>
     </item>
     <item>

@@ -1,6 +1,6 @@
 ---
-title: "Kenapa README.md Tidak Muncul di NuGet? Refleksi dari Sebuah Paket Internal"
-title_underscore: "readme_nuget_internal_refleksi"
+title: "Kenapa README.md Tidak Muncul di NuGet? Ternyata Paket Internal"
+title_underscore: "readme_nuget_internal"
 summary: Pengalaman langsung mengeksplorasi penyebab README.md tidak muncul di tampilan NuGet, yang ternyata bukan berasal dari kesalahan teknis, melainkan keterbatasan feed internal Azure DevOps.
 date: 2025-05-26T20:25:00+08:00
 tags: ["nuget", "azure devops", "readme.md", "internal feed", "pipeline", "dotnet", "AI"]
