@@ -25,7 +25,7 @@ TocOpen = true
 
 [params.homeInfoParams]
   Title = "Selamat datang 👋"
-  Content = "Ini blog markdown saya. Kumpulan tulisan, tips, dan dokumentasi pribadi. Hubungi saya di danny@dwan.co.id!"
+  Content = "Ini blog saya. Kumpulan tulisan, tips, dan dokumentasi pribadi. Hubungi saya di danny@dwan.co.id!"
 
 [[menu.main]]
   name = "Home"
