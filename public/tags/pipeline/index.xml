@@ -6,8 +6,22 @@
     <description>Recent content in Pipeline on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Mon, 26 May 2025 20:25:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 00:30:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/pipeline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Studi Kasus Mini: Pipeline ICA untuk Klasifikasi Kondisi Mata (EO/EC)</title>
+      <link>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</link>
+      <pubDate>Fri, 30 May 2025 00:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</guid>
+      <description>Studi kasus ini membahas bagaimana ICA digunakan untuk membersihkan sinyal EEG dari dataset Kaggle guna meningkatkan akurasi klasifikasi kondisi mata terbuka dan tertutup.</description>
+    </item>
+    <item>
+      <title>Kapan Kita Tidak Perlu ICA dalam Pipeline EEG?</title>
+      <link>http://localhost:1313/posts/37_kapan_kita_tidak_perlu_ica_dalam_pipeline_eeg/</link>
+      <pubDate>Fri, 30 May 2025 00:13:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/37_kapan_kita_tidak_perlu_ica_dalam_pipeline_eeg/</guid>
+      <description>Meskipun ICA merupakan alat kuat untuk reduksi artefak, tidak semua skenario analisis EEG membutuhkannya—beberapa kondisi justru lebih efektif tanpa ICA.</description>
+    </item>
     <item>
       <title>Kenapa README.md Tidak Muncul di NuGet? Ternyata Paket Internal</title>
       <link>http://localhost:1313/posts/26_readme_nuget_internal/</link>

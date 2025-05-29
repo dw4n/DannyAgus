@@ -6,8 +6,57 @@
     <description>Recent content in EEG on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Tue, 27 May 2025 21:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 00:30:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/eeg/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Studi Kasus Mini: Pipeline ICA untuk Klasifikasi Kondisi Mata (EO/EC)</title>
+      <link>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</link>
+      <pubDate>Fri, 30 May 2025 00:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</guid>
+      <description>Studi kasus ini membahas bagaimana ICA digunakan untuk membersihkan sinyal EEG dari dataset Kaggle guna meningkatkan akurasi klasifikasi kondisi mata terbuka dan tertutup.</description>
+    </item>
+    <item>
+      <title>Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?</title>
+      <link>http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/</link>
+      <pubDate>Fri, 30 May 2025 00:14:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/</guid>
+      <description>Sebagai metode blind source separation, ICA berperan penting dalam pemrosesan sinyal EEG, namun penggunaannya tidak secara otomatis menjamin reduksi artefak maupun noise kecuali disertai proses identifikasi dan rekonstruksi yang tepat.</description>
+    </item>
+    <item>
+      <title>ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG</title>
+      <link>http://localhost:1313/posts/38_ica_in_action/</link>
+      <pubDate>Fri, 30 May 2025 00:14:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/38_ica_in_action/</guid>
+      <description>Artikel ini menggambarkan penerapan konkret ICA dalam pembersihan sinyal EEG, dengan contoh kasus, hasil yang bisa dibayangkan, dan langkah-langkah umum yang bisa diterapkan di berbagai alat analisis.</description>
+    </item>
+    <item>
+      <title>Kapan Kita Tidak Perlu ICA dalam Pipeline EEG?</title>
+      <link>http://localhost:1313/posts/37_kapan_kita_tidak_perlu_ica_dalam_pipeline_eeg/</link>
+      <pubDate>Fri, 30 May 2025 00:13:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/37_kapan_kita_tidak_perlu_ica_dalam_pipeline_eeg/</guid>
+      <description>Meskipun ICA merupakan alat kuat untuk reduksi artefak, tidak semua skenario analisis EEG membutuhkannya—beberapa kondisi justru lebih efektif tanpa ICA.</description>
+    </item>
+    <item>
+      <title>ICA Sebagai Metode vs. CNN untuk Labeling Komponen: Memahami Peran Masing-Masing</title>
+      <link>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</link>
+      <pubDate>Fri, 30 May 2025 00:12:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</guid>
+      <description>ICA adalah metode statistik untuk memisahkan sinyal EEG campuran, sementara CNN seperti ICLabel hanya berperan dalam mengklasifikasi hasil dekomposisinya—dua hal ini tidak boleh disamakan.</description>
+    </item>
+    <item>
+      <title>Bagaimana Mengidentifikasi IC Artefak secara Otomatis?</title>
+      <link>http://localhost:1313/posts/35_bagaimana_mengidentifikasi_ic_artefak_secara_otomatis/</link>
+      <pubDate>Fri, 30 May 2025 00:11:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/35_bagaimana_mengidentifikasi_ic_artefak_secara_otomatis/</guid>
+      <description>Artikel ini membahas pendekatan otomatis untuk mendeteksi dan mengklasifikasi komponen artefak hasil ICA, termasuk penggunaan ICLabel, metrik kuantitatif, dan metode berbasis machine learning.</description>
+    </item>
+    <item>
+      <title>Mengenal Konsep Dasar Independent Component Analysis (ICA)</title>
+      <link>http://localhost:1313/posts/34_mengenal_konsep_dasar_independent_component_analysis/</link>
+      <pubDate>Fri, 30 May 2025 00:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/34_mengenal_konsep_dasar_independent_component_analysis/</guid>
+      <description>ICA adalah teknik statistik yang digunakan untuk memisahkan sinyal campuran menjadi komponen-komponen independen yang tidak diketahui sebelumnya, dan merupakan dasar penting dalam analisis sinyal EEG.</description>
+    </item>
     <item>
       <title>Analisis Kritis dan Relevansi Metodologi Deteksi Kejang EEG dalam Studi Jothi &amp; Jayaraj (2024) untuk Penelitian Klasifikasi Sinyal EEG Umum</title>
       <link>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</link>

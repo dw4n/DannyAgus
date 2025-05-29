@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Praktik on Danny Agus</title>
+    <link>http://localhost:1313/tags/praktik/</link>
+    <description>Recent content in Praktik on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Fri, 30 May 2025 00:14:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/praktik/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG</title>
+      <link>http://localhost:1313/posts/38_ica_in_action/</link>
+      <pubDate>Fri, 30 May 2025 00:14:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/38_ica_in_action/</guid>
+      <description>Artikel ini menggambarkan penerapan konkret ICA dalam pembersihan sinyal EEG, dengan contoh kasus, hasil yang bisa dibayangkan, dan langkah-langkah umum yang bisa diterapkan di berbagai alat analisis.</description>
+    </item>
+  </channel>
+</rss>

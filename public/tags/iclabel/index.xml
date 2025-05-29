@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ICLabel on Danny Agus</title>
+    <link>http://localhost:1313/tags/iclabel/</link>
+    <description>Recent content in ICLabel on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Fri, 30 May 2025 00:12:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/iclabel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ICA Sebagai Metode vs. CNN untuk Labeling Komponen: Memahami Peran Masing-Masing</title>
+      <link>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</link>
+      <pubDate>Fri, 30 May 2025 00:12:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</guid>
+      <description>ICA adalah metode statistik untuk memisahkan sinyal EEG campuran, sementara CNN seperti ICLabel hanya berperan dalam mengklasifikasi hasil dekomposisinya—dua hal ini tidak boleh disamakan.</description>
+    </item>
+    <item>
+      <title>Bagaimana Mengidentifikasi IC Artefak secara Otomatis?</title>
+      <link>http://localhost:1313/posts/35_bagaimana_mengidentifikasi_ic_artefak_secara_otomatis/</link>
+      <pubDate>Fri, 30 May 2025 00:11:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/35_bagaimana_mengidentifikasi_ic_artefak_secara_otomatis/</guid>
+      <description>Artikel ini membahas pendekatan otomatis untuk mendeteksi dan mengklasifikasi komponen artefak hasil ICA, termasuk penggunaan ICLabel, metrik kuantitatif, dan metode berbasis machine learning.</description>
+    </item>
+  </channel>
+</rss>

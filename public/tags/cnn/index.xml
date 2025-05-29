@@ -6,8 +6,15 @@
     <description>Recent content in CNN on Danny Agus</description>
     <generator>Hugo -- 0.147.0</generator>
     <language>id</language>
-    <lastBuildDate>Tue, 27 May 2025 21:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 30 May 2025 00:12:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/cnn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ICA Sebagai Metode vs. CNN untuk Labeling Komponen: Memahami Peran Masing-Masing</title>
+      <link>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</link>
+      <pubDate>Fri, 30 May 2025 00:12:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</guid>
+      <description>ICA adalah metode statistik untuk memisahkan sinyal EEG campuran, sementara CNN seperti ICLabel hanya berperan dalam mengklasifikasi hasil dekomposisinya—dua hal ini tidak boleh disamakan.</description>
+    </item>
     <item>
       <title>Analisis Metode Deep Learning Hibrida CNN-LSTM untuk Klasifikasi Aktivitas Manusia dan Potensinya pada Sinyal EEG</title>
       <link>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</link>

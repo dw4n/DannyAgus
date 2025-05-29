@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Klasifikasi on Danny Agus</title>
+    <link>http://localhost:1313/tags/klasifikasi/</link>
+    <description>Recent content in Klasifikasi on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Fri, 30 May 2025 00:30:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/klasifikasi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Studi Kasus Mini: Pipeline ICA untuk Klasifikasi Kondisi Mata (EO/EC)</title>
+      <link>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</link>
+      <pubDate>Fri, 30 May 2025 00:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</guid>
+      <description>Studi kasus ini membahas bagaimana ICA digunakan untuk membersihkan sinyal EEG dari dataset Kaggle guna meningkatkan akurasi klasifikasi kondisi mata terbuka dan tertutup.</description>
+    </item>
+  </channel>
+</rss>

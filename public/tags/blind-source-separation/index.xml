@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Blind Source Separation on Danny Agus</title>
+    <link>http://localhost:1313/tags/blind-source-separation/</link>
+    <description>Recent content in Blind Source Separation on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Fri, 30 May 2025 00:10:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/blind-source-separation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mengenal Konsep Dasar Independent Component Analysis (ICA)</title>
+      <link>http://localhost:1313/posts/34_mengenal_konsep_dasar_independent_component_analysis/</link>
+      <pubDate>Fri, 30 May 2025 00:10:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/34_mengenal_konsep_dasar_independent_component_analysis/</guid>
+      <description>ICA adalah teknik statistik yang digunakan untuk memisahkan sinyal campuran menjadi komponen-komponen independen yang tidak diketahui sebelumnya, dan merupakan dasar penting dalam analisis sinyal EEG.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG | Danny Agus</title>
+<meta name="keywords" content="ICA, praktik, EEG, pemrosesan sinyal, artefak">
+<meta name="description" content="Artikel ini menggambarkan penerapan konkret ICA dalam pembersihan sinyal EEG, dengan contoh kasus, hasil yang bisa dibayangkan, dan langkah-langkah umum yang bisa diterapkan di berbagai alat analisis.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/38_ica_in_action/">
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral', 
+         themeVariables: {
+          fontSize: "16px",
+          fontFamily: "inherit",
+          primaryColor: "#f3f4f6",           
+          primaryBorderColor: "#d1d5db",     
+          primaryTextColor: "#111827",       
+          lineColor: "#9ca3af",              
+          edgeLabelBackground: "#ffffff",
+          clusterBkg: "#f9fafb",
+          clusterBorder: "#e5e7eb"
+        }
+      });
+    }
+  });
+</script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/38_ica_in_action/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H233N3KGXJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H233N3KGXJ');
+</script>
+<meta property="og:url" content="http://localhost:1313/posts/38_ica_in_action/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG">
+  <meta property="og:description" content="Artikel ini menggambarkan penerapan konkret ICA dalam pembersihan sinyal EEG, dengan contoh kasus, hasil yang bisa dibayangkan, dan langkah-langkah umum yang bisa diterapkan di berbagai alat analisis.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-30T00:14:00+08:00">
+    <meta property="article:modified_time" content="2025-05-30T00:14:00+08:00">
+    <meta property="article:tag" content="ICA">
+    <meta property="article:tag" content="Praktik">
+    <meta property="article:tag" content="EEG">
+    <meta property="article:tag" content="Pemrosesan Sinyal">
+    <meta property="article:tag" content="Artefak">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG">
+<meta name="twitter:description" content="Artikel ini menggambarkan penerapan konkret ICA dalam pembersihan sinyal EEG, dengan contoh kasus, hasil yang bisa dibayangkan, dan langkah-langkah umum yang bisa diterapkan di berbagai alat analisis.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG",
+      "item": "http://localhost:1313/posts/38_ica_in_action/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG",
+  "name": "ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG",
+  "description": "Artikel ini menggambarkan penerapan konkret ICA dalam pembersihan sinyal EEG, dengan contoh kasus, hasil yang bisa dibayangkan, dan langkah-langkah umum yang bisa diterapkan di berbagai alat analisis.",
+  "keywords": [
+    "ICA", "praktik", "EEG", "pemrosesan sinyal", "artefak"
+  ],
+  "articleBody": " Outline Artikel Pendahuluan Langkah Umum Penerapan ICA dalam Pipeline EEG Contoh Kasus: Menghapus Artefak Kedipan Mata dari EEG Bagaimana Hasilnya Terlihat? Implementasi ICA dengan Python (MNE) Penutup dan Arah Eksperimen Lanjutan Seringkali, ICA dijelaskan secara teoretis, padahal kekuatannya justru terlihat saat kita benar-benar menggunakannya dalam pemrosesan EEG. Untuk memahami potensi ICA secara konkret, kita perlu menyaksikan bagaimana sinyal EEG mentah yang tercemar artefak bisa berubah menjadi lebih bersih dan terstruktur setelah melalui dekomposisi dan rekonstruksi. Artikel ini menyajikan langkah demi langkah serta visualisasi mental tentang cara kerja ICA dalam konteks nyata.\nICA biasanya diterapkan setelah sinyal EEG menjalani tahap pra-pemrosesan dasar seperti filtering, re-referencing, dan segmentasi. Pipeline tipikalnya adalah sebagai berikut:\nBandpass filtering (misalnya 1–50 Hz) Notch filter (misalnya 50 Hz untuk noise listrik) Epoching data (misalnya dalam potongan 2–5 detik) Jalankan ICA → hasilkan sejumlah Independent Components (ICs) Identifikasi IC artefak (manual atau otomatis dengan ICLabel) Hapus IC yang relevan → rekonstruksi ulang sinyal EEG bersih Langkah 4–6 adalah inti proses ICA in action: dari dekomposisi → seleksi → rekonstruksi.\nBayangkan sebuah sesi EEG saat subjek disuruh membuka dan menutup mata berulang kali. Dalam data mentah, kita akan melihat sinyal beramplitudo besar di area frontal (misalnya kanal FP1, FP2) setiap kali subjek berkedip. Setelah ICA diterapkan:\nMuncul satu komponen IC yang memperlihatkan pola gelombang besar dan lambat, topografi frontal dominan Kita mengenali ini sebagai artefak EOG (kedipan mata) Setelah IC ini dihapus dan sinyal direkonstruksi, pola gelombang besar di kanal frontal tersebut hilang—tetapi sinyal alfa di bagian oksipital tetap utuh Sinyal hasil ICA biasanya terlihat lebih “halus” namun tidak lepas dari dinamika otak yang penting. Misalnya:\nAktivitas alfa (8–13 Hz) saat mata tertutup menjadi lebih jelas Gangguan otot atau denyut jantung (yang sebelumnya mengganggu pita beta atau gamma) menjadi berkurang Topoplot distribusi sinyal menjadi lebih fisiologis (tidak terdistorsi oleh noise frontal) Dengan Python (library MNE), ICA dapat diterapkan hanya dalam beberapa baris kode. Contoh kode singkat:\nimport mne # Load data raw = mne.io.read_raw_fif(\"data_eeg.fif\", preload=True) # Preprocessing raw.filter(1., 50., fir_design='firwin') ica = mne.preprocessing.ICA(n_components=20, random_state=97, max_iter=800) ica.fit(raw) # Visualisasi dan identifikasi komponen ica.plot_components() ica.plot_properties(raw, picks=[0,1,2]) # misalnya komponen 0 adalah artefak # Hapus IC artefak ica.exclude = [0] # contoh ica.apply(raw) # raw sekarang sudah dibersihkan Alat seperti EEGLAB (MATLAB) juga menyediakan GUI interaktif untuk proses serupa.\nDengan menjalankan ICA secara langsung, kita membangun intuisi tentang bentuk artefak, efek penghapusan, dan batasannya. ICA bukan hanya alat statistik, tapi juga alat eksplorasi—kita bisa menguji: apa yang terjadi jika IC tertentu tidak dihapus? Apakah sinyal hilang terlalu banyak? Apakah artefak masih tersisa? Pertanyaan-pertanyaan ini mendorong kita pada praktik eksperimental yang reflektif. Artikel selanjutnya dapat mengangkat “Studi Kasus Mini: Pipeline ICA untuk Klasifikasi EO/EC”.\n",
+  "wordCount" : "441",
+  "inLanguage": "en",
+  "datePublished": "2025-05-30T00:14:00+08:00",
+  "dateModified": "2025-05-30T00:14:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/38_ica_in_action/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG
+    </h1>
+    <div class="post-meta"><span title='2025-05-30 00:14:00 +0800 +08'>May 30, 2025 Jam 00</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#pendahuluan">Pendahuluan</a></li>
+<li><a href="#langkah-umum-penerapan-ica-dalam-pipeline-eeg">Langkah Umum Penerapan ICA dalam Pipeline EEG</a></li>
+<li><a href="#contoh-kasus-menghapus-artefak-kedipan-mata-dari-eeg">Contoh Kasus: Menghapus Artefak Kedipan Mata dari EEG</a></li>
+<li><a href="#bagaimana-hasilnya-terlihat">Bagaimana Hasilnya Terlihat?</a></li>
+<li><a href="#implementasi-ica-dengan-python-mne">Implementasi ICA dengan Python (MNE)</a></li>
+<li><a href="#penutup-dan-arah-eksperimen-lanjutan">Penutup dan Arah Eksperimen Lanjutan</a></li>
+</ol></blockquote>
+<p><a id="pendahuluan"></a>
+<em><strong>Seringkali, ICA dijelaskan secara teoretis, padahal kekuatannya justru terlihat saat kita benar-benar menggunakannya dalam pemrosesan EEG.</strong></em> Untuk memahami potensi ICA secara konkret, kita perlu menyaksikan bagaimana sinyal EEG mentah yang tercemar artefak bisa berubah menjadi lebih bersih dan terstruktur setelah melalui dekomposisi dan rekonstruksi. Artikel ini menyajikan langkah demi langkah serta visualisasi mental tentang cara kerja ICA dalam konteks nyata.</p>
+<p><a id="langkah-umum-penerapan-ica-dalam-pipeline-eeg"></a>
+<em><strong>ICA biasanya diterapkan setelah sinyal EEG menjalani tahap pra-pemrosesan dasar seperti filtering, re-referencing, dan segmentasi.</strong></em> Pipeline tipikalnya adalah sebagai berikut:</p>
+<ol>
+<li>Bandpass filtering (misalnya 1–50 Hz)</li>
+<li>Notch filter (misalnya 50 Hz untuk noise listrik)</li>
+<li>Epoching data (misalnya dalam potongan 2–5 detik)</li>
+<li>Jalankan ICA → hasilkan sejumlah <em>Independent Components</em> (ICs)</li>
+<li>Identifikasi IC artefak (manual atau otomatis dengan ICLabel)</li>
+<li>Hapus IC yang relevan → rekonstruksi ulang sinyal EEG bersih</li>
+</ol>
+<p>Langkah 4–6 adalah inti proses ICA in action: dari dekomposisi → seleksi → rekonstruksi.</p>
+<p><a id="contoh-kasus-menghapus-artefak-kedipan-mata-dari-eeg"></a>
+<em><strong>Bayangkan sebuah sesi EEG saat subjek disuruh membuka dan menutup mata berulang kali.</strong></em> Dalam data mentah, kita akan melihat sinyal beramplitudo besar di area frontal (misalnya kanal FP1, FP2) setiap kali subjek berkedip. Setelah ICA diterapkan:</p>
+<ul>
+<li>Muncul satu komponen IC yang memperlihatkan pola gelombang besar dan lambat, topografi frontal dominan</li>
+<li>Kita mengenali ini sebagai artefak EOG (kedipan mata)</li>
+<li>Setelah IC ini dihapus dan sinyal direkonstruksi, pola gelombang besar di kanal frontal tersebut hilang—tetapi sinyal alfa di bagian oksipital tetap utuh</li>
+</ul>
+<p><a id="bagaimana-hasilnya-terlihat"></a>
+<em><strong>Sinyal hasil ICA biasanya terlihat lebih “halus” namun tidak lepas dari dinamika otak yang penting.</strong></em> Misalnya:</p>
+<ul>
+<li>Aktivitas alfa (8–13 Hz) saat mata tertutup menjadi lebih jelas</li>
+<li>Gangguan otot atau denyut jantung (yang sebelumnya mengganggu pita beta atau gamma) menjadi berkurang</li>
+<li>Topoplot distribusi sinyal menjadi lebih fisiologis (tidak terdistorsi oleh noise frontal)</li>
+</ul>
+<p><a id="implementasi-ica-dengan-python-mne"></a>
+<em><strong>Dengan Python (library MNE), ICA dapat diterapkan hanya dalam beberapa baris kode.</strong></em> Contoh kode singkat:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> mne
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Load data</span>
+</span></span><span style="display:flex;"><span>raw <span style="color:#f92672">=</span> mne<span style="color:#f92672">.</span>io<span style="color:#f92672">.</span>read_raw_fif(<span style="color:#e6db74">&#34;data_eeg.fif&#34;</span>, preload<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Preprocessing</span>
+</span></span><span style="display:flex;"><span>raw<span style="color:#f92672">.</span>filter(<span style="color:#ae81ff">1.</span>, <span style="color:#ae81ff">50.</span>, fir_design<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;firwin&#39;</span>)
+</span></span><span style="display:flex;"><span>ica <span style="color:#f92672">=</span> mne<span style="color:#f92672">.</span>preprocessing<span style="color:#f92672">.</span>ICA(n_components<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>, random_state<span style="color:#f92672">=</span><span style="color:#ae81ff">97</span>, max_iter<span style="color:#f92672">=</span><span style="color:#ae81ff">800</span>)
+</span></span><span style="display:flex;"><span>ica<span style="color:#f92672">.</span>fit(raw)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Visualisasi dan identifikasi komponen</span>
+</span></span><span style="display:flex;"><span>ica<span style="color:#f92672">.</span>plot_components()
+</span></span><span style="display:flex;"><span>ica<span style="color:#f92672">.</span>plot_properties(raw, picks<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>])  <span style="color:#75715e"># misalnya komponen 0 adalah artefak</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hapus IC artefak</span>
+</span></span><span style="display:flex;"><span>ica<span style="color:#f92672">.</span>exclude <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>]  <span style="color:#75715e"># contoh</span>
+</span></span><span style="display:flex;"><span>ica<span style="color:#f92672">.</span>apply(raw)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># raw sekarang sudah dibersihkan</span>
+</span></span></code></pre></div><p>Alat seperti EEGLAB (MATLAB) juga menyediakan GUI interaktif untuk proses serupa.</p>
+<p><a id="penutup-dan-arah-eksperimen-lanjutan"></a>
+Dengan menjalankan ICA secara langsung, kita membangun intuisi tentang bentuk artefak, efek penghapusan, dan batasannya. ICA bukan hanya alat statistik, tapi juga alat eksplorasi—kita bisa menguji: apa yang terjadi jika IC tertentu tidak dihapus? Apakah sinyal hilang terlalu banyak? Apakah artefak masih tersisa? Pertanyaan-pertanyaan ini mendorong kita pada praktik eksperimental yang reflektif. Artikel selanjutnya dapat mengangkat “Studi Kasus Mini: Pipeline ICA untuk Klasifikasi EO/EC”.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ica/">ICA</a></li>
+      <li><a href="http://localhost:1313/tags/praktik/">Praktik</a></li>
+      <li><a href="http://localhost:1313/tags/eeg/">EEG</a></li>
+      <li><a href="http://localhost:1313/tags/pemrosesan-sinyal/">Pemrosesan Sinyal</a></li>
+      <li><a href="http://localhost:1313/tags/artefak/">Artefak</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/37_kapan_kita_tidak_perlu_ica_dalam_pipeline_eeg/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Kapan Kita Tidak Perlu ICA dalam Pipeline EEG?</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+        .
+    </span>
+    <span>
+        Contact me <a href="mailto:danny@dwan.co.id">danny@dwan.co.id</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

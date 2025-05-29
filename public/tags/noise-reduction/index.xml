@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Noise Reduction on Danny Agus</title>
+    <link>http://localhost:1313/tags/noise-reduction/</link>
+    <description>Recent content in Noise Reduction on Danny Agus</description>
+    <generator>Hugo -- 0.147.0</generator>
+    <language>id</language>
+    <lastBuildDate>Fri, 30 May 2025 00:14:00 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/noise-reduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?</title>
+      <link>http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/</link>
+      <pubDate>Fri, 30 May 2025 00:14:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/</guid>
+      <description>Sebagai metode blind source separation, ICA berperan penting dalam pemrosesan sinyal EEG, namun penggunaannya tidak secara otomatis menjamin reduksi artefak maupun noise kecuali disertai proses identifikasi dan rekonstruksi yang tepat.</description>
+    </item>
+  </channel>
+</rss>

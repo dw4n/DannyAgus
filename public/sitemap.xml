@@ -2,43 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/eeg/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/eoec/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/ica/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/kaggle/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/klasifikasi/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/paper/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pipeline/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-30T00:30:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/artefak/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/38_ica_in_action/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/noise-reduction/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pemrosesan-sinyal/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/praktik/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/signal-processing/</loc>
+    <lastmod>2025-05-30T00:14:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/deep-learning/</loc>
+    <lastmod>2025-05-30T00:13:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/37_kapan_kita_tidak_perlu_ica_dalam_pipeline_eeg/</loc>
+    <lastmod>2025-05-30T00:13:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/pra-pemrosesan/</loc>
+    <lastmod>2025-05-30T00:13:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cnn/</loc>
+    <lastmod>2025-05-30T00:12:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/36_ica_vs_cnn_labeling_ic/</loc>
+    <lastmod>2025-05-30T00:12:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/iclabel/</loc>
+    <lastmod>2025-05-30T00:12:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/komponen-artefak/</loc>
+    <lastmod>2025-05-30T00:12:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/automatic-classification/</loc>
+    <lastmod>2025-05-30T00:11:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/35_bagaimana_mengidentifikasi_ic_artefak_secara_otomatis/</loc>
+    <lastmod>2025-05-30T00:11:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/blind-source-separation/</loc>
+    <lastmod>2025-05-30T00:10:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/34_mengenal_konsep_dasar_independent_component_analysis/</loc>
+    <lastmod>2025-05-30T00:10:00+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/posts/32_analisis_kritis_deteksi_kejang_eeg/</loc>
     <lastmod>2025-05-27T21:10:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/attention/</loc>
     <lastmod>2025-05-27T21:10:00+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/tags/cnn-rnn/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/deep-learning/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/eeg/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/paper/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2025-05-27T21:10:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2025-05-27T21:10:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/wavelet/</loc>
     <lastmod>2025-05-27T21:10:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/31_analisis_metode_deep_learning_hibrida_cnn_lstm_untuk_klasifikasi/</loc>
-    <lastmod>2025-05-27T21:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/cnn/</loc>
     <lastmod>2025-05-27T21:00:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/har/</loc>
@@ -132,9 +198,6 @@
     <lastmod>2025-05-26T20:25:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/nuget/</loc>
-    <lastmod>2025-05-26T20:25:00+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/pipeline/</loc>
     <lastmod>2025-05-26T20:25:00+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/readme.md/</loc>

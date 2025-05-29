@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Apakah ICA Selalu Berarti Reduksi Artefak atau Noise? | Danny Agus</title>
+<meta name="keywords" content="ICA, EEG, artefak, noise reduction, signal processing">
+<meta name="description" content="Sebagai metode blind source separation, ICA berperan penting dalam pemrosesan sinyal EEG, namun penggunaannya tidak secara otomatis menjamin reduksi artefak maupun noise kecuali disertai proses identifikasi dan rekonstruksi yang tepat.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/">
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof mermaid !== 'undefined') {
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'neutral', 
+         themeVariables: {
+          fontSize: "16px",
+          fontFamily: "inherit",
+          primaryColor: "#f3f4f6",           
+          primaryBorderColor: "#d1d5db",     
+          primaryTextColor: "#111827",       
+          lineColor: "#9ca3af",              
+          edgeLabelBackground: "#ffffff",
+          clusterBkg: "#f9fafb",
+          clusterBorder: "#e5e7eb"
+        }
+      });
+    }
+  });
+</script>
+<link crossorigin="anonymous" href="/assets/css/stylesheet.89a801ee0fa3e65a8483f67c3b2f3589d0b10f28196c3818d831e735221daa55.css" integrity="sha256-iagB7g&#43;j5lqEg/Z8Oy81idCxDygZbDgY2DHnNSIdqlU=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-H233N3KGXJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-H233N3KGXJ');
+</script>
+<meta property="og:url" content="http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/">
+  <meta property="og:site_name" content="Danny Agus">
+  <meta property="og:title" content="Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?">
+  <meta property="og:description" content="Sebagai metode blind source separation, ICA berperan penting dalam pemrosesan sinyal EEG, namun penggunaannya tidak secara otomatis menjamin reduksi artefak maupun noise kecuali disertai proses identifikasi dan rekonstruksi yang tepat.">
+  <meta property="og:locale" content="id">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-30T00:14:00+08:00">
+    <meta property="article:modified_time" content="2025-05-30T00:14:00+08:00">
+    <meta property="article:tag" content="ICA">
+    <meta property="article:tag" content="EEG">
+    <meta property="article:tag" content="Artefak">
+    <meta property="article:tag" content="Noise Reduction">
+    <meta property="article:tag" content="Signal Processing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?">
+<meta name="twitter:description" content="Sebagai metode blind source separation, ICA berperan penting dalam pemrosesan sinyal EEG, namun penggunaannya tidak secara otomatis menjamin reduksi artefak maupun noise kecuali disertai proses identifikasi dan rekonstruksi yang tepat.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://localhost:1313/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?",
+      "item": "http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?",
+  "name": "Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?",
+  "description": "Sebagai metode blind source separation, ICA berperan penting dalam pemrosesan sinyal EEG, namun penggunaannya tidak secara otomatis menjamin reduksi artefak maupun noise kecuali disertai proses identifikasi dan rekonstruksi yang tepat.",
+  "keywords": [
+    "ICA", "EEG", "artefak", "noise reduction", "signal processing"
+  ],
+  "articleBody": " Outline Artikel Pendahuluan Memahami Fungsi Dasar ICA ICA dan Reduksi Artefak: Antara Potensi dan Syarat ICA Tidak Dirancang untuk Noise Acak Refleksi dan Implikasi dalam Penelitian EEG Kesimpulan Independent Component Analysis (ICA) sering kali disalahartikan sebagai metode otomatis untuk menghilangkan artefak atau noise dari sinyal EEG. Padahal, ICA sejatinya adalah teknik dekomposisi statistik yang bertujuan memisahkan sinyal campuran menjadi komponen-komponen independen secara statistik, tanpa pengetahuan awal tentang sumbernya. Dalam konteks EEG, ICA sering digunakan untuk mengekstraksi sinyal otak murni dari campuran sinyal artefak dan aktivitas otak. Namun, efektivitas ICA sangat bergantung pada bagaimana hasil dekomposisinya dianalisis dan diproses lebih lanjut.\nICA bukanlah alat pemurni sinyal, melainkan metode untuk mengurai sinyal campuran menjadi sumber-sumber statistik yang diduga independen. Dalam pemrosesan sinyal EEG, ICA mengasumsikan bahwa data yang terekam di permukaan kepala adalah campuran linier dari berbagai sumber tersembunyi, seperti aktivitas otak, gerakan mata, atau kontraksi otot. Dengan menggunakan asumsi independensi statistik, ICA mencoba memisahkan campuran tersebut menjadi sejumlah komponen yang masing-masing mewakili satu sumber. Namun, ICA sendiri tidak tahu mana komponen artefak dan mana yang otak—itulah sebabnya, pengguna tetap perlu melakukan identifikasi secara manual atau semi-otomatis terhadap hasilnya.\nAgar ICA benar-benar menghasilkan reduksi artefak, langkah identifikasi dan rekonstruksi sinyal sangat penting. Dalam praktiknya, setelah dekomposisi dilakukan, pengguna harus meninjau satu per satu komponen (dalam bentuk wavelet, spektrum, atau topografi) untuk memutuskan mana yang mencerminkan artefak seperti kedipan mata atau aktivitas otot. Komponen-komponen artefak inilah yang kemudian dihilangkan atau dinolkan sebelum sinyal EEG direkonstruksi kembali. Proses ini bisa dilakukan secara manual oleh ahli, atau menggunakan alat bantu seperti ICLabel. Tanpa langkah ini, ICA hanya akan menjadi proses dekomposisi tanpa kontribusi nyata terhadap pembersihan sinyal.\nICA tidak dirancang untuk menangani noise acak yang tidak terstruktur, seperti white noise atau thermal noise. Ini adalah keterbatasan mendasar ICA karena metode ini bekerja paling baik ketika sumber sinyal bersifat deterministik dan memiliki struktur statistik yang relatif stabil. Noise acak umumnya tidak memiliki pola temporal atau spasial yang dapat dieksploitasi oleh ICA, sehingga pendekatan lain seperti filtering atau autoencoder seringkali lebih efektif. Dengan kata lain, jika kontaminan sinyal bukanlah artefak yang sistematik, maka ICA kemungkinan besar tidak akan banyak membantu.\nPemahaman yang tepat mengenai peran ICA sangat penting dalam merancang pipeline pemrosesan EEG yang efektif. Banyak kesalahpahaman dalam literatur atau praktik teknis yang menyederhanakan ICA sebagai ‘alat reduksi artefak otomatis’. Padahal, efektivitas ICA bergantung pada kualitas data, strategi pemilihan komponen, dan proses rekonstruksi sinyal yang dilakukan. Di sisi lain, tren saat ini menunjukkan bahwa kombinasi ICA dengan deep learning—misalnya untuk klasifikasi atau denoising lanjutan—memberikan hasil yang menjanjikan. Oleh karena itu, ICA sebaiknya diposisikan sebagai komponen awal dalam pipeline yang lebih luas, bukan sebagai solusi tunggal.\nKesimpulannya, ICA adalah alat yang sangat berguna untuk reduksi artefak, tetapi tidak otomatis melakukannya tanpa intervensi tambahan. ICA perlu dipadukan dengan proses identifikasi dan interpretasi komponen yang cermat agar benar-benar bermanfaat dalam mengurangi gangguan non-otak dari sinyal EEG. Selain itu, pengguna tidak boleh mengandalkan ICA untuk noise reduction terhadap kontaminasi acak, karena pendekatan ini tidak didesain untuk itu. Memahami batas dan kekuatan ICA akan membantu peneliti EEG merancang sistem klasifikasi dan analisis sinyal yang lebih robust dan realistis.\n",
+  "wordCount" : "516",
+  "inLanguage": "en",
+  "datePublished": "2025-05-30T00:14:00+08:00",
+  "dateModified": "2025-05-30T00:14:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/posts/33_apakah_ica_selalu_berarti_reduksi_artefak_atau_noise/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Danny Agus",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Danny Agus (Alt + H)">Danny Agus</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Apakah ICA Selalu Berarti Reduksi Artefak atau Noise?
+    </h1>
+    <div class="post-meta"><span title='2025-05-30 00:14:00 +0800 +08'>May 30, 2025 Jam 00</span>
+
+</div>
+  </header> 
+  <div class="post-content"><blockquote>
+<h4 id="outline-artikel">Outline Artikel<a hidden class="anchor" aria-hidden="true" href="#outline-artikel">#</a></h4>
+<ol>
+<li><a href="#pendahuluan">Pendahuluan</a></li>
+<li><a href="#memahami-fungsi-dasar-ica">Memahami Fungsi Dasar ICA</a></li>
+<li><a href="#ica-dan-reduksi-artefak-antara-potensi-dan-syarat">ICA dan Reduksi Artefak: Antara Potensi dan Syarat</a></li>
+<li><a href="#ica-tidak-dirancang-untuk-noise-acak">ICA Tidak Dirancang untuk Noise Acak</a></li>
+<li><a href="#refleksi-dan-implikasi-dalam-penelitian-eeg">Refleksi dan Implikasi dalam Penelitian EEG</a></li>
+<li><a href="#kesimpulan">Kesimpulan</a></li>
+</ol></blockquote>
+<p><a id="pendahuluan"></a>
+<em><strong>Independent Component Analysis (ICA) sering kali disalahartikan sebagai metode otomatis untuk menghilangkan artefak atau noise dari sinyal EEG.</strong></em> Padahal, ICA sejatinya adalah teknik dekomposisi statistik yang bertujuan memisahkan sinyal campuran menjadi komponen-komponen independen secara statistik, tanpa pengetahuan awal tentang sumbernya. Dalam konteks EEG, ICA sering digunakan untuk mengekstraksi sinyal otak murni dari campuran sinyal artefak dan aktivitas otak. Namun, efektivitas ICA sangat bergantung pada bagaimana hasil dekomposisinya dianalisis dan diproses lebih lanjut.</p>
+<p><a id="memahami-fungsi-dasar-ica"></a>
+<em><strong>ICA bukanlah alat pemurni sinyal, melainkan metode untuk mengurai sinyal campuran menjadi sumber-sumber statistik yang diduga independen.</strong></em> Dalam pemrosesan sinyal EEG, ICA mengasumsikan bahwa data yang terekam di permukaan kepala adalah campuran linier dari berbagai sumber tersembunyi, seperti aktivitas otak, gerakan mata, atau kontraksi otot. Dengan menggunakan asumsi independensi statistik, ICA mencoba memisahkan campuran tersebut menjadi sejumlah komponen yang masing-masing mewakili satu sumber. Namun, ICA sendiri tidak tahu mana komponen artefak dan mana yang otak—itulah sebabnya, pengguna tetap perlu melakukan identifikasi secara manual atau semi-otomatis terhadap hasilnya.</p>
+<p><a id="ica-dan-reduksi-artefak-antara-potensi-dan-syarat"></a>
+<em><strong>Agar ICA benar-benar menghasilkan reduksi artefak, langkah identifikasi dan rekonstruksi sinyal sangat penting.</strong></em> Dalam praktiknya, setelah dekomposisi dilakukan, pengguna harus meninjau satu per satu komponen (dalam bentuk wavelet, spektrum, atau topografi) untuk memutuskan mana yang mencerminkan artefak seperti kedipan mata atau aktivitas otot. Komponen-komponen artefak inilah yang kemudian dihilangkan atau dinolkan sebelum sinyal EEG direkonstruksi kembali. Proses ini bisa dilakukan secara manual oleh ahli, atau menggunakan alat bantu seperti ICLabel. Tanpa langkah ini, ICA hanya akan menjadi proses dekomposisi tanpa kontribusi nyata terhadap pembersihan sinyal.</p>
+<p><a id="ica-tidak-dirancang-untuk-noise-acak"></a>
+<em><strong>ICA tidak dirancang untuk menangani noise acak yang tidak terstruktur, seperti white noise atau thermal noise.</strong></em> Ini adalah keterbatasan mendasar ICA karena metode ini bekerja paling baik ketika sumber sinyal bersifat deterministik dan memiliki struktur statistik yang relatif stabil. Noise acak umumnya tidak memiliki pola temporal atau spasial yang dapat dieksploitasi oleh ICA, sehingga pendekatan lain seperti filtering atau autoencoder seringkali lebih efektif. Dengan kata lain, jika kontaminan sinyal bukanlah artefak yang sistematik, maka ICA kemungkinan besar tidak akan banyak membantu.</p>
+<p><a id="refleksi-dan-implikasi-dalam-penelitian-eeg"></a>
+<em><strong>Pemahaman yang tepat mengenai peran ICA sangat penting dalam merancang pipeline pemrosesan EEG yang efektif.</strong></em> Banyak kesalahpahaman dalam literatur atau praktik teknis yang menyederhanakan ICA sebagai ‘alat reduksi artefak otomatis’. Padahal, efektivitas ICA bergantung pada kualitas data, strategi pemilihan komponen, dan proses rekonstruksi sinyal yang dilakukan. Di sisi lain, tren saat ini menunjukkan bahwa kombinasi ICA dengan deep learning—misalnya untuk klasifikasi atau denoising lanjutan—memberikan hasil yang menjanjikan. Oleh karena itu, ICA sebaiknya diposisikan sebagai komponen awal dalam pipeline yang lebih luas, bukan sebagai solusi tunggal.</p>
+<p><a id="kesimpulan"></a>
+<em><strong>Kesimpulannya, ICA adalah alat yang sangat berguna untuk reduksi artefak, tetapi tidak otomatis melakukannya tanpa intervensi tambahan.</strong></em> ICA perlu dipadukan dengan proses identifikasi dan interpretasi komponen yang cermat agar benar-benar bermanfaat dalam mengurangi gangguan non-otak dari sinyal EEG. Selain itu, pengguna tidak boleh mengandalkan ICA untuk noise reduction terhadap kontaminasi acak, karena pendekatan ini tidak didesain untuk itu. Memahami batas dan kekuatan ICA akan membantu peneliti EEG merancang sistem klasifikasi dan analisis sinyal yang lebih robust dan realistis.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="http://localhost:1313/tags/ica/">ICA</a></li>
+      <li><a href="http://localhost:1313/tags/eeg/">EEG</a></li>
+      <li><a href="http://localhost:1313/tags/artefak/">Artefak</a></li>
+      <li><a href="http://localhost:1313/tags/noise-reduction/">Noise Reduction</a></li>
+      <li><a href="http://localhost:1313/tags/signal-processing/">Signal Processing</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/39_studi_kasus_pipeline_ica_eo_ec/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Studi Kasus Mini: Pipeline ICA untuk Klasifikasi Kondisi Mata (EO/EC)</span>
+  </a>
+  <a class="next" href="http://localhost:1313/posts/38_ica_in_action/">
+    <span class="title">Next »</span>
+    <br>
+    <span>ICA in Action: Contoh Praktis dan Imajinasi Aplikatif dalam Analisis EEG</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">Danny Agus</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+        .
+    </span>
+    <span>
+        Contact me <a href="mailto:danny@dwan.co.id">danny@dwan.co.id</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
